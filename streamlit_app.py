@@ -19,17 +19,19 @@ field_names = [
                "specialty"
             ]
 
-data_sources = {"":[],
+data_sources = {
+                "":[],
                 "Epic SER":["","emr_id","display_name","specialty","npi"],
                 "Epic DEP":["","emr_id","display_name","specialty"],
                 "CS_Providers":["","emrId","provider first name","provider last name","specialty","sub-specialties"],
                 "CS_Departments":["","iuuid","department name","specialty"]
             }
 
-data_types=["string",
+data_types = [
+            "string",
             "numerical",
             "boolean"
-        ]
+        ]   
 
 ## File Upload Activity
 st.subheader("Upload Files")
