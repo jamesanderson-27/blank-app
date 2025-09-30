@@ -1,89 +1,78 @@
 import streamlit as st
+from utilities.handle_files import handleFiles
 
-st.title("DexCare Data Mapping POC")
+st.title("DexCare Data Mapping POC") 
 st.write("*This is a mockup populated with hardcoded values.*")
-
 st.divider()
 
-### HARDCODED DATA FOR POC
-# Define your list of field names
+
+####### Hardcoded data for POC #######
 schemas={
         "Provider":["emr_id","npi","name"],
         "Department":["display_name","emr_id","is_active","specialty"]
     }
-
-field_names = [
-               "display_name",
-               "emr_id",
-               "is_active",
-               "specialty"
-            ]
-
-data_sources = {
-                "":[],
-                "Epic SER":["","emr_id","display_name","specialty","npi"],
-                "Epic DEP":["","emr_id","display_name","specialty"],
-                "CS_Providers":["","emrId","provider first name","provider last name","specialty","sub-specialties"],
-                "CS_Departments":["","iuuid","department name","specialty"]
-            }
-
+data_sources={ # will be populated with data during file loading, keep "" dict as dropdown placeholder
+    "files":{
+         "":{
+            "uploaded_at":"",
+            "attributes":[]
+        }
+    }
+}
 data_types = [
             "string",
             "numerical",
             "boolean"
-        ]   
+        ]
 
-## File Upload Activity
+
+####### File Upload Activity #######
 st.subheader("Upload Files")
-st.write("File Requirements")
-st.write("* format must be .json, .txt, or .csv")
-st.write("* another requirement")
 
-# File uploader
-uploaded_file = st.file_uploader("Choose a file")
+uploaded_files = st.file_uploader(
+    "Choose one or more files",
+    type=['csv', 'txt','json'],
+    accept_multiple_files=True
+)
 
-# Process the uploaded file
-if uploaded_file is not None:
-    st.write("Filename:", uploaded_file.name)
-    st.write("File type:", uploaded_file.type)
-    st.write("File size:", uploaded_file.size, "bytes")
-    
-    # Example: if it's a text file
-    if uploaded_file.type == "text/plain":
-        content = uploaded_file.read().decode("utf-8")
-        st.text_area("File content", content, height=200)
+data_sources_local=handleFiles(uploaded_files,data_sources)
+st.write(data_sources_local)
 
-for source in list(data_sources.keys())[1:]:
-    st.markdown(f"File called **{source}** uploaded successfully. {int(len(data_sources[source]))} fields parsed.")
+
+# ingest file
+
+# parse attributes
+
+# store file and attribute data in data_sources
 
 st.divider()
 
-## Data Mapping Activity
+
+####### Data Mapping Activity #######
 st.subheader("DexCare Schema")
 
 for schema in sorted(list(schemas.keys())):
     with st.expander(schema):
         for field in sorted(list(schemas[schema])):
             with st.expander(field):
-                # Free text description
                 st.write("**Description**")
                 st.write("*This will be pulled dynamically from the DexCare Schema*")
                 st.write("**Primary Source**")
                 primary_data_source = st.selectbox("Source File",
-                                            list(data_sources.keys()),
+                                            list(data_sources["files"].keys()),
                                             key=f"{schema}_{field}_primary_dropdown",
                                             index=0) # load the existing mapping, index that option func
                 primary_data_col = st.selectbox("Attribute",
-                                            list(data_sources[primary_data_source]),
+                                            list(data_sources["files"][primary_data_source]["attributes"]),
                                             key=f"{schema}_{field}_primary_attribute",
                                             index=0) # load the existing mapping, index that option func
                 st.write("**Secondary Source** (if primary attribute is null)")
                 secondary_data_source = st.selectbox("Source File",
-                                            list(data_sources.keys()),
+                                            list(data_sources["files"].keys()),
                                             key=f"{schema}_{field}_secondary_dropdown",
                                             index=0) # load the existing mapping, index that option func
                 secondary_data_col = st.selectbox("Attribute",
-                                            list(data_sources[secondary_data_source]),
+                                            list(data_sources["files"][secondary_data_source]["attributes"]),
                                             key=f"{schema}_{field}_secondary_attribute",
                                             index=0) # load the existing mapping, index that option func
                 st.write("**Default** (if primary & secondary attributes are null)")
@@ -97,8 +86,7 @@ for schema in sorted(list(schemas.keys())):
 if st.button("Save"):
         st.success("Data mapping uploaded to github/repo/output")
 
-# Inject custom CSS to style the button
-st.markdown("""
+st.markdown(""" 
     <style>
     div.stButton > button {
         background-color: #007BFF;
@@ -113,4 +101,4 @@ st.markdown("""
         color: white;
     }
     </style>
-""", unsafe_allow_html=True)
+""", unsafe_allow_html=True) # Inject custom CSS to style the button
