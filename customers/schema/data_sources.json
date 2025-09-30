@@ -1,7 +1,8 @@
 {
     "files":{
+        "file_name":"",
         "uploaded_at":"",
-        
-        "attributes":[]
+        "attributes":[],
+        "deleted":0
     }
 }
