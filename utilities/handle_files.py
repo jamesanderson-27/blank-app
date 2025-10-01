@@ -32,7 +32,7 @@ def jsonReader(file):
         json_obj = json.loads(data.strip())
         attributes=getJsonAttributes(json_obj)
     except Exception as e:
-        st.badge(f"Error reading JSON: {e}",color='red')
+        st.badge(f"Error reading {str(file.name)}: {e}",color='red')
 
     return list(attributes)
 
@@ -42,7 +42,7 @@ def csvTxTReader(file):
     raw=file.read().decode('utf-8') # assumed utf-8 encoding DOCUMENT
     content = raw.splitlines()
     dialect = csv.Sniffer().sniff(raw)
-    delim=dialect.delimiter # determines delimiter of file using library function
+    delim=dialect.delimiter # determines delimiter of file using csv library function
     try:
         reader = csv.reader(content, delimiter=delim)
     except Exception as e:
