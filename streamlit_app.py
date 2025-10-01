@@ -1,7 +1,7 @@
 import streamlit as st
 from utilities.handle_files import handleFiles
 from utilities.map_data import saveFieldMapping
-from utilities.load_customer import getCustomerList
+from utilities.load_github_data import getCustomerList,getEntitiesSchema,getCustomerDataMap
 
 st.title("DexCare Data Mapping POC") 
 
@@ -17,7 +17,6 @@ data_sources={ # will be populated with data during file loading, keep "" dict a
             "attributes":[]
         }
     }
-
 data_types = [
             "",
             "string",
@@ -29,11 +28,13 @@ data_types = [
 st.subheader("Select Customer")
 
 user="jamesanderson-27" # will change to generic user
-auth_token="" # will need this when the repo is private
-repo="blank-app" # will change to generic user repo
-customer_list=getCustomerList(user,auth_token,repo) # requests github for current customers
+auth_token="" # needed for private repos
 
-st.selectbox("Customer",customer_list,key="customer",index=0)
+customer_list=getCustomerList(user,auth_token) # requests github for current customers
+customer=st.selectbox("Customer",customer_list,key="customer",index=0)
+
+data = getCustomerDataMap(user,auth_token,customer)
+st.write(data)
 
 st.divider()
 
