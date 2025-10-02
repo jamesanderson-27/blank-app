@@ -1,1 +1,15 @@
-{"test":1}
+{
+    "last_modified_time":"",
+    "last_modified_user":"",
+    "mapping":{
+        "<schema_field>":{
+            "description":"",
+            "primary_source_file":"",
+            "primary_source_attribute":"",
+            "secondary_source_file":"",
+            "secondary_source_attribute":"",
+            "default_type":"",
+            "default_value":""
+        }
+    }
+}

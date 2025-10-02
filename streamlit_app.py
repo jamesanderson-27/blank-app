@@ -3,20 +3,8 @@ from utilities.handle_files import handleFiles
 from utilities.map_data import saveFieldMapping
 from utilities.load_github_data import getCustomerList,getEntitiesSchema,getCustomerDataMap
 
-st.title("DexCare Data Mapping POC") 
+st.title("DexCare Data Mapping") 
 
-####### Hardcoded data for POC #######
-schemas={
-        "Provider":["emr_id","npi","name"],
-        "Department":["display_name","emr_id"]
-    }
-data_sources={ # will be populated with data during file loading, keep "" dict as dropdown placeholder
-        "":{
-            "uploaded_at":"",
-            "file_type":"",
-            "attributes":[]
-        }
-    }
 
 ####### Customer Selection Activity #######
 st.subheader("Select Customer")
@@ -27,12 +15,29 @@ auth_token=""# needed for private repos / better rate limits
 customer_list=getCustomerList(user,auth_token) # requests github for current customers
 customer=st.selectbox("Customer",customer_list,key="customer",index=0)
 
+st.divider()
+
+
+####### Customer Load #######
+data_sources={ # will be populated with data during file loading, keep "" dict as dropdown placeholder
+        "":{
+            "uploaded_at":"",
+            "file_type":"",
+            "attributes":[]
+        }
+    }
+
 if customer:
     data_map = getCustomerDataMap(user,auth_token,customer) # pull existing data_map
     st.write(data_map)
-    
 
-st.divider()
+
+####### Schema Load #######
+schemas={
+        "Provider":["emr_id","npi","name"],
+        "Department":["display_name","emr_id"]
+    }
+
 
 ####### File Upload Activity #######
 st.subheader("Upload Files")
@@ -48,30 +53,13 @@ for file in list(data_sources.keys())[1:]:
     n_attributes=len(data_sources[file]["attributes"])
     st.write(f"*{file}* has {n_attributes} attributes.")
 
-st.markdown(""" 
-    <style>
-    div.stButton > button {
-        background-color: #007BFF;
-        color: white;
-        padding: 10px 24px;
-        font-size: 16px;
-        border: none;
-        border-radius: 5px;
-    }
-    div.stButton > button:hover {
-        background-color: #0056b3;
-        color: white;
-    }
-    </style>
-""", unsafe_allow_html=True) # Inject custom CSS to style the button
-
 # store file and attribute data in data_sources
 
 st.divider()
 
 
 ####### Data Mapping Activity #######
-st.subheader("DexCare Schema")
+st.subheader("Map to DexCare Schema")
 
 #try:
     #ass #load data map
@@ -119,28 +107,20 @@ for schema in sorted(list(schemas.keys())):
                                     secondary_data_col,
                                     default_value)  ## Save field mapping to data_map
 
-if st.button("Save Mapping",key="data_map_save"):
-        st.success("Data mapping uploaded to github/repo/output")
+if st.button("Save Mapping to GitHub",key="data_map_save"):
+        st.success(f"Data mapping uploaded to repo")
         st.write(data_map)
 
 st.markdown(""" 
     <style>
     div.stButton > button {
-        background-color: #007BFF;
-        color: white;
-        padding: 10px 24px;
-        font-size: 16px;
-        border: none;
-        border-radius: 5px;
-    }
-    div.stButton > button:hover {
-        background-color: #0056b3;
-        color: white;
-    }
+        background-color: #007BFF;color: white;padding: 10px 24px;
+        font-size: 16px;border: none;border-radius: 5px;
+    } 
+            div.stButton > button:hover {
+        background-color: #0056b3;color: white;}
     </style>
-""", unsafe_allow_html=True) # Inject custom CSS to style the button
-
-
+""", unsafe_allow_html=True)
 
 # To fix later
 # 1. The steps must be completed in order
