@@ -51,7 +51,6 @@ def csvTxTReader(file):
 
 
 # store file and attribute data in data_sources
-
 def handleFiles(uploaded_files,data_sources):
     for file in uploaded_files:
 
