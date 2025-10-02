@@ -1,8 +1,8 @@
 import requests as re
-import streamlit as st
-# Customer data load - called after a user selects a customer
 
-def makeUrl(user,repo,path,customer=""):
+#### Helper functions to build request ####
+
+def makeUrl(user,repo,path):
     if not path:
         url=f"https://api.github.com/repos/{user}/{repo}/contents/customers"
     else:
@@ -15,10 +15,11 @@ def makeHeaders(auth_token):
 
 def makeRequest(user,auth_token,repo,path=""):
     url=makeUrl(user,repo,path)
-    st.write(url)
     headers=makeHeaders(auth_token)
     response = re.get(url, headers=headers)
     return response.json()
+
+#### Individual requests to github ####
 
 def getCustomerList(user,auth_token):
     repo="blank-app" # will change when generic user is created
@@ -30,10 +31,14 @@ def getCustomerList(user,auth_token):
     return customer_list
 
 def getCustomerDataMap(user,auth_token,customer):
-    repo="blank-app"
-    path=f"{customer}/output.json"
+    import base64
+    repo="blank-app"  # will change when generic user is created
+    path=f"{customer}/data_map.json"
     data=makeRequest(user,auth_token,repo,path)
-    return data
+    content=data["content"]
+    decoded_content = base64.b64decode(content)  # Decode Base64 to bytes
+    data_map = decoded_content.decode('utf-8')
+    return data_map
 
 def getEntitiesSchema(user,auth_token,repo):
     repo="entities-schema"
