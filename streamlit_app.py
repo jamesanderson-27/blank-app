@@ -17,24 +17,20 @@ data_sources={ # will be populated with data during file loading, keep "" dict a
             "attributes":[]
         }
     }
-data_types = [
-            "",
-            "string",
-            "numerical",
-            "boolean"
-        ]
 
 ####### Customer Selection Activity #######
 st.subheader("Select Customer")
 
 user="jamesanderson-27" # will change to generic user
-auth_token="" # needed for private repos
+auth_token=""# needed for private repos / better rate limits
 
 customer_list=getCustomerList(user,auth_token) # requests github for current customers
 customer=st.selectbox("Customer",customer_list,key="customer",index=0)
 
-data = getCustomerDataMap(user,auth_token,customer)
-st.write(data)
+if customer:
+    data_map = getCustomerDataMap(user,auth_token,customer) # pull existing data_map
+    st.write(data_map)
+    
 
 st.divider()
 
@@ -113,10 +109,6 @@ for schema in sorted(list(schemas.keys())):
                                             key=f"{schema}_{field}_secondary_attribute",
                                             index=0) # load the existing mapping, index that option func
                 st.write("**Default** (if primary & secondary attributes are null)")
-                data_type = st.selectbox("Data Type",
-                                            data_types,
-                                            key=f"{schema}_{field}_data_type",
-                                            index=0) # load the existing mapping, index that option func
                 default_value=st.text_input("Value",
                                             key=f"{schema}_{field}_data_value")
             data_map=saveFieldMapping(data_map,
@@ -125,7 +117,6 @@ for schema in sorted(list(schemas.keys())):
                                     primary_data_col,
                                     secondary_data_source,
                                     secondary_data_col,
-                                    data_type,
                                     default_value)  ## Save field mapping to data_map
 
 if st.button("Save Mapping",key="data_map_save"):
@@ -151,7 +142,7 @@ st.markdown("""
 
 
 
-# Limitations
+# To fix later
 # 1. The steps must be completed in order
     # if you upload more files after partially completing mapping steps
     # your mapping will be wiped out.
