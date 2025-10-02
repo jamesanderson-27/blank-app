@@ -1,4 +1,5 @@
 import requests as re
+import streamlit as st
 
 #### Helper functions to build request ####
 
@@ -16,8 +17,13 @@ def makeHeaders(auth_token):
 def makeRequest(user,auth_token,repo,path=""):
     url=makeUrl(user,repo,path)
     headers=makeHeaders(auth_token)
-    response = re.get(url, headers=headers)
-    return response.json()
+    try:
+        response = re.get(url, headers=headers)
+        return response.json()
+    except:
+        return ""
+        
+    
 
 #### Individual requests to github ####
 
@@ -25,23 +31,32 @@ def getCustomerList(user,auth_token):
     repo="blank-app" # will change when generic user is created
     customer_list=[""]
     data=makeRequest(user,auth_token,repo)
-    for item in data:
-        customer_list.append(item["name"])
-    customer_list.remove("schema") # only show real customers
-    return customer_list
+    if not data:
+        for item in data:
+            customer_list.append(item["name"])
+        customer_list.remove("schema") # only show real customers
+        return customer_list
+    else:
+        return ""
 
 def getCustomerDataMap(user,auth_token,customer):
     import base64
     repo="blank-app"  # will change when generic user is created
     path=f"{customer}/data_map.json"
     data=makeRequest(user,auth_token,repo,path)
-    content=data["content"]
-    decoded_content = base64.b64decode(content)  # Decode Base64 to bytes
-    data_map = decoded_content.decode('utf-8')
-    return data_map
+    if not data:
+        content=data["content"]
+        decoded_content = base64.b64decode(content)  # Decode Base64 to bytes
+        data_map = decoded_content.decode('utf-8')
+        return data_map
+    else:
+        return ""
 
 def getEntitiesSchema(user,auth_token,repo):
     repo="entities-schema"
     path=""
     data=makeRequest(user,auth_token,repo,path)
-    pass
+    if not data:
+        pass
+    else:
+        return ""
