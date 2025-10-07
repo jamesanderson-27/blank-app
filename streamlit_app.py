@@ -6,10 +6,9 @@ from utilities.load_github_data import getCustomerList,getCustomerDataMap
 from utilities.handle_markdown import schemaToMarkdown
 st.title("DexCare Data Mapping") 
 
-####### Customer Selection Activity #######
+####### Customer Selection #######
 st.subheader("Select Customer")
-user="jamesanderson-27" # Change to generic user
-auth_token=os.environ.get('API_KEY') # Needed for private repos and better rate limits
+auth_token,user=os.environ.get('API_KEY'),os.environ.get('USERNAME') # Needed for private repos and better rate limits
 customer_list=getCustomerList(user,auth_token) # Requests github for current customers
 customer=st.selectbox("Customer",
                       customer_list,
@@ -32,7 +31,7 @@ schemas={ # will be replaced when pulling schema dynamically
         "Department":["display_name","emr_id"]
     }
 
-####### File Upload Activity #######
+####### File Upload #######
 st.subheader("Upload Files")
 uploaded_files = st.file_uploader("Choose one or more files",
                                   type=['csv', 'txt','json'],
@@ -44,7 +43,7 @@ for file in list(data_sources.keys())[1:]: # skips null key
 st.divider()
 
 
-####### Data Mapping Activity #######
+####### Data Mapping #######
 st.subheader("Map to DexCare Schema")
 
 data_map = getCustomerDataMap(user,auth_token,customer) # pulls existing data_map or returns blank map
@@ -107,7 +106,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- Sidebar ---
+####### Sidebar Markdown 
 with st.sidebar:
     st.markdown(schemaToMarkdown(data_map))
 

@@ -3,34 +3,11 @@
 
 def schemaToMarkdown(data_map):
 
-    markdown="""
-                ### Current Schema Mapping 
-
-                **Department**
-                - display_name
-                    - primary = DataSource.Attribute
-                    - secondary = 
-                    - default = 
-                - emr_id
-                    - primary = DataSource.Attribute
-                    - secondary = 
-                    - default = DataSource.Attribute
-
-                ***
-
-                **Provider**
-                - emr_id
-                    - primary = DataSource.Attribute
-                    - secondary = DataSource.Attribute
-                    - default = 
-                - npi
-                    - primary = DataSource.Attribute
-                    - secondary = 
-                    - default = 
-                - name
-                    - primary = DataSource.Attribute
-                    - secondary = 
-                    - default = 
-                """
+    markdown = ""
+    for entity, fields in data_map.items():
+        markdown += f"## {entity}\n"
+        for field in fields:
+            markdown += f"- {field}\n"
+        markdown += "\n"
     return markdown
 
