@@ -106,22 +106,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# To fix later
-# 1. The steps must be completed in order
-    # if you upload more files after partially completing mapping steps
-    # your mapping will be wiped out.
-
-
-import streamlit as st
-import pandas as pd
-
-# --- Sample data ---
-data = pd.DataFrame({
-    "name": ["Alice", "Bob", "Charlie", "Diana", "Edward"],
-    "role": ["Engineer", "Designer", "Engineer", "Manager", "Engineer"],
-    "location": ["NY", "CA", "TX", "NY", "CA"]
-})
-
 # --- Sidebar ---
 with st.sidebar:
     st.markdown(schemaToMarkdown(data_map))
