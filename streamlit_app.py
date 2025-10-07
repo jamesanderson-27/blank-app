@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 from utilities.handle_files import handleFiles
 from utilities.map_data import saveFieldMapping,getIndex
 from utilities.load_github_data import getCustomerList,getCustomerDataMap
@@ -8,7 +9,7 @@ st.title("DexCare Data Mapping")
 ####### Customer Selection Activity #######
 st.subheader("Select Customer")
 user="jamesanderson-27" # Change to generic user
-auth_token="" # Needed for private repos and better rate limits
+auth_token=os.environ.get('API_KEY') # Needed for private repos and better rate limits
 customer_list=getCustomerList(user,auth_token) # Requests github for current customers
 customer=st.selectbox("Customer",
                       customer_list,
@@ -47,7 +48,7 @@ st.divider()
 st.subheader("Map to DexCare Schema")
 
 data_map = getCustomerDataMap(user,auth_token,customer) # pulls existing data_map or returns blank map
-
+st.write(data_map)
 for schema in sorted(list(schemas.keys())):
     with st.expander(schema):
         for field in sorted(list(schemas[schema])):
