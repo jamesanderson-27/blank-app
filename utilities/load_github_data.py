@@ -1,4 +1,4 @@
-import requests as re
+import requests as req
 import streamlit as st
 
 #### Helper functions to build request ####
@@ -18,12 +18,12 @@ def makeRequest(user,auth_token,repo,path=""):
     url=makeUrl(user,repo,path)
     headers=makeHeaders(auth_token)
     try:
-        response = re.get(url, headers=headers)
+        response = req.get(url, headers=headers)
         return response.json()
     except:
         st.badge("Could not load github data",color="red")
+        return ""
         
-    
 
 #### Individual requests to github ####
 
@@ -31,12 +31,12 @@ def getCustomerList(user,auth_token):
     repo="blank-app" # will change when generic user is created
     customer_list=[""]
     data=makeRequest(user,auth_token,repo)
-    if data:
+    try:
         for item in data:
             customer_list.append(item["name"])
         customer_list.remove("schema") # only show real customers
         return customer_list
-    else:
+    except:
         return ""
 
 def getCustomerDataMap(user,auth_token,customer):
@@ -44,13 +44,18 @@ def getCustomerDataMap(user,auth_token,customer):
     repo="blank-app"  # will change when generic user is created
     path=f"{customer}/data_map.json"
     data=makeRequest(user,auth_token,repo,path)
-    if not data:
+    try:
         content=data["content"]
         decoded_content = base64.b64decode(content)  # Decode Base64 to bytes
         data_map = decoded_content.decode('utf-8')
         return data_map
-    else:
-        return ""
+    except:
+        data_map = {
+                "last_modified_time":"",
+                "last_modified_user":"",
+                "mapping":{}
+            }
+        return data_map
 
 def getEntitiesSchema(user,auth_token,repo):
     repo="entities-schema"
