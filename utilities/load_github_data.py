@@ -21,7 +21,7 @@ def makeRequest(user,auth_token,repo,path=""):
         response = re.get(url, headers=headers)
         return response.json()
     except:
-        return ""
+        st.badge("Could not load github data",color="red")
         
     
 
@@ -31,7 +31,7 @@ def getCustomerList(user,auth_token):
     repo="blank-app" # will change when generic user is created
     customer_list=[""]
     data=makeRequest(user,auth_token,repo)
-    if not data:
+    if data:
         for item in data:
             customer_list.append(item["name"])
         customer_list.remove("schema") # only show real customers
