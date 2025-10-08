@@ -3,14 +3,15 @@
     "last_modified_user":"",
     "mapping":{
         "object":{
-        "<schema_field>":{
-            "description":"",
-            "primary_source_file":"",
-            "primary_source_attribute":"",
-            "secondary_source_file":"",
-            "secondary_source_attribute":"",
-            "default_type":"",
-            "default_value":""
+            "<schema_field>":{
+                "description":"",
+                "primary_source_file":"",
+                "primary_source_attribute":"",
+                "secondary_source_file":"",
+                "secondary_source_attribute":"",
+                "default_type":"",
+                "default_value":""
+            }
         }
     }
 }
