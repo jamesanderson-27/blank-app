@@ -1,16 +1,13 @@
 # Data mapper - these are called after the customer completes data mapping
 import streamlit as st
 
-def saveFieldMapping(data_map,object,field,primary_data_source,primary_data_col,secondary_data_source,secondary_data_col,default_value):
-    data_map["mapping"][object]={
-        field:{
-            "primary_data_source":primary_data_source,
-            "primary_data_col":primary_data_col,
-            "secondary_data_source":secondary_data_source,
-            "secondary_data_col":secondary_data_col,
-            "default_value":default_value
-        }
-    }
+def saveFieldMapping(data_map,schema,field,primary_source,primary_col,secondary_source,secondary_col,default_value):
+    data_map["mapping"][schema][field]["primary_source"]=primary_source
+    data_map["mapping"][schema][field]["primary_col"]=primary_col
+    data_map["mapping"][schema][field]["secondary_source"]=secondary_source
+    data_map["mapping"][schema][field]["secondary_col"]=secondary_col
+    data_map["mapping"][schema][field]["default_value"]=default_value
+
     return data_map
     
 def getIndex(data_map,object,field,attributes,data_source_type):
