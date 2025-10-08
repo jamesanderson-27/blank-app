@@ -7,6 +7,9 @@ def schemaToMarkdown(data_map,customer):
         md.append(f"# {customer.upper()} Mapping\n")
         mapping = data_map.get("mapping", {})
         for category, fields in mapping.items():
+            md.append("---")
+            md.append(f"## {category}")
+            
             for field_name, field_data in fields.items():
                 md.append(f"\n")
                 md.append(f"**{category}.{field_name}**")
