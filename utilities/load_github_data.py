@@ -12,7 +12,7 @@ def makeUrl(user,repo,path):
     return url
     
 def makeHeaders(auth_token):
-    headers = {"Authorization": "Bearer "+auth_token,"Accept": "application/vnd.github+json"}
+    headers = {"Authorization": "Bearer "+str(auth_token),"Accept": "application/vnd.github+json"}
     return headers
 
 def makeRequest(user,auth_token,repo,path=""):
