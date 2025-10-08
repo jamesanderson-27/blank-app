@@ -22,7 +22,7 @@ def makeRequest(user,auth_token,repo,path=""):
         response = req.get(url, headers=headers)
         return response.json()
     except:
-        st.badge("Could not load github data",color="red")
+        st.badge(f"GitHub request to {url} failed")
         return ""
         
 
