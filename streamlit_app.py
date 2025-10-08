@@ -8,7 +8,8 @@ st.title("DexCare Data Mapping")
 
 ####### Customer Selection #######
 st.subheader("Select Customer")
-auth_token,user=os.environ.get('API_KEY'),os.environ.get('USERNAME') # Needed for private repos and better rate limits
+auth_token=os.environ.get('API_KEY') # Needed for private repos and better rate limits
+user="jamesanderson-27" 
 customer_list=getCustomerList(user,auth_token) # Requests github for current customers
 customer=st.selectbox("Customer",
                       customer_list,
@@ -24,6 +25,8 @@ data_sources={ # null key serves as dropdown default selection
             "attributes":[]
         }
     }
+
+data_map = getCustomerDataMap(user,auth_token,customer) # pulls existing data_map or returns blank map
 
 ####### Schema Load #######
 schemas={ # will be replaced when pulling schema dynamically
@@ -45,9 +48,6 @@ st.divider()
 
 ####### Data Mapping #######
 st.subheader("Map to DexCare Schema")
-
-data_map = getCustomerDataMap(user,auth_token,customer) # pulls existing data_map or returns blank map
-st.write(data_map)
 for schema in sorted(list(schemas.keys())):
     with st.expander(schema):
         for field in sorted(list(schemas[schema])):
@@ -56,23 +56,23 @@ for schema in sorted(list(schemas.keys())):
                 st.write("*This will be pulled dynamically from the DexCare Schema*")
                 attributes=data_sources.keys()
                 st.write("**Primary Source**")
-                index=getIndex(data_map,field,attributes,"primary_source_attribute")
+                index=getIndex(data_map,schema,field,attributes,"primary_source_attribute")
                 primary_data_source = st.selectbox("Source File",
                                             list(attributes),
                                             key=f"{schema}_{field}_primary_dropdown",
                                             index=index) # load the existing mapping, index that option func
-                index=getIndex(data_map,field,attributes,"primary_data_col")
+                index=getIndex(data_map,schema,field,attributes,"primary_data_col")
                 primary_data_col = st.selectbox("Attribute",
                                             list(data_sources[primary_data_source]["attributes"]),
                                             key=f"{schema}_{field}_primary_attribute",
                                             index=index) # load the existing mapping, index that option func
                 st.write("**Secondary Source** (if primary attribute is null)")
-                index=getIndex(data_map,field,attributes,"secondary_source_attribute")
+                index=getIndex(data_map,schema,field,attributes,"secondary_source_attribute")
                 secondary_data_source = st.selectbox("Source File",
                                             list(attributes),
                                             key=f"{schema}_{field}_secondary_dropdown",
                                             index=index) # load the existing mapping, index that option func
-                index=getIndex(data_map,field,attributes,"secondary_data_col")
+                index=getIndex(data_map,schema,field,attributes,"secondary_data_col")
                 secondary_data_col = st.selectbox("Attribute",
                                             list(data_sources[secondary_data_source]["attributes"]),
                                             key=f"{schema}_{field}_secondary_attribute",
@@ -81,13 +81,13 @@ for schema in sorted(list(schemas.keys())):
                 default_value=st.text_input("Value",
                                             key=f"{schema}_{field}_data_value")
             data_map=saveFieldMapping(data_map,
+                                    schema,
                                     field,
                                     primary_data_source,
                                     primary_data_col,
                                     secondary_data_source,
                                     secondary_data_col,
                                     default_value)  ## Save field mapping to data_map
-
 if st.button("Save Mapping to GitHub",key="data_map_save"):
         st.success(f"Data mapping uploaded to repo")
         # update customer/data_map.json

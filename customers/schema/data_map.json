@@ -2,6 +2,7 @@
     "last_modified_time":"",
     "last_modified_user":"",
     "mapping":{
+        "object":{
         "<schema_field>":{
             "description":"",
             "primary_source_file":"",

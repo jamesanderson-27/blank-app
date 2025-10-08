@@ -1,4 +1,5 @@
 import requests as req
+import json
 import streamlit as st
 
 #### Helper functions to build request ####
@@ -11,7 +12,7 @@ def makeUrl(user,repo,path):
     return url
     
 def makeHeaders(auth_token):
-    headers = {"Authorization": auth_token,"Accept": "application/vnd.github+json"}
+    headers = {"Authorization": "Bearer "+auth_token,"Accept": "application/vnd.github+json"}
     return headers
 
 def makeRequest(user,auth_token,repo,path=""):
@@ -48,7 +49,7 @@ def getCustomerDataMap(user,auth_token,customer):
         content=data["content"]
         decoded_content = base64.b64decode(content)  # Decode Base64 to bytes
         data_map = decoded_content.decode('utf-8')
-        return dict(data_map)
+        return json.loads(data_map)
     except:
         data_map = {
                 "last_modified_time":"",

@@ -2,14 +2,15 @@
     "last_modified_time":"",
     "last_modified_user":"",
     "mapping":{
-        "<schema_field>":{
-            "description":"",
-            "primary_source_file":"",
-            "primary_source_attribute":"",
-            "secondary_source_file":"",
-            "secondary_source_attribute":"",
-            "default_type":"",
-            "default_value":""
-        }
+        "Department":{
+            "display_name":{
+                "description":"",
+                "primary_source_file":"DEP_2025_09_02.csv",
+                "primary_source_attribute":"NAME",
+                "secondary_source_file":"",
+                "secondary_source_attribute":"",
+                "default_type":"",
+                "default_value":""
+            }
     }
 }
