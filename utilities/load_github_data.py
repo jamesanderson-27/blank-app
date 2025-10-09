@@ -45,7 +45,7 @@ def getCustomerList(user,auth_token):
     except:
         return ""
 
-def getCustomerDataMap(req_type,d,user,auth_token,customer):
+def getCustomerDataMap(user,auth_token,customer):
     import base64
     path=f"{customer}/data_map.json"
     req_type,d="GET",None
