@@ -1,5 +1,6 @@
 import requests as req
 import json
+import base64
 import streamlit as st
 
 #### Helper functions to build request ####
@@ -46,7 +47,6 @@ def getCustomerList(user,auth_token):
         return ""
 
 def getCustomerDataMap(user,auth_token,customer):
-    import base64
     path=f"{customer}/data_map.json"
     req_type,d="GET",None
     data=makeRequest(req_type,d,user,auth_token,path)
@@ -75,17 +75,20 @@ def getEntitiesSchema(user,auth_token):
 def updateGithub(user,auth_token,customer,target,req_data):
     req_type="PUT"
     json_string = json.dumps(req_data).encode('utf-8')
-    base64 = base64.b64encode(json_string)
+    encoded_data = base64.b64encode(json_string)
     data={
         "message":"update from mapping tool",
         "committer":{
             "name":"James Anderson",
             "email":"james.anderson@dexcarehealth.com"
             },
-        "content":base64
+        "content":encoded_data
         } # convert request data to base64 encoding
     path=f"{customer}/{target}.json"
     try:
         data=makeRequest(req_type,data,user,auth_token,path)
+        st.write(req_type,data,user,path,auth_token)
+        return data
     except Exception as e:
         st.badge(e,color="red")
+        return "failure"

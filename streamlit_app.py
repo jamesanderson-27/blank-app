@@ -2,18 +2,18 @@ import streamlit as st
 import os
 from utilities.handle_files import handleFiles
 from utilities.map_data import saveFieldMapping,getIndex
-from utilities.load_github_data import getCustomerList,getCustomerDataMap
+from utilities.load_github_data import getCustomerList,getCustomerDataMap,updateGithub
 from utilities.handle_markdown import schemaToMarkdown
-st.title("DexCare Data Mapping") 
 
 ####### Customer Selection #######
+st.title("DexCare Data Mapping") 
 st.subheader("Select Customer")
-user,auth_token="jamesanderson-27",os.environ.get('API_KEY')
-customer_list=getCustomerList(user,auth_token) # API_KEY set in Streamlit app's settings
+user,auth_token="jamesanderson-27",os.environ.get('API_KEY') # AUTH_KEY is a github pat
+customer_list=getCustomerList(user,auth_token)
 customer=st.selectbox("Customer",
                       customer_list,
                       key="customer",
-                      index=0) # Displays those customers in a dropdown
+                      index=0) # currently checks app's repo - means manual work AAA
 st.divider()
 
 ####### Customer Load #######
@@ -25,7 +25,7 @@ data_sources={ # null key serves as dropdown default selection
         }
     }
 
-data_map = getCustomerDataMap(user,auth_token,customer) # pulls existing data_map or returns blank map
+data_map = getCustomerDataMap(user,auth_token,customer) # calls customers/customer/data_map.json
 
 ####### Schema Load #######
 schemas={ # will be replaced when pulling schema dynamically
@@ -36,8 +36,8 @@ schemas={ # will be replaced when pulling schema dynamically
 ####### File Upload #######
 st.subheader("Upload Files")
 uploaded_files = st.file_uploader("Choose one or more files",
-                                  type=['csv', 'txt','json'],
-                                  accept_multiple_files=True)
+                                type=['csv', 'txt','json'],
+                                accept_multiple_files=True)
 data_sources=handleFiles(uploaded_files,data_sources) # reads file and extracts attributes
 for file in list(data_sources.keys())[1:]: # skips null key
     n_attributes=len(data_sources[file]["attributes"]) # counts attributes per file
@@ -79,8 +79,7 @@ for schema in sorted(list(schemas.keys())):
                                             key=f"{schema}_{field}_secondary_attribute",
                                             index=index) # load the existing mapping, index that option func
                 st.write("**Default** (if primary & secondary attributes are null)")
-                default_value=st.text_input("Value",
-                                            key=f"{schema}_{field}_data_value")
+                default_value=st.text_input("Value",key=f"{schema}_{field}_data_value")
                 data_map=saveFieldMapping(data_map,
                                 schema,
                                 field,
@@ -89,12 +88,12 @@ for schema in sorted(list(schemas.keys())):
                                 secondary_source,
                                 secondary_col,
                                 default_value)  ## Save field mapping to data_map
+                
 if st.button("Save Mapping to GitHub",key="data_map_save"):
         st.success(f"Data mapping uploaded to repo")
-        # update customer/data_map.json
+        # response = updateGithub(user,auth_token,customer,"data_map",data_map)
         # update customer/data_map.md
         # update customer/data_sources.json
-        st.write(data_map)
 
 st.markdown(""" 
     <style>
