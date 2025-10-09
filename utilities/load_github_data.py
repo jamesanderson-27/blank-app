@@ -15,12 +15,17 @@ def makeHeaders(auth_token):
     headers = {"Authorization": "Bearer "+str(auth_token),"Accept": "application/vnd.github+json"}
     return headers
 
-def makeRequest(user,auth_token,repo,path=""):
+def makeRequest(req_type,d,user,auth_token,path=""):
+    repo="blank-app"
     url=makeUrl(user,repo,path)
     headers=makeHeaders(auth_token)
     try:
-        response = req.get(url, headers=headers)
-        return response.json()
+        if req_type=="GET":
+            response = req.get(url, headers=headers)
+            return response.json()
+        if req_type=="PUT":
+            response = req.put(url, headers=headers,json=d)
+            return response.json()
     except:
         st.badge(f"GitHub request to {url} failed")
         return ""
@@ -29,9 +34,9 @@ def makeRequest(user,auth_token,repo,path=""):
 #### Individual requests to github ####
 
 def getCustomerList(user,auth_token):
-    repo="blank-app" # will change when generic user is created
     customer_list=[""]
-    data=makeRequest(user,auth_token,repo)
+    req_type,d="GET",None
+    data=makeRequest(req_type,d,user,auth_token)
     try:
         for item in data:
             customer_list.append(item["name"])
@@ -40,11 +45,11 @@ def getCustomerList(user,auth_token):
     except:
         return ""
 
-def getCustomerDataMap(user,auth_token,customer):
+def getCustomerDataMap(req_type,d,user,auth_token,customer):
     import base64
-    repo="blank-app"  # will change when generic user is created
     path=f"{customer}/data_map.json"
-    data=makeRequest(user,auth_token,repo,path)
+    req_type,d="GET",None
+    data=makeRequest(req_type,d,user,auth_token,path)
     try:
         content=data["content"]
         decoded_content = base64.b64decode(content)  # Decode Base64 to bytes
@@ -58,12 +63,29 @@ def getCustomerDataMap(user,auth_token,customer):
             }
         return dict(data_map)
 
-def getEntitiesSchema(user,auth_token,repo):
-    repo="entities-schema"
+def getEntitiesSchema(user,auth_token):
     path=""
-    data=makeRequest(user,auth_token,repo,path)
+    data=makeRequest(user,auth_token,path)
     try:
         #parse data
         return 0
     except:
         return ""
+    
+def updateGithub(user,auth_token,customer,target,req_data):
+    req_type="PUT"
+    json_string = json.dumps(req_data).encode('utf-8')
+    base64 = base64.b64encode(json_string)
+    data={
+        "message":"update from mapping tool",
+        "committer":{
+            "name":"James Anderson",
+            "email":"james.anderson@dexcarehealth.com"
+            },
+        "content":base64
+        } # convert request data to base64 encoding
+    path=f"{customer}/{target}.json"
+    try:
+        data=makeRequest(req_type,data,user,auth_token,path)
+    except Exception as e:
+        st.badge(e,color="red")

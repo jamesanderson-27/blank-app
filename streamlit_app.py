@@ -8,9 +8,8 @@ st.title("DexCare Data Mapping")
 
 ####### Customer Selection #######
 st.subheader("Select Customer")
-auth_token=os.environ.get('API_KEY') # Needed for private repos and better rate limits
-user="jamesanderson-27" 
-customer_list=getCustomerList(user,auth_token) # Requests github for current customers
+user,auth_token="jamesanderson-27",os.environ.get('API_KEY')
+customer_list=getCustomerList(user,auth_token) # API_KEY set in Streamlit app's settings
 customer=st.selectbox("Customer",
                       customer_list,
                       key="customer",
