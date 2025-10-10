@@ -1,5 +1,6 @@
 # Data mapper - these are called after the customer completes data mapping
 import streamlit as st
+from utilities.load_github_data import getCustomerDataMap
 
 def saveFieldMapping(data_map,schema,field,primary_source,primary_col,secondary_source,secondary_col,default_value):
     data_map["mapping"][schema][field]["primary_source"]=primary_source
@@ -20,6 +21,10 @@ def getIndex(data_map,object,field,attributes,data_source_type):
     except:
         return 0
     
-def lock():
+def lock(user,customer=""):
     st.session_state.locked=True
-    return 1
+    data=getCustomerDataMap(user,customer,1)
+    try:
+        st.session_state.data_map_sha=data["sha"]
+    except:
+        pass

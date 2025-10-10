@@ -8,18 +8,26 @@ import streamlit as st
 def makeUrl(user,repo,path):
     if not path:
         url=f"https://api.github.com/repos/{user}/{repo}/contents/customers"
+    if path=="commit":
+        url=f"https://api.github.com/repos/{user}/{repo}/git/commits"
     else:
         url=f"https://api.github.com/repos/{user}/{repo}/contents/customers/{path}"
     return url
     
-def makeHeaders(auth_token):
-    headers = {"Authorization": "Bearer "+str(auth_token),"Accept": "application/vnd.github+json"}
+def makeHeaders(write):
+    if write:
+        auth_token=st.session_state.API_KEY_WRITE
+    else:
+        auth_token=st.session_state.API_KEY
+    headers = {"Authorization": "Bearer "+str(auth_token),
+               "Accept": "application/vnd.github+json",
+               "sha": str(st.session_state.data_map_sha)}
     return headers
 
-def makeRequest(req_type,d,user,auth_token,path=""):
+def makeRequest(req_type,d,user,write=0,path=""):
     repo="blank-app"
     url=makeUrl(user,repo,path)
-    headers=makeHeaders(auth_token)
+    headers=makeHeaders(0)
     try:
         if req_type=="GET":
             response = req.get(url, headers=headers)
@@ -27,17 +35,17 @@ def makeRequest(req_type,d,user,auth_token,path=""):
         if req_type=="PUT":
             response = req.put(url, headers=headers,json=d)
             return response.json()
-    except:
-        st.badge(f"GitHub request to {url} failed")
+    except Exception as e:
+        st.badge(f"GitHub request failed: {e}.",color="red")
         return ""
         
 
 #### Individual requests to github ####
 
-def getCustomerList(user,auth_token):
+def getCustomerList(user):
     customer_list=[""]
     req_type,d="GET",None
-    data=makeRequest(req_type,d,user,auth_token)
+    data=makeRequest(req_type,d,user,write=0)
     try:
         for item in data:
             customer_list.append(item["name"])
@@ -46,10 +54,15 @@ def getCustomerList(user,auth_token):
     except:
         return ""
 
-def getCustomerDataMap(user,auth_token,customer):
+def getCustomerDataMap(user,customer,bool=0):
     path=f"{customer}/data_map.json"
     req_type,d="GET",None
-    data=makeRequest(req_type,d,user,auth_token,path)
+    data=makeRequest(req_type,d,user,0,path)
+    if bool: # dynamic add to grab sha
+        try:
+            st.session_state.data_map_sha=data["sha"] # while we're here, grab the sha for PUT request
+        except:
+            pass
     try:
         content=data["content"]
         decoded_content = base64.b64decode(content)  # Decode Base64 to bytes
@@ -63,32 +76,32 @@ def getCustomerDataMap(user,auth_token,customer):
             }
         return dict(data_map)
 
-def getEntitiesSchema(user,auth_token):
+def getEntitiesSchema(user):
     path=""
-    data=makeRequest(user,auth_token,path)
+    data=makeRequest(user,0,path)
     try:
         #parse data
         return 0
     except:
         return ""
     
-def updateGithub(user,auth_token,customer,target,req_data):
+def updateGithub(user,customer,target,req_data):
     req_type="PUT"
     json_string = json.dumps(req_data).encode('utf-8')
-    encoded_data = base64.b64encode(json_string)
+    encoded_data = base64.b64encode(json_string) # convert to base64 encoding
     data={
         "message":"update from mapping tool",
         "committer":{
             "name":"James Anderson",
             "email":"james.anderson@dexcarehealth.com"
             },
+            "tree":str(st.session_state.data_map_sha),
         "content":encoded_data
-        } # convert request data to base64 encoding
-    path=f"{customer}/{target}.json"
+        }
+    path="commit"
     try:
-        data=makeRequest(req_type,data,user,auth_token,path)
-        st.write(req_type,data,user,path,auth_token)
+        data=makeRequest(req_type,data,user,1,path)
         return data
     except Exception as e:
-        st.badge(e,color="red")
+        st.badge(f"Error: {e}",color="red")
         return "failure"
