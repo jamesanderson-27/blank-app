@@ -1,13 +1,12 @@
 
 # convert mapping to markdown
+import streamlit as st
 
 def schemaToMarkdown(data_map,customer):
     md = []
     if customer:
-        md.append(f"# {customer.upper()} Mapping\n")
         mapping = data_map.get("mapping", {})
         for category, fields in mapping.items():
-            md.append("---")
             md.append(f"## {category}")
             
             for field_name, field_data in fields.items():
@@ -28,8 +27,6 @@ def schemaToMarkdown(data_map,customer):
                 # Value row
                 md.append("| " + " | ".join(formatted_values) + " |")
                 md.append("")  # Blank line after table
-    else:
-        md.append(f"*Select a customer to view current mapping* \n")
 
     return "\n".join(md)
 

@@ -1,20 +1,39 @@
-import streamlit as st
 import os
+import streamlit as st
 from utilities.handle_files import handleFiles
-from utilities.map_data import saveFieldMapping,getIndex
-from utilities.load_github_data import getCustomerList,getCustomerDataMap,updateGithub
 from utilities.handle_markdown import schemaToMarkdown
+from utilities.map_data import saveFieldMapping,getIndex
+from utilities.load_github_data import getCustomerList,getCustomerDataMap
 
-####### Customer Selection #######
-st.title("DexCare Data Mapping") 
-st.subheader("Select Customer")
 user,auth_token="jamesanderson-27",os.environ.get('API_KEY') # AUTH_KEY is a github pat
-customer_list=getCustomerList(user,auth_token)
-customer=st.selectbox("Customer",
-                      customer_list,
-                      key="customer",
-                      index=0) # currently checks app's repo - means manual work AAA
-st.divider()
+
+####### View Customer Siderbar #######
+with st.sidebar:
+    st.title("View Customer Mapping")
+    customer_list=getCustomerList(user,auth_token)
+    try:
+        idx=customer_list.index(view_customer)
+    except:
+        idx=0
+    view_customer=st.selectbox("Select Customer",
+                customer_list,
+                key="view_customer",
+                index=idx)
+    st.divider()
+    data_map = getCustomerDataMap(user,auth_token,view_customer) # calls customers/customer/data_map.json
+
+####### Edit Customer Main #######
+st.subheader("Edit Customer Mapping")
+customer=st.selectbox("Select Customer",
+                    customer_list,
+                    key="customer",
+                    index=0)
+
+####### Schema Load #######
+schemas={ # will be replaced when pulling schema dynamically
+        "Provider":["emr_id","npi","name"],
+        "Department":["display_name","emr_id"]
+    }
 
 ####### Customer Load #######
 data_sources={ # null key serves as dropdown default selection
@@ -23,14 +42,6 @@ data_sources={ # null key serves as dropdown default selection
             "file_type":"",
             "attributes":[]
         }
-    }
-
-data_map = getCustomerDataMap(user,auth_token,customer) # calls customers/customer/data_map.json
-
-####### Schema Load #######
-schemas={ # will be replaced when pulling schema dynamically
-        "Provider":["emr_id","npi","name"],
-        "Department":["display_name","emr_id"]
     }
 
 ####### File Upload #######
@@ -88,25 +99,59 @@ for schema in sorted(list(schemas.keys())):
                                 secondary_source,
                                 secondary_col,
                                 default_value)  ## Save field mapping to data_map
-                
-if st.button("Save Mapping to GitHub",key="data_map_save"):
-        st.success(f"Data mapping uploaded to repo")
+
+if st.button("Save Mapping"):
+        st.badge("Data mapping uploaded to GitHub.",color="blue")
         # response = updateGithub(user,auth_token,customer,"data_map",data_map)
         # update customer/data_map.md
         # update customer/data_sources.json
 
-st.markdown(""" 
+st.session_state[f"{customer}_data_map"]=data_map
+
+with st.sidebar:
+    try:
+        if view_customer:
+            st.markdown(schemaToMarkdown(st.session_state[f"{view_customer}_data_map"],view_customer),unsafe_allow_html=True)
+        else:
+            st.markdown("*Select a customer to view current mapping*")
+    except:
+        if view_customer and not customer: # view customer selected, edit customer unselected
+            data_map = getCustomerDataMap(user,auth_token,view_customer) # want to display different data_maps
+            st.markdown(schemaToMarkdown(data_map,view_customer),unsafe_allow_html=True)
+        elif view_customer and (view_customer!=customer): # both customers selected
+            data_map = getCustomerDataMap(user,auth_token,view_customer) # want to display different data_maps
+            st.markdown(schemaToMarkdown(data_map,customer),unsafe_allow_html=True)
+        elif view_customer and (view_customer==customer):# both customers selected
+            st.markdown(schemaToMarkdown(data_map,customer),unsafe_allow_html=True) # want to display same data_map
+        else:
+            st.markdown("*Select a customer to view current mapping*")
+
+## Style buttons
+
+st.markdown("""
     <style>
+    /* Target buttons using their class */
     div.stButton > button {
-        background-color: #007BFF;color: white;padding: 10px 24px;
-        font-size: 16px;border: none;border-radius: 5px;
-    } 
-            div.stButton > button:hover {
-        background-color: #0056b3;color: white;}
+        background-color: #add8e6; /* Light blue */
+        color: black;
+        border: none;
+        padding: 0.5em 1em;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: all 0.2s ease;
+    }
+
+    div.stButton > button:hover {
+        background-color: #87ceeb; /* Sky blue on hover */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transform: translateY(-2px);
+    }
+
+    div.stButton > button:active {
+        background-color: #4682b4; /* Steel blue on click */
+        transform: translateY(1px);
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
     </style>
 """, unsafe_allow_html=True)
-
-####### Sidebar Markdown 
-with st.sidebar:
-    st.markdown(schemaToMarkdown(data_map,customer),unsafe_allow_html=True)
-
