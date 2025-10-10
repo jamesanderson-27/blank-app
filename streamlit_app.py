@@ -2,7 +2,7 @@ import os
 import streamlit as st
 from utilities.handle_files import handleFiles
 from utilities.handle_markdown import schemaToMarkdown
-from utilities.map_data import saveFieldMapping,getIndex
+from utilities.map_data import saveFieldMapping,getIndex,lock
 from utilities.load_github_data import getCustomerList,getCustomerDataMap
 
 user,auth_token="jamesanderson-27",os.environ.get('API_KEY') # AUTH_KEY is a github pat
@@ -22,12 +22,17 @@ with st.sidebar:
     st.divider()
     data_map = getCustomerDataMap(user,auth_token,view_customer) # calls customers/customer/data_map.json
 
-####### Edit Customer Main #######
+
+    ####### Edit Customer Main #######
 st.subheader("Edit Customer Mapping")
+if 'locked' not in st.session_state:
+    st.session_state.locked = False
 customer=st.selectbox("Select Customer",
                     customer_list,
                     key="customer",
-                    index=0)
+                    index=0,
+                    disabled=st.session_state.locked)
+st.button("Lock selection",on_click=lock)
 
 ####### Schema Load #######
 schemas={ # will be replaced when pulling schema dynamically
@@ -35,7 +40,7 @@ schemas={ # will be replaced when pulling schema dynamically
         "Department":["display_name","emr_id"]
     }
 
-####### Customer Load #######
+####### Data Sources Load #######
 data_sources={ # null key serves as dropdown default selection
         "":{
             "uploaded_at":"",
@@ -109,22 +114,28 @@ if st.button("Save Mapping"):
 st.session_state[f"{customer}_data_map"]=data_map
 
 with st.sidebar:
-    try:
+    toggle_state = st.toggle("",label_visibility="collapsed")
+    if toggle_state:
+        st.badge("Draft Mapping",color="red")
+        try:
+            if view_customer:
+                st.markdown(schemaToMarkdown(st.session_state[f"{view_customer}_data_map"],view_customer),unsafe_allow_html=True)
+        except:
+            if view_customer and not customer: # view customer selected, edit customer unselected
+                data_map = getCustomerDataMap(user,auth_token,view_customer) # want to display different data_maps
+                st.markdown(schemaToMarkdown(data_map,view_customer),unsafe_allow_html=True)
+            elif view_customer and (view_customer!=customer): # both customers selected
+                data_map = getCustomerDataMap(user,auth_token,view_customer) # want to display different data_maps
+                st.markdown(schemaToMarkdown(data_map,customer),unsafe_allow_html=True)
+            elif view_customer and (view_customer==customer):# both customers selected
+                st.markdown(schemaToMarkdown(data_map,customer),unsafe_allow_html=True) # want to display same data_map
+    else:
+        st.badge("Current Mapping",color="grey")
         if view_customer:
-            st.markdown(schemaToMarkdown(st.session_state[f"{view_customer}_data_map"],view_customer),unsafe_allow_html=True)
-        else:
-            st.markdown("*Select a customer to view current mapping*")
-    except:
-        if view_customer and not customer: # view customer selected, edit customer unselected
-            data_map = getCustomerDataMap(user,auth_token,view_customer) # want to display different data_maps
-            st.markdown(schemaToMarkdown(data_map,view_customer),unsafe_allow_html=True)
-        elif view_customer and (view_customer!=customer): # both customers selected
-            data_map = getCustomerDataMap(user,auth_token,view_customer) # want to display different data_maps
-            st.markdown(schemaToMarkdown(data_map,customer),unsafe_allow_html=True)
-        elif view_customer and (view_customer==customer):# both customers selected
-            st.markdown(schemaToMarkdown(data_map,customer),unsafe_allow_html=True) # want to display same data_map
-        else:
-            st.markdown("*Select a customer to view current mapping*")
+            st.markdown(schemaToMarkdown(getCustomerDataMap(user,auth_token,view_customer),view_customer),unsafe_allow_html=True)
+    if not view_customer:
+        st.markdown("*Select a customer to view current mapping*")
+            
 
 ## Style buttons
 

@@ -20,3 +20,6 @@ def getIndex(data_map,object,field,attributes,data_source_type):
     except:
         return 0
     
+def lock():
+    st.session_state.locked=True
+    return 1
