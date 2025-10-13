@@ -85,6 +85,32 @@ def getEntitiesSchema(user):
     except:
         return ""
     
+def getDataSources(user,customer,bool=0):
+    path=f"{customer}/data_sources.json"
+    req_type,d="GET",None
+    data=makeRequest(req_type,d,user,0,path)
+    if bool: # dynamic add to grab sha
+        try:
+            st.session_state.data_sources_sha=data["sha"] # while we're here, grab the sha for PUT request
+        except:
+            pass
+    try:
+        content=data["content"]
+        decoded_content = base64.b64decode(content)  # Decode Base64 to bytes
+        data_sources = decoded_content.decode('utf-8')
+        return json.loads(data_sources)
+    except:
+        data_sources = {
+                    "files":{
+                        "<file_name>":{
+                            "uploaded_at":"",
+                            "file_type":"",
+                            "attributes":[]
+                        }
+                    }
+                }
+        return dict(data_sources)
+    
 def updateGithub(user,customer,target,req_data):
     req_type="PUT"
     json_string = json.dumps(req_data).encode('utf-8')

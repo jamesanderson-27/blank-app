@@ -1,1 +1,9 @@
-{}
+{
+    "files":{
+        "<file_name>":{
+            "uploaded_at":"",
+            "file_type":"",
+            "attributes":[]
+        }
+    }
+}
