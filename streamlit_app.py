@@ -71,10 +71,10 @@ if st.session_state.customer_locked:
                 data_map["mapping"][schema]={}
             with st.expander(schema):                                 # drives mapping UI dropdowns
                 for field in sorted(list(schemas[schema]["field_names"])): 
-                    data_map=fieldMapper(field,data_sources,data_map,schema)  
+                    data_map=fieldMapper(field,data_sources,data_map,schema)
         st.session_state[f"{customer}_data_map"]=data_map             # stores field mapping in session
-        if st.button("Save"):
-            response=updateGithub(user,customer,"data_map",data_map)  # (TO DO - write to GitHub
+        if st.button("Save Mapping"):
+            response=updateGithub(user,customer,"data_map",data_map)  # (TO DO - write to GitHub)
 
 ####### View Customer Siderbar #######
 with st.sidebar:

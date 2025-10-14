@@ -45,14 +45,17 @@ def csvTxTReader(file):
 
 def handleFiles(uploaded_files,data_sources):
     for file in uploaded_files:
-        if file.type=='application/vnd.ms-excel' or file.type=='text/plain': # csv or excel
-            attributes=csvTxTReader(file)
-        if file.type=='application/json': # json
-            attributes=jsonReader(file)
-        data_sources["files"][str(file.name)]={
-            "uploaded_at":datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "file_type":file.type,
-            "attributes":attributes
-        }
+        try:
+            if file.type=='application/vnd.ms-excel' or file.type=='text/plain' or file.type=='csv': # csv or excel
+                attributes=csvTxTReader(file)
+            if file.type=='application/json': # json
+                attributes=jsonReader(file)
+            data_sources["files"][str(file.name)]={
+                "uploaded_at":datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "file_type":file.type,
+                "attributes":attributes
+            }
+        except:
+            st.write("Sup Jess")
         
     return data_sources
