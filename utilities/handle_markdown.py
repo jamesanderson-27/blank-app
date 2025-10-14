@@ -2,9 +2,9 @@
 # convert mapping to markdown
 import streamlit as st
 
-def schemaToMarkdown(data_map,customer): ## Chat GPT credit
+def schemaToMarkdown(data_map): ## Chat GPT credit
     md = []
-    if customer:
+    try:
         mapping = data_map.get("mapping", {})
         for category, fields in mapping.items():
             md.append(f"## {category}") # category is schema name (e.g. Provider)
@@ -17,14 +17,14 @@ def schemaToMarkdown(data_map,customer): ## Chat GPT credit
                 keys = list(field_data.keys())
                 values = list(field_data.values())
                 formatted_keys = [f"*<span style='font-size:12px; font-style:italic; font-weight:normal;'>{k.replace('_', ' ').title()}</small>*" for k in keys]
-                formatted_values = [f"`null`" if v is None else f"`{v}`" for v in values]
-
-                
+                formatted_values = [f"``" if v is None else f"`{v}`" for v in values]
                 md.append("| " + " | ".join(formatted_keys) + " |")
                 md.append("|" + ":-------:|" * len(formatted_keys))
                 md.append("| " + " | ".join(formatted_values) + " |")
                 md.append("")  # Blank line after table
 
-    return "\n".join(md)
+        return "\n".join(md)
+    except:
+        return "Could not load markdown: schemaToMarkdown failure."
 
 

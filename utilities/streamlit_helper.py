@@ -1,7 +1,6 @@
 import streamlit as st
-from utilities.handle_github_data import getCustomerDataMap
+from utilities.handle_github_data import getCustomerDataMap,getEntitiesSchema
 from utilities.handle_markdown import schemaToMarkdown
-
     
 def customerLock(user,customer=""):
     st.session_state.customer_locked=True
@@ -105,22 +104,25 @@ def fieldMapper(field,data_sources,data_map,schema):
                                     default_value)
     return data_map
 
-def sidebarMapping(toggle_state,view_customer,customer,user,data_map):
+def sidebarMapping(view_customer,customer,data_map):
+    # we will always use view_customer
+    # if draft, use customer data map
+    # if current, use v
+    toggle_state = st.toggle("",label_visibility="collapsed")
     if toggle_state:
         st.badge("Draft Mapping",color="red")
-        try:
-            if view_customer:
-                st.markdown(schemaToMarkdown(st.session_state[f"{view_customer}_data_map"],view_customer),unsafe_allow_html=True)
-        except:
-            if view_customer and not customer:                         # sidebar selected, main tab unselected
-                data_map = getCustomerDataMap(user,view_customer)
-                st.markdown(schemaToMarkdown(data_map,view_customer),unsafe_allow_html=True)
-            elif view_customer and (view_customer!=customer):          # different customers selected
-                data_map = getCustomerDataMap(user,view_customer)
-                st.markdown(schemaToMarkdown(data_map,customer),unsafe_allow_html=True)
-            elif view_customer and (view_customer==customer):          # same customers selected
-                st.markdown(schemaToMarkdown(data_map,customer),unsafe_allow_html=True)      
+        if view_customer==customer:
+            st.markdown(schemaToMarkdown(data_map),unsafe_allow_html=True)
+        else:
+            st.markdown(schemaToMarkdown(st.session_state[f"{view_customer}_current_data_map"]),unsafe_allow_html=True)
     else:
         st.badge("Current Mapping",color="grey")
-        if view_customer:
-            st.markdown(schemaToMarkdown(getCustomerDataMap(user,view_customer),view_customer),unsafe_allow_html=True)
+        st.markdown(schemaToMarkdown(st.session_state[f"{view_customer}_current_data_map"]),unsafe_allow_html=True)
+
+def stateManage():
+    if "data_map_sha" not in st.session_state:
+        st.session_state.data_map_sha=""
+    if 'customer_locked' not in st.session_state:
+        st.session_state.customer_locked = False
+    if 'file_locked' not in st.session_state:
+        st.session_state.file_locked = False

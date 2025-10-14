@@ -2,13 +2,13 @@
     "last_modified_time":"",
     "last_modified_user":"",
     "mapping":{
-        "object":{
-            "<schema_field>":{
+        "Department":{
+            "brandName":{
                 "primary_file":"",
                 "primary_attribute":"",
                 "secondary_file":"",
                 "secondary_attribute":"",
-                "default_value":""
+                "default_value":"hmh"
             }
         }
     }
