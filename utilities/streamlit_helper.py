@@ -58,10 +58,10 @@ def getIndex(data_map,object,field,attributes,data_source_type):
 def saveFieldMapping(data_map,schema,field,primary_source,primary_col,secondary_source,secondary_col,default_value):
     if field not in data_map["mapping"][schema]:
         data_map["mapping"][schema][field]={}
-    data_map["mapping"][schema][field]["primary_source"]=primary_source
-    data_map["mapping"][schema][field]["primary_col"]=primary_col
-    data_map["mapping"][schema][field]["secondary_source"]=secondary_source
-    data_map["mapping"][schema][field]["secondary_col"]=secondary_col
+    data_map["mapping"][schema][field]["primary_file"]=primary_source
+    data_map["mapping"][schema][field]["primary_attribute"]=primary_col
+    data_map["mapping"][schema][field]["secondary_file"]=secondary_source
+    data_map["mapping"][schema][field]["secondary_attribute"]=secondary_col
     data_map["mapping"][schema][field]["default_value"]=default_value
 
     return data_map
