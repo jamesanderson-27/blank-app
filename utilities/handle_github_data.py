@@ -40,7 +40,7 @@ def makeRequest(req_type,d,user,write=0,path=""):
         return ""
         
 
-#### Individual requests to github ####
+#### requests to github ####
 
 def getCustomerList(user):
     customer_list=[""]
@@ -85,7 +85,7 @@ def getEntitiesSchema(user):
     except:
         return ""
     
-def getDataSources(user,customer,bool=0):
+def getCustomerDataSources(user,customer,bool=0):
     path=f"{customer}/data_sources.json"
     req_type,d="GET",None
     data=makeRequest(req_type,d,user,0,path)

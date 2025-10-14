@@ -1,5 +1,7 @@
 import streamlit as st
-from utilities.load_github_data import getCustomerDataMap
+from utilities.handle_github_data import getCustomerDataMap
+from utilities.handle_markdown import schemaToMarkdown
+
     
 def customerLock(user,customer=""):
     st.session_state.customer_locked=True
@@ -11,6 +13,7 @@ def customerLock(user,customer=""):
 
 def fileLock():
     st.session_state.file_locked=True
+    # update customer/data_sources.json
 
 
 def styleButtons():
@@ -101,3 +104,23 @@ def fieldMapper(field,data_sources,data_map,schema):
                                     secondary_col,
                                     default_value)
     return data_map
+
+def sidebarMapping(toggle_state,view_customer,customer,user,data_map):
+    if toggle_state:
+        st.badge("Draft Mapping",color="red")
+        try:
+            if view_customer:
+                st.markdown(schemaToMarkdown(st.session_state[f"{view_customer}_data_map"],view_customer),unsafe_allow_html=True)
+        except:
+            if view_customer and not customer:                         # sidebar selected, main tab unselected
+                data_map = getCustomerDataMap(user,view_customer)
+                st.markdown(schemaToMarkdown(data_map,view_customer),unsafe_allow_html=True)
+            elif view_customer and (view_customer!=customer):          # different customers selected
+                data_map = getCustomerDataMap(user,view_customer)
+                st.markdown(schemaToMarkdown(data_map,customer),unsafe_allow_html=True)
+            elif view_customer and (view_customer==customer):          # same customers selected
+                st.markdown(schemaToMarkdown(data_map,customer),unsafe_allow_html=True)      
+    else:
+        st.badge("Current Mapping",color="grey")
+        if view_customer:
+            st.markdown(schemaToMarkdown(getCustomerDataMap(user,view_customer),view_customer),unsafe_allow_html=True)

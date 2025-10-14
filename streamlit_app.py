@@ -1,13 +1,15 @@
 import os
 import streamlit as st
 from utilities.handle_files import handleFiles
-from utilities.handle_markdown import schemaToMarkdown
-from utilities.streamlit_helper import fieldMapper,styleButtons,customerLock,fileLock
-from utilities.load_github_data import getCustomerList,getCustomerDataMap,updateGithub,getDataSources
+from utilities.streamlit_helper import styleButtons,fieldMapper,customerLock,fileLock,sidebarMapping
+from utilities.handle_github_data import getCustomerList,getCustomerDataMap,getCustomerDataSources,updateGithub
 
 # Housekeeping
-user="jamesanderson-27"
-st.session_state.API_KEY=os.environ.get('API_KEY')
+    # Maintenance items during app finalization:
+        # 1. Create generic github user, set the username below
+        # 2. Create GitHub PATs, set those in the streamlit env ssecrets
+user="jamesanderson-27" 
+st.session_state.API_KEY=os.environ.get('API_KEY') 
 st.session_state.API_KEY_WRITE=os.environ.get('API_KEY_WRITE')
 styleButtons()
 
@@ -23,115 +25,67 @@ if 'file_locked' not in st.session_state:
 with st.sidebar:
     st.title("View Customer Mapping")
     customer_list=getCustomerList(user)
-    
     try:
-        idx=customer_list.index(view_customer)
+        idx=customer_list.index(view_customer) # type: ignore
     except:
         idx=0
-
     view_customer=st.selectbox("Select Customer",
                 customer_list,
                 key="view_customer",
                 index=idx)
-    
     data_map = getCustomerDataMap(user,view_customer)
     st.divider()
-    
 
-
-####### Edit Customer Main #######
+####### Edit Customer Main Tab #######
 st.subheader("Edit Customer Mapping")
-
 customer=st.selectbox("Select Customer",
                     customer_list,
                     key="customer",
                     index=0,
                     disabled=st.session_state.customer_locked)
-
 if st.button("Save Customer"):
     customerLock(user,customer)
     st.rerun()
-
 if st.session_state.customer_locked:
-
     st.divider()
 
-    ####### Schema Load ####### (TO DO)
-    schemas={                      
-            "Provider":["emr_id","npi","name"],
-            "Department":["display_name","emr_id"]
-        }
-    
     ####### File Upload #######
     st.subheader("Upload Files")
-
     uploaded_files = st.file_uploader("Choose one or more files",
                                     type=['csv', 'txt','json'],
                                     accept_multiple_files=True,
                                     disabled=st.session_state.file_locked)
-    
-    data_sources=getDataSources(user,customer,1)                      # load previous files
-    data_sources=handleFiles(uploaded_files,data_sources)             # upload new files
-
+    data_sources=getCustomerDataSources(user,customer,1)              # loads previous files                   
+    data_sources=handleFiles(uploaded_files,data_sources)             # allows upload of new files
     if len(list(data_sources["files"].keys())[1:])>0:
         st.write("Uploaded files")
-
-    for file in list(data_sources["files"].keys())[1:]:               # skips null key
-        n_attributes=len(data_sources["files"][file]["attributes"])   # counts attributes per file
+    for file in list(data_sources["files"].keys())[1:]:               # shows user each file and
+        n_attributes=len(data_sources["files"][file]["attributes"])   # its number of attributes
         st.write(f"*{file}* has {n_attributes} attributes.")          
-
     if st.button("Save Files"):                                       # saves data_sources to github
         fileLock()                                                    # locks file upload activity
         st.rerun()
 
+    ####### Data Mapping #######
     if st.session_state.file_locked:                                  # User continues to mapping
-
         st.divider()
-
-        ####### Data Mapping #######
         st.subheader("Map to DexCare Schema")
-
+        schemas={"Provider":["emr_id","npi","name"],                  # (TO DO - pull from ingest schema)
+             "Department":["display_name","emr_id"]
+            }
         for schema in sorted(list(schemas.keys())):                  
             if schema not in data_map["mapping"]:
                 data_map["mapping"][schema]={}
-
             with st.expander(schema):                                 # drives mapping UI dropdowns
                 for field in sorted(list(schemas[schema])): 
                     data_map=fieldMapper(field,data_sources,data_map,schema)  
-
         st.session_state[f"{customer}_data_map"]=data_map             # stores field mapping in session
-
         if st.button("Save"):
-            response = updateGithub(user,customer,"data_map",data_map)
-            # update customer/data_map.md
-            # update customer/data_sources.json
+            response=updateGithub(user,customer,"data_map",data_map)  # (TO DO - write to GitHub)
 
 ####### View Customer Siderbar #######
 with st.sidebar:
     toggle_state = st.toggle("",label_visibility="collapsed")
-    if toggle_state:
-        st.badge("Draft Mapping",color="red")
-
-        try:
-            if view_customer:
-                st.markdown(schemaToMarkdown(st.session_state[f"{view_customer}_data_map"],view_customer),unsafe_allow_html=True)
-
-        except:
-            if view_customer and not customer:      # view customer selected, edit customer unselected
-                data_map = getCustomerDataMap(user,view_customer)
-                st.markdown(schemaToMarkdown(data_map,view_customer),unsafe_allow_html=True)
-
-            elif view_customer and (view_customer!=customer):       # different customers selected
-                data_map = getCustomerDataMap(user,view_customer)
-                st.markdown(schemaToMarkdown(data_map,customer),unsafe_allow_html=True)
-
-            elif view_customer and (view_customer==customer):       # same customers selected
-                st.markdown(schemaToMarkdown(data_map,customer),unsafe_allow_html=True)
-    else:
-        st.badge("Current Mapping",color="grey")
-        if view_customer:
-            st.markdown(schemaToMarkdown(getCustomerDataMap(user,view_customer),view_customer),unsafe_allow_html=True)
-
+    sidebarMapping(toggle_state,view_customer,customer,user,data_map)
     if not view_customer:
         st.markdown("*Select a customer to view current mapping*")
-            

@@ -2,7 +2,7 @@
 # convert mapping to markdown
 import streamlit as st
 
-def schemaToMarkdown(data_map,customer):
+def schemaToMarkdown(data_map,customer): ## Chat GPT credit
     md = []
     if customer:
         mapping = data_map.get("mapping", {})
