@@ -75,7 +75,6 @@ if st.session_state.customer_locked:
         st.session_state[f"{customer}_data_map"]=data_map             # stores field mapping in session
         if st.button("Save"):
             response=updateGithub(user,customer,"data_map",data_map)  # (TO DO - write to GitHub
-            st.badge(str(st.session_state.count),color="red")
 
 ####### View Customer Siderbar #######
 with st.sidebar:

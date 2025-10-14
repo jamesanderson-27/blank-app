@@ -82,7 +82,6 @@ def getCustomerDataMap(user,customer,bool=0):
 
 @st.cache_data
 def getEntitiesSchema():
-    st.session_state.count+=1
     user="DexCare"
     schemas={
                 "Provider":{
