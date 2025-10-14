@@ -5,10 +5,10 @@
         "object":{
             "<schema_field>":{
                 "description":"",
-                "primary_source_file":"",
-                "primary_source_attribute":"",
-                "secondary_source_file":"",
-                "secondary_source_attribute":"",
+                "primary_file":"",
+                "primary_attribute":"",
+                "secondary_file":"",
+                "secondary_attribute":"",
                 "default_type":"",
                 "default_value":""
             }
