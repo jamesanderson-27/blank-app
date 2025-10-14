@@ -67,7 +67,7 @@ def fieldMapper(field,data_sources,data_map,schema):
     with st.expander(field):
         st.write("**Description**")
         st.write("*This will be pulled dynamically from the DexCare Schema*")
-        attributes=data_sources.keys()
+        attributes=data_sources["files"].keys()
         st.write("**Primary Source**")
         index=getIndex(data_map,schema,field,attributes,"primary_source_attribute")
         primary_source = st.selectbox("Source File",
@@ -76,7 +76,7 @@ def fieldMapper(field,data_sources,data_map,schema):
                                     index=index) # load the existing mapping, index that option func
         index=getIndex(data_map,schema,field,attributes,"primary_col")
         primary_col = st.selectbox("Attribute",
-                                    list(data_sources[primary_source]["attributes"]),
+                                    list(data_sources["files"][primary_source]["attributes"]),
                                     key=f"{schema}_{field}_primary_attribute",
                                     index=index) # load the existing mapping, index that option func
         st.write("**Secondary Source** (if primary attribute is null)")
@@ -87,7 +87,7 @@ def fieldMapper(field,data_sources,data_map,schema):
                                     index=index) # load the existing mapping, index that option func
         index=getIndex(data_map,schema,field,attributes,"secondary_col")
         secondary_col = st.selectbox("Attribute",
-                                    list(data_sources[secondary_source]["attributes"]),
+                                    list(data_sources["files"][secondary_source]["attributes"]),
                                     key=f"{schema}_{field}_secondary_attribute",
                                     index=index) # load the existing mapping, index that option func
         st.write("**Default** (if primary & secondary attributes are null)")
