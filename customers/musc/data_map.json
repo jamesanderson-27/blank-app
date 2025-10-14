@@ -4,7 +4,6 @@
     "mapping":{
         "object":{
             "<schema_field>":{
-                "description":"",
                 "primary_file":"",
                 "primary_attribute":"",
                 "secondary_file":"",
