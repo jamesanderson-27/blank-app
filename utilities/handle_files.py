@@ -55,8 +55,7 @@ def handleFiles(uploaded_files,data_sources):
                 "file_type":file.type,
                 "attributes":attributes
             }
-            st.write("Hey Jess, I fixed the problem. You should see the number of attributes of your file listed below.")
         except:
-            st.write("Hey Jess, there's still an issue with uploads from a Mac.")
+            st.write("Something went wrong with the file upload... please reach out to James!")
         
     return data_sources
