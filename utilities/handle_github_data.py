@@ -91,6 +91,10 @@ def getEntitiesSchema():
                 "Department":{
                     "file_name":"departmentIngest.json",
                     "field_names":[]
+                },
+                "Location":{
+                    "file_name":"locationIngest.json",
+                    "field_names":[]
                 }
             }
     exclusion_list=[]

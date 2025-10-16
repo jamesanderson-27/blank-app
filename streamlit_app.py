@@ -69,7 +69,7 @@ if st.session_state.customer_locked:
         for schema in sorted(list(schemas.keys())):                  
             if schema not in data_map["mapping"]:
                 data_map["mapping"][schema]={}
-            with st.expander(schema):                                 # drives mapping UI dropdowns
+            with st.expander(f"**{schema}**"):                                 # drives mapping UI dropdowns
                 for field in sorted(list(schemas[schema]["field_names"])): 
                     data_map=fieldMapper(field,data_sources,data_map,schema)
         st.session_state[f"{customer}_data_map"]=data_map             # stores field mapping in session

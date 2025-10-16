@@ -2,13 +2,14 @@
     "last_modified_time":"",
     "last_modified_user":"",
     "mapping":{
-        "Department":{
-            "brandName":{
+        "<schema_object>":{
+            "<schema_field>":{
                 "primary_file":"",
                 "primary_attribute":"",
                 "secondary_file":"",
                 "secondary_attribute":"",
-                "default_value":"musc"
+                "fallback_value_type":"",
+                "fallback_value":""
             }
         }
     }

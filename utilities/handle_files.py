@@ -6,16 +6,22 @@ from datetime import datetime
 
 ####### File Upload Activity #######
 
-def getJsonAttributes(obj: Union[dict, list], prefix: str="") -> Set[str]: ## Chat GPT credit
+def getJsonAttributes(obj: Union[dict, list], prefix: str = "") -> Set[str]:
     attributes = set()
-    if isinstance(obj, dict): # dict path
+
+    if isinstance(obj, dict):
         for key, value in obj.items():
-            full_key = f"{prefix}.{key}" if prefix else key # attribute is parent data 
-            attributes.add(full_key)
-            attributes.update(getJsonAttributes(value, prefix=full_key)) # attribute is child data
-    elif isinstance(obj, list): # list path
+            full_key = f"{prefix}.{key}" if prefix else key
+
+            if isinstance(value, dict) or (isinstance(value, list) and any(isinstance(i, dict) for i in value)):
+                # Skip adding this key, but recurse into it
+                attributes.update(getJsonAttributes(value, prefix=full_key))
+            else:
+                attributes.add(full_key)
+
+    elif isinstance(obj, list):
         for item in obj:
-            attributes.update(getJsonAttributes(item, prefix=prefix)) # attribute is a list name
+            attributes.update(getJsonAttributes(item, prefix=prefix))
 
     return attributes
 
