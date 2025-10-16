@@ -145,3 +145,4 @@ def stateManage():
     if 'file_locked' not in st.session_state:
         st.session_state.file_locked = False
     st.set_page_config(layout="wide")
+    st.logo("DexCare_logo.jpg",size="large")

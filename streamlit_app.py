@@ -64,6 +64,7 @@ if st.session_state.customer_locked:
 
     ####### Data Mapping #######
     if st.session_state.file_locked:                                  # User continues to mapping
+        st.toast("Use ctrl F to find schema objects", icon=":material/search:", duration="infinite")
         st.divider()
         st.subheader("Map to DexCare Schema")
         for schema in sorted(list(schemas.keys())):                  
