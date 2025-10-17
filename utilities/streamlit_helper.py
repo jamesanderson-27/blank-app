@@ -1,5 +1,5 @@
-import streamlit as st
 import os
+import streamlit as st
 from utilities.handle_github_data import getCustomerDataMap,getEntitiesSchema
 from utilities.handle_markdown import schemaToMarkdown,styleButtons
 from entities_field_exclusion import createExclusion
@@ -112,7 +112,6 @@ def housekeeping():
     st.set_page_config(layout="wide")
     st.logo("DexCare_logo.jpg",size="large")
     styleButtons()
-
     if "data_map_sha" not in st.session_state:
         st.session_state.data_map_sha=""
     if 'customer_locked' not in st.session_state:
@@ -122,7 +121,6 @@ def housekeeping():
 
 
 def loadSchemas():
-
     schemas={
             "Provider":{
                 "file_name":"clinicianIngest.json",
@@ -138,6 +136,5 @@ def loadSchemas():
             }
         }
     createExclusion()
-
     schemas=getEntitiesSchema(schemas,st.session_state.exclusion_list)
     return schemas
