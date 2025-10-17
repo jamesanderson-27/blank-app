@@ -14,7 +14,7 @@ st.session_state.API_KEY=os.environ.get('API_KEY')
 st.session_state.API_KEY_WRITE=os.environ.get('API_KEY_WRITE')
 schemas=housekeeping() # there's a lot that needs to run on app initialization
 
-####### View Customer Sidebar #######
+####### View Customer (Sidebar) #######
 with st.sidebar:
     st.title("View Customer Mapping")
     customer_list=getCustomerList(user)
@@ -29,7 +29,7 @@ with st.sidebar:
     data_map = getCustomerDataMap(user,view_customer)
     st.divider()
 
-####### Edit Customer Main Tab #######
+####### Edit Customer (Main Tab) #######
 st.subheader("Edit Customer Mapping")
 customer=st.selectbox("Select Customer",
                     customer_list,
@@ -74,7 +74,7 @@ if st.session_state.customer_locked:
         if st.button("Save Mapping"):
             response=updateGithub(user,customer,"data_map",data_map)  # (TO DO - write to GitHub)
 
-####### View Customer Siderbar #######
+####### View Customer (Sidebar) #######
 with st.sidebar:
     if view_customer:
         sidebarMapping(view_customer,customer,data_map)

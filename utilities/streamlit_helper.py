@@ -22,13 +22,13 @@ def getIndex(data_map,object,field,attributes,data_source_type):
     except:
         return 0
     
-def saveFieldMapping(data_map,schema,field,primary_source,primary_col,secondary_source,secondary_col,fallback_value_type,fallback_value):
+def saveFieldMapping(data_map,schema,field,primary_source,primary_attribute,secondary_source,secondary_attribute,fallback_value_type,fallback_value):
     if field not in data_map["mapping"][schema]:
         data_map["mapping"][schema][field]={}
     data_map["mapping"][schema][field]["primary_file"]=primary_source
-    data_map["mapping"][schema][field]["primary_attribute"]=primary_col
+    data_map["mapping"][schema][field]["primary_attribute"]=primary_attribute
     data_map["mapping"][schema][field]["secondary_file"]=secondary_source
-    data_map["mapping"][schema][field]["secondary_attribute"]=secondary_col
+    data_map["mapping"][schema][field]["secondary_attribute"]=secondary_attribute
     data_map["mapping"][schema][field]["fallback_value_type"]=fallback_value_type
     data_map["mapping"][schema][field]["fallback_value"]=fallback_value
     return data_map
