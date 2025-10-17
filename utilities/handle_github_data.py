@@ -3,21 +3,20 @@ import json
 import base64
 import streamlit as st
 
-#### Helper functions to build request ####
-
+#### Helper functions to build requests ####
 def makeUrl(user,repo,path):
-    if not path:
+    if not path: # used by getCustomerList()
         url=f"https://api.github.com/repos/{user}/{repo}/contents/customers"
-    elif repo=="entities-schema":
+    elif repo=="entities-schema": # used by getEntitiesSchema()
         url=f"https://api.github.com/repos/{user}/{repo}/contents/packages/entities-schema-ingest/schema/{path}"
-    elif path=="commit":
-        url=f"https://api.github.com/repos/{user}/{repo}/git/commits"        
-    else:
+    elif path=="commit": # used by updateGitHub()
+        url=f"https://api.github.com/repos/{user}/{repo}/git/commits"
+    else: # used by getCustomerDataSources() and getCustomerDataMap()
         url=f"https://api.github.com/repos/{user}/{repo}/contents/customers/{path}"
     return url
     
 def makeHeaders(write):
-    if write:
+    if write: # used by updateGitHub()
         auth_token=st.session_state.API_KEY_WRITE
     else:
         auth_token=st.session_state.API_KEY
@@ -33,7 +32,7 @@ def makeRequest(req_type,d,user,write=0,path="",repo="blank-app"):
         if req_type=="GET":
             response = req.get(url, headers=headers)
             return response.json()
-        if req_type=="PUT":
+        if req_type=="PUT": # used by updateGitHub()
             response = req.put(url, headers=headers,json=d)
             return response.json()
     except Exception as e:
@@ -41,7 +40,7 @@ def makeRequest(req_type,d,user,write=0,path="",repo="blank-app"):
         return ""
         
 
-#### requests to github ####
+#### Individual requests to GitHub API ####
 @st.cache_data
 def getCustomerList(user):
     customer_list=[""]
@@ -61,14 +60,14 @@ def getCustomerDataMap(user,customer,bool=0):
     path=f"{customer}/data_map.json"
     req_type,d="GET",None
     data=makeRequest(req_type,d,user,0,path)
-    if bool: # dynamic add to grab sha
+    if bool:
         try:
-            st.session_state.data_map_sha=data["sha"] # while we're here, grab the sha for PUT request
+            st.session_state.data_map_sha=data["sha"] # used by getCustomerDatamap() called within edit activity
         except:
             pass
     try:
         content=data["content"]
-        decoded_content = base64.b64decode(content)  # Decode Base64 to bytes
+        decoded_content = base64.b64decode(content)
         data_map = decoded_content.decode('utf-8')
         st.session_state[f"{customer}_current_data_map"]=json.loads(data_map)
         return json.loads(data_map)
@@ -90,38 +89,33 @@ def getSchemaSmall(user,path):
 @st.cache_data
 def getEntitiesSchema(schemas,exclusion_list):
     user = "DexCare"
-
     def collectFields(schema_name, schema_path, seen_paths):
-        if schema_path in seen_paths:
+        if schema_path in seen_paths: # ensure we're not pulling the same ref twice
             return []
-        seen_paths.add(schema_path)
+        seen_paths.add(schema_path) 
         field_names = []
-
-        schema_json = getSchemaSmall(user, schema_path)
+        schema_json = getSchemaSmall(user, schema_path) # GETs the json for "$ref"erenced file
         properties = schema_json.get("properties", {})
-
         for field, field_data in properties.items():
-            if field in exclusion_list:
+            if field in exclusion_list: # passes on excluded fields
                 continue
             field_names.append(field)
             ref_path = None
             if "$ref" in field_data:
-                ref_path = field_data["$ref"].strip("./")
-            elif "items" in field_data and "$ref" in field_data["items"]:
+                ref_path = field_data["$ref"].strip("./") # ref path convention
+            elif "items" in field_data and "$ref" in field_data["items"]: # some fields have a ref path in items {}
                 ref_path = field_data["items"]["$ref"].strip("./")
             if ref_path:
                 nested_fields = collectFields(schema_name, ref_path, seen_paths)
                 field_names.extend(nested_fields)
-
+            st.write(f"Field: {field} has nested fields {nested_fields}")
         return field_names
-    
     for schema_name, schema_info in schemas.items():
         path = schema_info["file_name"]
-        seen = set() # removes dups
+        seen = set()
         fields = collectFields(schema_name, path, seen)
         schemas[schema_name]["field_names"].extend(fields)
-        schemas[schema_name]["field_names"] = list(dict.fromkeys(schemas[schema_name]["field_names"]))
-
+        schemas[schema_name]["field_names"] = list(dict.fromkeys(schemas[schema_name]["field_names"])) # another remove dups needed
     return schemas
 
 @st.cache_data
@@ -136,7 +130,7 @@ def getCustomerDataSources(user,customer,bool=0):
             pass
     try:
         content=data["content"]
-        decoded_content = base64.b64decode(content)  # Decode Base64 to bytes
+        decoded_content = base64.b64decode(content)
         data_sources = decoded_content.decode('utf-8')
         return json.loads(data_sources)
     except:
@@ -154,7 +148,7 @@ def getCustomerDataSources(user,customer,bool=0):
 def updateGithub(user,customer,target,req_data):
     req_type="PUT"
     json_string = json.dumps(req_data).encode('utf-8')
-    encoded_data = base64.b64encode(json_string) # convert to base64 encoding
+    encoded_data = base64.b64encode(json_string) # convert to base64 encoding for GitHub API
     data={
         "message":"update from mapping tool",
         "committer":{
