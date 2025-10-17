@@ -94,7 +94,9 @@ def sidebarMapping(view_customer,customer,data_map):
     toggle_state = st.toggle("",label_visibility="collapsed") # controls which data map shows (toggle current/draft)
     if toggle_state:
         st.badge("Draft Mapping",color="red")
-        if view_customer==customer:
+        if not st.session_state.file_locked:
+            st.markdown("*No draft in progress*")
+        elif view_customer==customer:
             st.markdown(schemaToMarkdown(data_map),unsafe_allow_html=True)
         else:
             st.markdown(schemaToMarkdown(st.session_state[f"{view_customer}_current_data_map"]),unsafe_allow_html=True)
