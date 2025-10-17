@@ -82,9 +82,9 @@ def fieldMapper(field,data_sources,data_map,schema):
                                     schema,
                                     field,
                                     primary_source,
-                                    primary_col,
+                                    primary_attribute,
                                     secondary_source,
-                                    secondary_col,
+                                    secondary_attribute,
                                     fallback_value_type,
                                     fallback_value)
     return data_map
