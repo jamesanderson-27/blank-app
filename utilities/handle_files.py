@@ -6,23 +6,18 @@ from datetime import datetime
 
 ####### File Upload Activity #######
 
-def getJsonAttributes(obj: Union[dict, list], prefix: str = "") -> Set[str]:
-    attributes = set()
-
+def getJsonAttributes(obj: Union[dict, list],prefix=""):
+    attributes = set() # set for auto dup checking
     if isinstance(obj, dict):
         for key, value in obj.items():
-            full_key = f"{prefix}.{key}" if prefix else key
-
+            full_key = f"{prefix}.{key}" if prefix else key # record parent nodes
             if isinstance(value, dict) or (isinstance(value, list) and any(isinstance(i, dict) for i in value)):
-                # Skip adding this key, but recurse into it
-                attributes.update(getJsonAttributes(value, prefix=full_key))
+                attributes.update(getJsonAttributes(value, prefix=full_key)) # self ref for child / grandchild nodes
             else:
                 attributes.add(full_key)
-
-    elif isinstance(obj, list):
+    elif isinstance(obj, list): # there won't be any child nodes
         for item in obj:
             attributes.update(getJsonAttributes(item, prefix=prefix))
-
     return attributes
 
 def jsonReader(file):
@@ -34,7 +29,6 @@ def jsonReader(file):
         attributes=getJsonAttributes(json_obj)
     except Exception as e:
         st.badge(f"Error reading {str(file.name)}: {e}",color='red')
-
     return list(attributes)
 
 def csvTxTReader(file):
@@ -46,7 +40,6 @@ def csvTxTReader(file):
         reader = csv.reader(content, delimiter=delim)
     except Exception as e:
         st.badge(f"Error reading file: {e}",color='red')
-
     return list(next(reader))
 
 def handleFiles(uploaded_files,data_sources):
@@ -63,5 +56,4 @@ def handleFiles(uploaded_files,data_sources):
             }
         except:
             st.write("Something went wrong with the file upload... please reach out to James!")
-        
     return data_sources
