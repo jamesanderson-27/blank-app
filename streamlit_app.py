@@ -1,22 +1,16 @@
 import os
 import streamlit as st
 from utilities.handle_files import handleFiles
-from utilities.streamlit_helper import fieldMapper,customerLock,fileLock,sidebarMapping,housekeeping
+from utilities.streamlit_helper import fieldMapper,customerLock,fileLock,sidebarMapping,housekeeping,loadSchemas
 from utilities.handle_github_data import getCustomerList,getCustomerDataMap,getCustomerDataSources,updateGithub
 
-# Housekeeping
-    # Maintenance items during app formalization:
-        # 1. Create generic github user, set the username below
-        # 2. Create GitHub PATs, set those in the streamlit env secrets
-
-user="jamesanderson-27"
-st.session_state.API_KEY=os.environ.get('API_KEY')
-st.session_state.API_KEY_WRITE=os.environ.get('API_KEY_WRITE')
-schemas=housekeeping() # there's a lot that needs to run on app initialization
+housekeeping() # there's a lot that needs to run on app launch
+schemas=loadSchemas()
 
 ####### View Customer (Sidebar) #######
 with st.sidebar:
     st.title("View Customer Mapping")
+    user=st.session_state.user
     customer_list=getCustomerList(user)
     try:
         idx=customer_list.index(view_customer) # type: ignore

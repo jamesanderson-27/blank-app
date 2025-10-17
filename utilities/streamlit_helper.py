@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 from utilities.handle_github_data import getCustomerDataMap,getEntitiesSchema
 from utilities.handle_markdown import schemaToMarkdown,styleButtons
 from entities_field_exclusion import createExclusion
@@ -102,15 +103,23 @@ def sidebarMapping(view_customer,customer,data_map):
         st.markdown(schemaToMarkdown(st.session_state[f"{view_customer}_current_data_map"]),unsafe_allow_html=True)
 
 def housekeeping():
+    st.session_state.user="jamesanderson-27"
+    st.session_state.API_KEY=os.environ.get('API_KEY')
+    st.session_state.API_KEY_WRITE=os.environ.get('API_KEY_WRITE')
     st.set_page_config(layout="wide")
     st.logo("DexCare_logo.jpg",size="large")
     styleButtons()
+
     if "data_map_sha" not in st.session_state:
         st.session_state.data_map_sha=""
     if 'customer_locked' not in st.session_state:
         st.session_state.customer_locked = False
     if 'file_locked' not in st.session_state:
         st.session_state.file_locked = False
+
+
+def loadSchemas():
+
     schemas={
             "Provider":{
                 "file_name":"clinicianIngest.json",

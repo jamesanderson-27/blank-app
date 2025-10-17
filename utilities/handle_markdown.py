@@ -27,7 +27,7 @@ def schemaToMarkdown(data_map): ## Chat GPT credit
     except:
         return "Could not load markdown: schemaToMarkdown failure."
 
-
+@st.cache_data
 def styleButtons():
     st.markdown("""
         <style>
