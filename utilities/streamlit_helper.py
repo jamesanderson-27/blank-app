@@ -5,23 +5,20 @@ from entities_field_exclusion import createExclusion
     
 def customerLock(user,customer=""):
     st.session_state.customer_locked=True
-    data=getCustomerDataMap(user,customer,1)
     try:
-        st.session_state.data_map_sha=data["sha"] # store the github file's sha
+        data=getCustomerDataMap(user,customer,1) # calls to a customer/data_map.json
+        st.session_state.data_map_sha=data["sha"] # stores the sha of the github file for later use
     except:
         pass
 
 def fileLock():
     st.session_state.file_locked=True
-    # update customer/data_sources.json
+    # update customer/data_sources.json (TO DO)
 
 def getIndex(data_map,object,field,attributes,data_source_type):
-    # data_source_type either = primary_source_attribute or secondary_source_attribute
-    # if the loaded data_map has a value for that attribute - source combo, use that
     try:
         value=data_map["mapping"][object][field][data_source_type]
         return attributes.index(value)
-    # if it doesn't have a value for that attribute - source combo, use 0
     except:
         return 0
     
@@ -34,52 +31,51 @@ def saveFieldMapping(data_map,schema,field,primary_source,primary_col,secondary_
     data_map["mapping"][schema][field]["secondary_attribute"]=secondary_col
     data_map["mapping"][schema][field]["fallback_value_type"]=fallback_value_type
     data_map["mapping"][schema][field]["fallback_value"]=fallback_value
-
     return data_map
 
 def fieldMapper(field,data_sources,data_map,schema):
-    with st.expander(f"{schema}.**{field}**"):
+    with st.expander(f"{schema}.**{field}**"): # schema field name; e.g. abbreviation, externalIdentifiers, etc...
         attributes=data_sources["files"].keys()
         col1,col2=st.columns(2)
-        #index=getIndex(data_map,schema,field,attributes,"primary_source_attribute")
         index=0
         with col1:
-            primary_source = st.selectbox("Primary File",
-                                        list(attributes),
-                                        key=f"{schema}_{field}_primary_dropdown",
+            #index=getIndex(data_map,schema,field,attributes,"primary_source") # indexes currently mapped selection
+            primary_source=st.selectbox("Primary File",
+                                        list(attributes), # displays the attributes per data source
+                                        key=f"{schema}_{field}_primary_source", # streamlit global value (must be unique)
                                         index=index) # load the existing mapping, index that option func
-            secondary_source = st.selectbox("Secondary File",
+            #index=getIndex(data_map,schema,field,attributes,"secondary_source")
+            secondary_source=st.selectbox("Secondary File",
                                         list(attributes),
-                                        key=f"{schema}_{field}_secondary_dropdown",
-                                        index=index) # load the existing mapping, index that option func
+                                        key=f"{schema}_{field}_secondary_source",
+                                        index=index)
             #index=getIndex(data_map,schema,field,attributes,"fallback_value_type")
             fallback_value_type=st.selectbox("Fallback Type",
-                                                ["None","String","Boolean"],
-                                                key=f"{schema}_{field}_data_value_type",
-                                                index=index)
-        #index=getIndex(data_map,schema,field,attributes,"secondary_source_attribute")
+                                        ["None","String","Boolean"],
+                                        key=f"{schema}_{field}_fallback_value_type",
+                                        index=index)
         with col2:
-            #index=getIndex(data_map,schema,field,attributes,"primary_col")
-            primary_col = st.selectbox("Primary Attribute",
+            #index=getIndex(data_map,schema,field,attributes,"primary_attribute")
+            primary_attribute=st.selectbox("Primary Attribute",
                                         list(data_sources["files"][primary_source]["attributes"]),
                                         key=f"{schema}_{field}_primary_attribute",
                                         index=index) # load the existing mapping, index that option func
-            #index=getIndex(data_map,schema,field,attributes,"secondary_col")
-            secondary_col = st.selectbox("Secondary Attribute",
+            #index=getIndex(data_map,schema,field,attributes,"secondary_attribute")
+            secondary_attribute=st.selectbox("Secondary Attribute",
                                         list(data_sources["files"][secondary_source]["attributes"]),
                                         key=f"{schema}_{field}_secondary_attribute",
                                         index=index) # load the existing mapping, index that option func
             if fallback_value_type=="Boolean":
-                fallback_value_type=fallback_value=st.selectbox("Fallback Value",
-                                                ["True","False"],
-                                                key=f"{schema}_{field}_data_value_a",
-                                                index=index)
+                fallback_value=st.selectbox("Fallback Value",
+                                        ["True","False"],
+                                        key=f"{schema}_{field}_data_value_a",
+                                        index=index)
             if fallback_value_type=="None":
-                fallback_value_type=fallback_value=st.selectbox("Fallback Value",
-                                                [None],
-                                                disabled=True,
-                                                key=f"{schema}_{field}_data_value_b",
-                                                index=index)
+                fallback_value=st.selectbox("Fallback Value",
+                                        [None],
+                                        disabled=True,
+                                        key=f"{schema}_{field}_data_value_b",
+                                        index=index)
             if fallback_value_type=="String":
                 fallback_value=st.text_input("Fallback Value",key=f"{schema}_{field}_data_value_c")
         data_map = saveFieldMapping(data_map,
@@ -112,14 +108,12 @@ def housekeeping():
     st.set_page_config(layout="wide")
     st.logo("DexCare_logo.jpg",size="large")
     styleButtons()
-
     if "data_map_sha" not in st.session_state:
         st.session_state.data_map_sha=""
     if 'customer_locked' not in st.session_state:
         st.session_state.customer_locked = False
     if 'file_locked' not in st.session_state:
         st.session_state.file_locked = False
-
     schemas={
             "Provider":{
                 "file_name":"clinicianIngest.json",
@@ -134,7 +128,6 @@ def housekeeping():
                 "field_names":[]
             }
         }
-    
     createExclusion()
 
     schemas=getEntitiesSchema(schemas,st.session_state.exclusion_list)
