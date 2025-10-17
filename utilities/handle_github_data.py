@@ -1,6 +1,6 @@
-import requests as req
 import json
 import base64
+import requests as req
 import streamlit as st
 
 #### Helper functions to build requests ####
@@ -90,33 +90,34 @@ def getSchemaSmall(user,path):
 def getEntitiesSchema(schemas,exclusion_list):
     user = "DexCare"
     def collectFields(schema_name, schema_path, seen_paths):
-        if schema_path in seen_paths: # ensure we're not pulling the same ref twice
-            return []
-        seen_paths.add(schema_path) 
-        field_names = []
-        schema_json = getSchemaSmall(user, schema_path) # GETs the json for "$ref"erenced file
+        if schema_path in seen_paths:
+            return {}
+        seen_paths.add(schema_path)
+        field_dict = {}
+        schema_json = getSchemaSmall(user, schema_path)
         properties = schema_json.get("properties", {})
         for field, field_data in properties.items():
-            if field in exclusion_list: # passes on excluded fields
+            if field in exclusion_list:
                 continue
-            field_names.append(field)
             ref_path = None
+            nested_fields = {}
             if "$ref" in field_data:
-                ref_path = field_data["$ref"].strip("./") # ref path convention
-            elif "items" in field_data and "$ref" in field_data["items"]: # some fields have a ref path in items {}
+                ref_path = field_data["$ref"].strip("./")
+            elif "items" in field_data and "$ref" in field_data["items"]:
                 ref_path = field_data["items"]["$ref"].strip("./")
             if ref_path:
                 nested_fields = collectFields(schema_name, ref_path, seen_paths)
-                field_names.extend(nested_fields)
-            st.write(f"Field: {field} has nested fields {nested_fields}")
-        return field_names
+                field_dict[field] = nested_fields
+            else:
+                field_dict[field] = {}
+        return field_dict
     for schema_name, schema_info in schemas.items():
         path = schema_info["file_name"]
         seen = set()
         fields = collectFields(schema_name, path, seen)
-        schemas[schema_name]["field_names"].extend(fields)
-        schemas[schema_name]["field_names"] = list(dict.fromkeys(schemas[schema_name]["field_names"])) # another remove dups needed
+        schemas[schema_name]["field_names"] = fields
     return schemas
+
 
 @st.cache_data
 def getCustomerDataSources(user,customer,bool=0):

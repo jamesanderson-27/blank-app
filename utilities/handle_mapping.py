@@ -1,8 +1,6 @@
-import os
 import streamlit as st
-from utilities.handle_github_data import getCustomerDataMap,getEntitiesSchema
-from utilities.handle_markdown import schemaToMarkdown,styleButtons
-from entities_field_exclusion import createExclusion
+from utilities.handle_github_data import getCustomerDataMap
+from utilities.handle_markdown import schemaToMarkdown
     
 def customerLock(user,customer=""):
     st.session_state.customer_locked=True
@@ -35,7 +33,7 @@ def saveFieldMapping(data_map,schema,field,primary_source,primary_attribute,seco
     return data_map
 
 def fieldMapper(field,data_sources,data_map,schema):
-    with st.expander(f"{schema}.**{field}**"): # schema field name; e.g. abbreviation, externalIdentifiers, etc...
+    with st.expander(f"{schema}.*{field}*"): # schema field name; e.g. abbreviation, externalIdentifiers, etc...
         attributes=data_sources["files"].keys()
         col1,col2=st.columns(2)
         index=0
@@ -104,37 +102,3 @@ def sidebarMapping(view_customer,customer,data_map):
     else: 
         st.badge("Current Mapping",color="grey")
         st.markdown(schemaToMarkdown(st.session_state[f"{view_customer}_current_data_map"]),unsafe_allow_html=True)
-
-def housekeeping():
-    st.session_state.user="jamesanderson-27"
-    st.session_state.API_KEY=os.environ.get('API_KEY')
-    st.session_state.API_KEY_WRITE=os.environ.get('API_KEY_WRITE')
-    st.set_page_config(layout="wide")
-    st.logo("DexCare_logo.jpg",size="large")
-    styleButtons()
-    if "data_map_sha" not in st.session_state:
-        st.session_state.data_map_sha=""
-    if 'customer_locked' not in st.session_state:
-        st.session_state.customer_locked = False
-    if 'file_locked' not in st.session_state:
-        st.session_state.file_locked = False
-
-
-def loadSchemas():
-    schemas={
-            "Provider":{
-                "file_name":"clinicianIngest.json",
-                "field_names":[]
-            },                 
-            "Department":{
-                "file_name":"departmentIngest.json",
-                "field_names":[]
-            },
-            "Location":{
-                "file_name":"locationIngest.json",
-                "field_names":[]
-            }
-        }
-    createExclusion()
-    schemas=getEntitiesSchema(schemas,st.session_state.exclusion_list)
-    return schemas

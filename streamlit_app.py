@@ -1,7 +1,7 @@
-import os
 import streamlit as st
 from utilities.handle_files import handleFiles
-from utilities.streamlit_helper import fieldMapper,customerLock,fileLock,sidebarMapping,housekeeping,loadSchemas
+from utilities.housekeeping import housekeeping,loadSchemas
+from utilities.handle_mapping import fieldMapper,customerLock,fileLock,sidebarMapping
 from utilities.handle_github_data import getCustomerList,getCustomerDataMap,getCustomerDataSources,updateGithub
 
 housekeeping() # there's a lot that needs to run on app launch
@@ -20,7 +20,7 @@ with st.sidebar:
                 customer_list,
                 key="view_customer",
                 index=idx)
-    data_map = getCustomerDataMap(user,view_customer)
+    st.session_state.data_map = getCustomerDataMap(user,view_customer)
     st.divider()
 
 ####### Edit Customer (Main Tab) #######
@@ -59,18 +59,22 @@ if st.session_state.customer_locked:
         st.divider()
         st.subheader("Map to DexCare Schema")
         for schema in sorted(list(schemas.keys())):                  
-            if schema not in data_map["mapping"]:
-                data_map["mapping"][schema]={}
+            if schema not in st.session_state.data_map["mapping"]:
+                st.session_state.data_map["mapping"][schema]={}
             with st.expander(f"**{schema}**"):                        # drives mapping UI dropdowns
-                for field in list(schemas[schema]["field_names"]): 
-                    data_map=fieldMapper(field,data_sources,data_map,schema)
-        st.session_state[f"{customer}_data_map"]=data_map             # stores field mapping in session
+                for field in schemas[schema]["field_names"].keys():
+                    if schemas[schema]["field_names"][field].keys(): 
+                        with st.expander(f"{schema}.*{field}*"):
+                            for nested_field in schemas[schema]["field_names"][field].keys():
+                                st.session_state.data_map=fieldMapper(f"{field}.{nested_field}",data_sources,st.session_state.data_map,schema)
+                    else:
+                        st.session_state.data_map=fieldMapper(field,data_sources,st.session_state.data_map,schema)
         if st.button("Save Mapping"):
-            response=updateGithub(user,customer,"data_map",data_map)  # (TO DO - write to GitHub)
+            response=updateGithub(user,customer,"data_map",st.session_state.data_map)  # (TO DO - write to GitHub)
 
 ####### View Customer (Sidebar) #######
 with st.sidebar:
     if view_customer:
-        sidebarMapping(view_customer,customer,data_map)
+        sidebarMapping(view_customer,customer,st.session_state.data_map)
     else:
         st.markdown("*Select a customer to view current mapping*")
