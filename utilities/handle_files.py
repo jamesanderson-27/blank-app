@@ -1,7 +1,7 @@
 import csv
 import json
 import streamlit as st
-from typing import Set, Union
+from typing import Union
 from datetime import datetime
 
 ####### File Upload Activity #######
@@ -11,7 +11,7 @@ def getJsonAttributes(obj: Union[dict, list],prefix=""):
     if isinstance(obj, dict):
         for key, value in obj.items():
             full_key = f"{prefix}.{key}" if prefix else key # record parent nodes
-            if isinstance(value, dict) or (isinstance(value, list) and any(isinstance(i, dict) for i in value)):
+            if isinstance(value, dict) or (isinstance(value, list) and any(isinstance(i, dict) for i in value)): # dict or list of dicts
                 attributes.update(getJsonAttributes(value, prefix=full_key)) # self ref for child / grandchild nodes
             else:
                 attributes.add(full_key)
@@ -21,9 +21,8 @@ def getJsonAttributes(obj: Union[dict, list],prefix=""):
     return attributes
 
 def jsonReader(file):
-    attributes = set() # usage of set() elimates possibility of attribute duplicates
-    prefix=""
-    data = file.read().decode("utf-8") # assumed utf-8 encoding DOCUMENT
+    attributes = set() # in case the parsing fails, we load empty attribute list
+    data = file.read().decode("utf-8")
     try:
         json_obj = json.loads(data.strip())
         attributes=getJsonAttributes(json_obj)
@@ -32,10 +31,10 @@ def jsonReader(file):
     return list(attributes)
 
 def csvTxTReader(file):
-    raw=file.read().decode('utf-8') # assumed utf-8 encoding DOCUMENT
+    raw=file.read().decode('utf-8')
     content = raw.splitlines()
     dialect = csv.Sniffer().sniff(raw)
-    delim=dialect.delimiter # determines delimiter of file using csv library function
+    delim=dialect.delimiter # should determine delimiter of file
     try:
         reader = csv.reader(content, delimiter=delim)
     except Exception as e:
