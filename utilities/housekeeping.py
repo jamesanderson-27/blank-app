@@ -36,8 +36,8 @@ def createExclusion():
         "specialties.externalIdentifiers",
         "exclusionVisitTypeListMdm",
         "excludedVisitTypes",
-        "extended"
-        
+        "extended",
+        "brandRefs"
     ]
 
 @st.cache_data
