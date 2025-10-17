@@ -80,41 +80,49 @@ def getCustomerDataMap(user,customer,bool=0):
             }
         return dict(data_map)
 
-@st.cache_data
-def getEntitiesSchema():
-    user="DexCare"
-    schemas={
-                "Provider":{
-                    "file_name":"clinicianIngest.json",
-                    "field_names":[]
-                },                 
-                "Department":{
-                    "file_name":"departmentIngest.json",
-                    "field_names":[]
-                },
-                "Location":{
-                    "file_name":"locationIngest.json",
-                    "field_names":[]
-                }
-            }
-    exclusion_list=[]
-    # for schema in schemas
-    for schema in schemas:
-        path=schemas[schema]["file_name"]
-        data=makeRequest("GET","",user,0,path,"entities-schema")
-        content=data["content"]
-        decoded_content = base64.b64decode(content)  # Decode Base64 to bytes
-        field_json = json.loads(decoded_content.decode('utf-8'))
-        for field in field_json["properties"]:
-            if field in exclusion_list:
-                pass
-            else:
-                schemas[schema]["field_names"].append(field)
-    return schemas
+def getSchemaSmall(user,path):
+    data=makeRequest("GET","",user,0,path,"entities-schema")
+    content=data["content"]
+    decoded_content = base64.b64decode(content)  # Decode Base64 to bytes
+    field_json = json.loads(decoded_content.decode('utf-8'))
+    return field_json
 
-        # iterate through the json and add each field name to the list
-            # exclusion list fsor field names
-            # if the field has an $ref, call to that file and add those field names
+@st.cache_data
+def getEntitiesSchema(schemas,exclusion_list):
+    user = "DexCare"
+
+    def collectFields(schema_name, schema_path, seen_paths):
+        if schema_path in seen_paths:
+            return []
+        seen_paths.add(schema_path)
+        field_names = []
+
+        schema_json = getSchemaSmall(user, schema_path)
+        properties = schema_json.get("properties", {})
+
+        for field, field_data in properties.items():
+            if field in exclusion_list:
+                continue
+            field_names.append(field)
+            ref_path = None
+            if "$ref" in field_data:
+                ref_path = field_data["$ref"].strip("./")
+            elif "items" in field_data and "$ref" in field_data["items"]:
+                ref_path = field_data["items"]["$ref"].strip("./")
+            if ref_path:
+                nested_fields = collectFields(schema_name, ref_path, seen_paths)
+                field_names.extend(nested_fields)
+
+        return field_names
+    
+    for schema_name, schema_info in schemas.items():
+        path = schema_info["file_name"]
+        seen = set() # removes dups
+        fields = collectFields(schema_name, path, seen)
+        schemas[schema_name]["field_names"].extend(fields)
+        schemas[schema_name]["field_names"] = list(dict.fromkeys(schemas[schema_name]["field_names"]))
+
+    return schemas
 
 @st.cache_data
 def getCustomerDataSources(user,customer,bool=0):
@@ -134,7 +142,7 @@ def getCustomerDataSources(user,customer,bool=0):
     except:
         data_sources = {
                     "files":{
-                        "<file_name>":{
+                        "":{
                             "uploaded_at":"",
                             "file_type":"",
                             "attributes":[]

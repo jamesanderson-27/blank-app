@@ -1,21 +1,18 @@
 import os
 import streamlit as st
 from utilities.handle_files import handleFiles
-from utilities.streamlit_helper import styleButtons,fieldMapper,customerLock,fileLock,sidebarMapping,stateManage
-from utilities.handle_github_data import getCustomerList,getCustomerDataMap,getCustomerDataSources,updateGithub,getEntitiesSchema
+from utilities.streamlit_helper import fieldMapper,customerLock,fileLock,sidebarMapping,housekeeping
+from utilities.handle_github_data import getCustomerList,getCustomerDataMap,getCustomerDataSources,updateGithub
 
 # Housekeeping
-    # Maintenance items during app finalization:
+    # Maintenance items during app formalization:
         # 1. Create generic github user, set the username below
-        # 2. Create GitHub PATs, set those in the streamlit env ssecrets
-user="jamesanderson-27" 
-st.session_state.API_KEY=os.environ.get('API_KEY') 
+        # 2. Create GitHub PATs, set those in the streamlit env secrets
+
+user="jamesanderson-27"
+st.session_state.API_KEY=os.environ.get('API_KEY')
 st.session_state.API_KEY_WRITE=os.environ.get('API_KEY_WRITE')
-
-stateManage()
-styleButtons()
-schemas=getEntitiesSchema()
-
+schemas=housekeeping() # there's a lot that needs to run on app initialization
 
 ####### View Customer Sidebar #######
 with st.sidebar:
@@ -70,8 +67,8 @@ if st.session_state.customer_locked:
         for schema in sorted(list(schemas.keys())):                  
             if schema not in data_map["mapping"]:
                 data_map["mapping"][schema]={}
-            with st.expander(f"**{schema}**"):                                 # drives mapping UI dropdowns
-                for field in sorted(list(schemas[schema]["field_names"])): 
+            with st.expander(f"**{schema}**"):                        # drives mapping UI dropdowns
+                for field in list(schemas[schema]["field_names"]): 
                     data_map=fieldMapper(field,data_sources,data_map,schema)
         st.session_state[f"{customer}_data_map"]=data_map             # stores field mapping in session
         if st.button("Save Mapping"):

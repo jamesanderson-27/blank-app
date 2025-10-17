@@ -1,6 +1,7 @@
 import streamlit as st
 from utilities.handle_github_data import getCustomerDataMap,getEntitiesSchema
-from utilities.handle_markdown import schemaToMarkdown
+from utilities.handle_markdown import schemaToMarkdown,styleButtons
+from entities_field_exclusion import createExclusion
     
 def customerLock(user,customer=""):
     st.session_state.customer_locked=True
@@ -13,36 +14,6 @@ def customerLock(user,customer=""):
 def fileLock():
     st.session_state.file_locked=True
     # update customer/data_sources.json
-
-
-def styleButtons():
-    st.markdown("""
-        <style>
-        /* Target buttons using their class */
-        div.stButton > button {
-            background-color: #add8e6; /* Light blue */
-            color: black;
-            border: none;
-            padding: 0.5em 1em;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: all 0.2s ease;
-        }
-
-        div.stButton > button:hover {
-            background-color: #87ceeb; /* Sky blue on hover */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            transform: translateY(-2px);
-        }
-
-        div.stButton > button:active {
-            background-color: #4682b4; /* Steel blue on click */
-            transform: translateY(1px);
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-        </style>
-        """, unsafe_allow_html=True)
 
 def getIndex(data_map,object,field,attributes,data_source_type):
     # data_source_type either = primary_source_attribute or secondary_source_attribute
@@ -67,7 +38,7 @@ def saveFieldMapping(data_map,schema,field,primary_source,primary_col,secondary_
     return data_map
 
 def fieldMapper(field,data_sources,data_map,schema):
-    with st.expander(f"{schema}.**{field}**",expanded=True):
+    with st.expander(f"{schema}.**{field}**"):
         attributes=data_sources["files"].keys()
         col1,col2=st.columns(2)
         #index=getIndex(data_map,schema,field,attributes,"primary_source_attribute")
@@ -137,12 +108,34 @@ def sidebarMapping(view_customer,customer,data_map):
         st.badge("Current Mapping",color="grey")
         st.markdown(schemaToMarkdown(st.session_state[f"{view_customer}_current_data_map"]),unsafe_allow_html=True)
 
-def stateManage():
+def housekeeping():
+    st.set_page_config(layout="wide")
+    st.logo("DexCare_logo.jpg",size="large")
+    styleButtons()
+
     if "data_map_sha" not in st.session_state:
         st.session_state.data_map_sha=""
     if 'customer_locked' not in st.session_state:
         st.session_state.customer_locked = False
     if 'file_locked' not in st.session_state:
         st.session_state.file_locked = False
-    st.set_page_config(layout="wide")
-    st.logo("DexCare_logo.jpg",size="large")
+
+    schemas={
+            "Provider":{
+                "file_name":"clinicianIngest.json",
+                "field_names":[]
+            },                 
+            "Department":{
+                "file_name":"departmentIngest.json",
+                "field_names":[]
+            },
+            "Location":{
+                "file_name":"locationIngest.json",
+                "field_names":[]
+            }
+        }
+    
+    createExclusion()
+
+    schemas=getEntitiesSchema(schemas,st.session_state.exclusion_list)
+    return schemas

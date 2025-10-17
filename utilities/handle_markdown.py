@@ -28,3 +28,31 @@ def schemaToMarkdown(data_map): ## Chat GPT credit
         return "Could not load markdown: schemaToMarkdown failure."
 
 
+def styleButtons():
+    st.markdown("""
+        <style>
+        /* Target buttons using their class */
+        div.stButton > button {
+            background-color: #add8e6; /* Light blue */
+            color: black;
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.2s ease;
+        }
+
+        div.stButton > button:hover {
+            background-color: #87ceeb; /* Sky blue on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transform: translateY(-2px);
+        }
+
+        div.stButton > button:active {
+            background-color: #4682b4; /* Steel blue on click */
+            transform: translateY(1px);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        </style>
+        """, unsafe_allow_html=True)
