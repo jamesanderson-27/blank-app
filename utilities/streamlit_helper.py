@@ -96,6 +96,7 @@ def sidebarMapping(view_customer,customer,data_map):
         st.badge("Draft Mapping",color="red")
         if not st.session_state.file_locked:
             st.markdown("*No draft in progress*")
+            pass
         elif view_customer==customer:
             st.markdown(schemaToMarkdown(data_map),unsafe_allow_html=True)
         else:
