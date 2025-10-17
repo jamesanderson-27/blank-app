@@ -36,8 +36,9 @@ def createExclusion():
         "specialties.externalIdentifiers",
         "exclusionVisitTypeListMdm",
         "excludedVisitTypes",
-        "extended"
-        
+        "extended",
+        "careTeamClinicianIdentifiers",
+        "careTeamIds"
     ]
 
 @st.cache_data
