@@ -4,8 +4,6 @@ import streamlit as st
 from typing import Union
 from datetime import datetime
 
-####### File Upload Activity #######
-
 def getJsonAttributes(obj: Union[dict, list],prefix=""):
     attributes = set() # set for auto dup checking
     if isinstance(obj, dict):
