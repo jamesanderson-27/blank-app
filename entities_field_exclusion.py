@@ -5,5 +5,4 @@ def createExclusion():
         "adventCustom",
         "businessLineName",
         "businessUnitName"
-
     ]
