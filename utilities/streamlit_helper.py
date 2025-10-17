@@ -90,17 +90,14 @@ def fieldMapper(field,data_sources,data_map,schema):
     return data_map
 
 def sidebarMapping(view_customer,customer,data_map):
-    # we will always use view_customer
-    # if draft, use customer data map
-    # if current, use v
-    toggle_state = st.toggle("",label_visibility="collapsed")
+    toggle_state = st.toggle("",label_visibility="collapsed") # controls which data map shows (toggle current/draft)
     if toggle_state:
         st.badge("Draft Mapping",color="red")
         if view_customer==customer:
             st.markdown(schemaToMarkdown(data_map),unsafe_allow_html=True)
         else:
             st.markdown(schemaToMarkdown(st.session_state[f"{view_customer}_current_data_map"]),unsafe_allow_html=True)
-    else:
+    else: 
         st.badge("Current Mapping",color="grey")
         st.markdown(schemaToMarkdown(st.session_state[f"{view_customer}_current_data_map"]),unsafe_allow_html=True)
 
