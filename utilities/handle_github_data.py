@@ -39,7 +39,6 @@ def makeRequest(req_type,d,user,write=0,path="",repo="blank-app"):
         st.badge(f"GitHub request failed: {e}.",color="red")
         return {}
         
-
 #### Individual requests to GitHub API ####
 @st.cache_data
 def getCustomerList(user):
@@ -114,7 +113,6 @@ def getEntitiesSchema(schemas,exclusion_list):
         fields = collectFields(schema_name, path, seen)
         schemas[schema_name]["field_names"] = fields
     return schemas
-
 
 @st.cache_data
 def getCustomerDataSources(user,customer,bool=0):
