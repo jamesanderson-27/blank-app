@@ -72,6 +72,7 @@ if st.session_state.customer_locked:
                         st.session_state.data_map=fieldMapper(field,st.session_state.data_sources,st.session_state.data_map,schema)
         if st.button("Save Mapping"):
             response=updateGithub(user,customer,"data_map",st.session_state.data_map)
+    st.write(st.session_state.exclusion_list)
 
 ####### View Customer (Sidebar) #######
 with st.sidebar:
