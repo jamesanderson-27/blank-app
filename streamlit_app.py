@@ -42,7 +42,7 @@ if st.session_state.customer_locked:
                                     type=['csv', 'txt','json'],
                                     accept_multiple_files=True,
                                     disabled=st.session_state.file_locked)
-    st.session_state.data_sources=getCustomerDataSources(user,customer,1)              # loads previous files                   
+    st.session_state.data_sources=getCustomerDataSources(user,customer)              # loads previous files                   
     st.session_state.data_sources=handleFiles(uploaded_files,st.session_state.data_sources)             # allows upload of new files
     if len(list(st.session_state.data_sources["files"].keys())[1:])>0:
         st.write("Uploaded files")
