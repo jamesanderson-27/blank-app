@@ -81,7 +81,10 @@ def getCustomerDataMap(user,customer,bool=0):
 
 def getSchemaSmall(user,path):
     data=makeRequest("GET","",user,0,path,"entities-schema")
-    return decodeContent(data)
+    content=data["content"]
+    decoded_content = base64.b64decode(content)  # Decode Base64 to bytes
+    field_json = json.loads(decoded_content.decode('utf-8'))
+    return field_json
 
 @st.cache_data
 def getEntitiesSchema(schemas,exclusion_list):
