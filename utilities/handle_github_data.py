@@ -9,25 +9,25 @@ def makeUrl(user,repo,path):
         url=f"https://api.github.com/repos/{user}/{repo}/contents/customers"
     elif repo=="entities-schema": # used by getEntitiesSchema()
         url=f"https://api.github.com/repos/{user}/{repo}/contents/packages/entities-schema-ingest/schema/{path}"
-    elif path=="commit": # used by updateGitHub()
+    elif path=="commit": # used by NOTHING
         url=f"https://api.github.com/repos/{user}/{repo}/git/commits"
-    else: # used by getCustomerDataSources() and getCustomerDataMap()
+    else: # used by getCustomerDataSources(), getCustomerDataMap() and updateGitHub()
         url=f"https://api.github.com/repos/{user}/{repo}/contents/customers/{path}"
     return url
     
-def makeHeaders(write):
+def makeHeaders(write,target):
     if write: # used by updateGitHub()
         auth_token=st.session_state.API_KEY_WRITE
     else:
         auth_token=st.session_state.API_KEY
     headers = {"Authorization": "Bearer "+str(auth_token),
                "Accept": "application/vnd.github+json",
-               "sha": str(st.session_state.data_map_sha)}
+               "sha": str(st.session_state[f"{target}_sha"])}
     return headers
 
-def makeRequest(req_type,d,user,write=0,path="",repo="blank-app"):
+def makeRequest(req_type,d,user,write=0,path="",repo="blank-app",target="data_map"):
     url=makeUrl(user,repo,path)
-    headers=makeHeaders(write)
+    headers=makeHeaders(write,target)
     try:
         if req_type=="GET":
             response = req.get(url, headers=headers)
@@ -43,7 +43,7 @@ def decodeContent(data):
         content=data["content"]
         decoded_content = base64.b64decode(content)
         json = decoded_content.decode('utf-8')
-        return json.loads(json)
+        return json.load(json)
 
 #### Individual requests to GitHub API ####
 @st.cache_data
@@ -119,19 +119,16 @@ def getEntitiesSchema(schemas,exclusion_list):
     return schemas
 
 @st.cache_data
-def getCustomerDataSources(user,customer,bool=0):
+def getCustomerDataSources(user,customer):
     path=f"{customer}/data_sources.json"
     req_type,d="GET",None
-    data=makeRequest(req_type,d,user,0,path)
-    if bool: # dynamic add to grab sha
-        try:
-            st.session_state.data_sources_sha=data["sha"] # while we're here, grab the sha for PUT request
-        except:
-            pass
+    data=makeRequest(req_type,d,user,0,path,target="data_sources")
     try:
-        return decodeContent(data)
+        st.session_state.data_sources_sha=data["sha"] # while we're here, grab the sha for PUT request
+        st.session_state.data_sources=decodeContent(data)
+        st.write(st.session_state.data_sources_sha)
     except:
-        data_sources = {
+        st.session_state.data_sources = {
                     "files":{
                         "":{
                             "uploaded_at":"",
@@ -140,24 +137,25 @@ def getCustomerDataSources(user,customer,bool=0):
                         }
                     }
                 }
-        return dict(data_sources)
+    return st.session_state.data_sources
     
 def updateGithub(user,customer,target,req_data):
     req_type="PUT"
-    json_string = json.dumps(req_data).encode('utf-8')
-    encoded_data = base64.b64encode(json_string) # convert to base64 encoding for GitHub API
+    json_string = json.dumps(req_data, indent=2)
+    encoded_data = base64.b64encode(json_string.encode()).decode()  # convert to base64 encoding for GitHub API
     data={
-        "message":"update from mapping tool",
         "committer":{
             "name":"James Anderson",
             "email":"james.anderson@dexcarehealth.com"
-            },
-            "tree":str(st.session_state.data_map_sha),
-        "content":encoded_data
+        },
+        "message":"update from mapping tool",
+        "sha":st.session_state[f"{target}_sha"],
+        "content":encoded_data,
+        "branch":"main"
         }
-    path="commit"
+    path=f"{customer}/{target}.json"
     try:
-        data=makeRequest(req_type,data,user,1,path)
+        data=makeRequest(req_type,data,user,1,path,target=target)
         return data
     except Exception as e:
         st.badge(f"Failed to update: {customer}'s {target}. Error: {e}",color="red")
