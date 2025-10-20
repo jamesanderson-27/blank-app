@@ -46,7 +46,6 @@ def createExclusion():
         "Provider.departmentPrimaryId"
     ]
 
-@st.cache_data
 def loadSchemas():
     schemas={
             "Provider":{
