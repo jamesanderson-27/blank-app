@@ -123,6 +123,46 @@
         "fallback_value_type": "None",
         "fallback_value": null
       },
+      "brandRefs.brand": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "brandRefs.isPrimary": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "brandRefs.url": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "businessLineName": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "businessUnitName": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
       "clockwise": {
         "primary_file": "",
         "primary_attribute": null,
@@ -212,6 +252,14 @@
         "fallback_value": null
       },
       "emrIdentifier.emrSystemId": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "extended": {
         "primary_file": "",
         "primary_attribute": null,
         "secondary_file": "",
@@ -579,6 +627,14 @@
         "fallback_value_type": "None",
         "fallback_value": null
       },
+      "reviews.ratingDistribution": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
       "reviews.ratingSystemId": {
         "primary_file": "",
         "primary_attribute": null,
@@ -636,6 +692,150 @@
         "fallback_value": null
       },
       "url": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypeDepartmentOverrides.dateRangeLookAhead": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypeDepartmentOverrides.dateRangeStartBuffer": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypeDepartmentOverrides.displayName": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypeDepartmentOverrides.emrIdentifier": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypeDepartmentOverrides.isEstablishedPatient": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypeDepartmentOverrides.isNewPatient": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypes.ageUnit": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypes.contextMetadata": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypes.displayName": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypes.maxAge": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypes.minAge": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypes.dateRangeLookAhead": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypes.dateRangeStartBuffer": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypes.duration": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypes.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypes.isBookableOnline": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypes.relationshipCheck": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypes.visitTypeCore": {
         "primary_file": "",
         "primary_attribute": null,
         "secondary_file": "",
@@ -742,6 +942,30 @@
         "fallback_value": null
       },
       "brandName": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "brandRefs.brand": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "brandRefs.isPrimary": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "brandRefs.url": {
         "primary_file": "",
         "primary_attribute": null,
         "secondary_file": "",
@@ -861,6 +1085,30 @@
         "fallback_value_type": "None",
         "fallback_value": null
       },
+      "departments.brandRefs": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "departments.businessLineName": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "departments.businessUnitName": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
       "departments.clockwise": {
         "primary_file": "",
         "primary_attribute": null,
@@ -918,6 +1166,14 @@
         "fallback_value": null
       },
       "departments.emrIdentifier": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "departments.extended": {
         "primary_file": "",
         "primary_attribute": null,
         "secondary_file": "",
@@ -1125,6 +1381,22 @@
         "fallback_value_type": "None",
         "fallback_value": null
       },
+      "departments.visitTypeDepartmentOverrides": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "departments.visitTypes": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
       "departments.walkInsWelcome": {
         "primary_file": "",
         "primary_attribute": null,
@@ -1150,6 +1422,14 @@
         "fallback_value": null
       },
       "displayName": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "extended": {
         "primary_file": "",
         "primary_attribute": null,
         "secondary_file": "",
@@ -1287,6 +1567,166 @@
         "fallback_value_type": "None",
         "fallback_value": null
       },
+      "adventCustom.showDynamicFaq": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "adventCustom.eLinkSchedulingUrl": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "adventCustom.hideRequestAppointment": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "adventCustom.hideRequestAppointmentBlock": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "adventCustom.isCareAdvocateProvider": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "adventCustom.isPCP": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "adventCustom.consumerSpecialties": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "adventCustom.carePhilosophy": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "adventCustom.personalInterests": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "adventCustom.awardAndRecognitions": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "adventCustom.professionalAffiliations": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "adventCustom.professionalLinks": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "adventCustom.publications": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "adventCustom.searchKeywords": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "adventCustom.careCategories": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "adventCustom.treatmentsOffered": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "adventCustom.proceduresAndTests": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "adventCustom.reasonForReferral": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "adventCustom.inNetworkStatus": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "adventCustom.isMedStaff": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
       "agesSeen": {
         "primary_file": "",
         "primary_attribute": null,
@@ -1296,6 +1736,30 @@
         "fallback_value": null
       },
       "bio": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "brandRefs.brand": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "brandRefs.isPrimary": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "brandRefs.url": {
         "primary_file": "",
         "primary_attribute": null,
         "secondary_file": "",
@@ -1472,6 +1936,118 @@
         "fallback_value": null
       },
       "emrIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "excludedVisitTypes.ageUnit": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "excludedVisitTypes.contextMetadata": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "excludedVisitTypes.displayName": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "excludedVisitTypes.maxAge": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "excludedVisitTypes.minAge": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "excludedVisitTypes.dateRangeLookAhead": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "excludedVisitTypes.dateRangeStartBuffer": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "excludedVisitTypes.duration": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "excludedVisitTypes.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "excludedVisitTypes.isBookableOnline": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "excludedVisitTypes.relationshipCheck": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "excludedVisitTypes.visitTypeCore": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "exclusionVisitTypeListMdm": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "extended": {
         "primary_file": "",
         "primary_attribute": null,
         "secondary_file": "",
@@ -1815,6 +2391,14 @@
         "fallback_value_type": "None",
         "fallback_value": null
       },
+      "reviews.ratingDistribution": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
       "reviews.ratingSystemId": {
         "primary_file": "",
         "primary_attribute": null,
@@ -1864,6 +2448,110 @@
         "fallback_value": null
       },
       "videoUrl": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypeOverrides.disabled": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypeOverrides.displayName": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypeOverrides.sexTypeI18s": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypeOverrides.ageUnit": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypeOverrides.maxAge": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypeOverrides.minAge": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypeOverrides.dateRangeLookAhead": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypeOverrides.dateRangeStartBuffer": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypeOverrides.duration": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypeOverrides.isBookableOnline": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypeOverrides.isNewPatient": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypeOverrides.relationshipCheck": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "visitTypeOverrides.visitType": {
         "primary_file": "",
         "primary_attribute": null,
         "secondary_file": "",
