@@ -38,7 +38,13 @@ def makeRequest(req_type,d,user,write=0,path="",repo="blank-app"):
     except Exception as e:
         st.badge(f"GitHub request failed: {e}.",color="red")
         return {}
-        
+
+def decodeContent(data):
+        content=data["content"]
+        decoded_content = base64.b64decode(content)
+        json = decoded_content.decode('utf-8')
+        return json.load(json)
+
 #### Individual requests to GitHub API ####
 @st.cache_data
 def getCustomerList(user):
@@ -62,11 +68,9 @@ def getCustomerDataMap(user,customer,bool=0):
     try:
         if bool:
             st.session_state.data_map_sha=data["sha"] # used by getCustomerDatamap() called within edit activity
-        content=data["content"]
-        decoded_content = base64.b64decode(content)
-        data_map = decoded_content.decode('utf-8')
+        data_map = decodeContent(data)
         st.session_state[f"{customer}_current_data_map"]=json.loads(data_map)
-        return json.loads(data_map)
+        return data_map
     except:
         data_map = {
                 "last_modified_time":"",
@@ -77,10 +81,7 @@ def getCustomerDataMap(user,customer,bool=0):
 
 def getSchemaSmall(user,path):
     data=makeRequest("GET","",user,0,path,"entities-schema")
-    content=data["content"]
-    decoded_content = base64.b64decode(content)  # Decode Base64 to bytes
-    field_json = json.loads(decoded_content.decode('utf-8'))
-    return field_json
+    return decodeContent(data)
 
 @st.cache_data
 def getEntitiesSchema(schemas,exclusion_list):
@@ -125,10 +126,7 @@ def getCustomerDataSources(user,customer,bool=0):
         except:
             pass
     try:
-        content=data["content"]
-        decoded_content = base64.b64decode(content)
-        data_sources = decoded_content.decode('utf-8')
-        return json.loads(data_sources)
+        return decodeContent(data)
     except:
         data_sources = {
                     "files":{
@@ -159,4 +157,4 @@ def updateGithub(user,customer,target,req_data):
         data=makeRequest(req_type,data,user,1,path)
         return data
     except Exception as e:
-        st.badge(f""Failed to update: {customer}'s {target}. Error: {e}",color="red")
+        st.badge(f"Failed to update: {customer}'s {target}. Error: {e}",color="red")
