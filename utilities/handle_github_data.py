@@ -70,8 +70,8 @@ def getCustomerDataMap(user,customer,bool=0):
             st.session_state.data_map_sha=data["sha"] # used by getCustomerDatamap() called within edit activity
         content=data["content"]
         decoded_content = base64.b64decode(content)
-        data_map = decoded_content.decode('utf-8')
-        st.session_state[f"{customer}_current_data_map"]=json.loads(data_map)
+        data_map = json.loads(decoded_content.decode('utf-8'))
+        st.session_state[f"{customer}_current_data_map"]=data_map
         return data_map
     except:
         data_map = {
