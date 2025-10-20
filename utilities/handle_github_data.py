@@ -43,7 +43,7 @@ def decodeContent(data):
         content=data["content"]
         decoded_content = base64.b64decode(content)
         json = decoded_content.decode('utf-8')
-        return json.load(json)
+        return json.loads(json)
 
 #### Individual requests to GitHub API ####
 @st.cache_data
