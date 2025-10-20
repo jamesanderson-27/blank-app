@@ -64,6 +64,7 @@ def fieldMapper(field,data_sources,data_map,schema):
                                         list(data_sources["files"][secondary_source]["attributes"]),
                                         key=f"{schema}_{field}_secondary_attribute",
                                         index=index) # load the existing mapping, index that option func
+            #index=getIndex(data_map,schema,field,attributes,"fallback_value")
             if fallback_value_type=="Boolean":
                 fallback_value=st.selectbox("Fallback Value",
                                         ["True","False"],
