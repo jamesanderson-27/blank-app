@@ -42,16 +42,17 @@ if st.session_state.customer_locked:
                                     type=['csv', 'txt','json'],
                                     accept_multiple_files=True,
                                     disabled=st.session_state.file_locked)
-    data_sources=getCustomerDataSources(user,customer,1)              # loads previous files                   
-    data_sources=handleFiles(uploaded_files,data_sources)             # allows upload of new files
-    if len(list(data_sources["files"].keys())[1:])>0:
+    st.session_state.data_sources=getCustomerDataSources(user,customer,1)              # loads previous files                   
+    st.session_state.data_sources=handleFiles(uploaded_files,st.session_state.data_sources)             # allows upload of new files
+    if len(list(st.session_state.data_sources["files"].keys())[1:])>0:
         st.write("Uploaded files")
-    for file in list(data_sources["files"].keys())[1:]:               # shows user each file and
-        n_attributes=len(data_sources["files"][file]["attributes"])   # its number of attributes
+    for file in list(st.session_state.data_sources["files"].keys())[1:]:               # shows user each file and
+        n_attributes=len(st.session_state.data_sources["files"][file]["attributes"])   # its number of attributes
         st.write(f"*{file}* has {n_attributes} attributes.")          
     if st.button("Save Files"):                                       # saves data_sources to github
         fileLock()                                                    # locks file upload activity
         st.rerun()
+        response=updateGithub(user,customer,"data_sources",st.session_state.data_sources)
 
     ####### Data Mapping #######
     if st.session_state.file_locked:                                  # User continues to mapping
@@ -66,11 +67,11 @@ if st.session_state.customer_locked:
                     if schemas[schema]["field_names"][field].keys():  # shows nested fields (e.g. address_line_1) under fields (e.g. address)
                         with st.expander(f"{schema}.*{field}*"):
                             for nested_field in schemas[schema]["field_names"][field].keys():
-                                st.session_state.data_map=fieldMapper(f"{field}.{nested_field}",data_sources,st.session_state.data_map,schema)
+                                st.session_state.data_map=fieldMapper(f"{field}.{nested_field}",st.session_state.data_sources,st.session_state.data_map,schema)
                     else:
-                        st.session_state.data_map=fieldMapper(field,data_sources,st.session_state.data_map,schema)
+                        st.session_state.data_map=fieldMapper(field,st.session_state.data_sources,st.session_state.data_map,schema)
         if st.button("Save Mapping"):
-            response=updateGithub(user,customer,"data_map",st.session_state.data_map)  # (TO DO - write to GitHub)
+            response=updateGithub(user,customer,"data_map",st.session_state.data_map)
 
 ####### View Customer (Sidebar) #######
 with st.sidebar:
