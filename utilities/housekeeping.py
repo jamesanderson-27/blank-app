@@ -41,7 +41,9 @@ def createExclusion():
         "brandRefs",
         "departments",
         "careTeamClinicianIdentifiers",
-        "careTeamIds"
+        "careTeamIds",
+        "Provider.departmentIds",
+        "Provider.departmentPrimaryId"
     ]
 
 @st.cache_data
