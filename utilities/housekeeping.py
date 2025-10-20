@@ -17,7 +17,6 @@ def housekeeping():
     if 'file_locked' not in st.session_state:
         st.session_state.file_locked = False
 
-@st.cache_data
 def createExclusion():
     st.session_state.exclusion_list=[
         "adventCustom",
