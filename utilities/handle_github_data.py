@@ -37,7 +37,7 @@ def makeRequest(req_type,d,user,write=0,path="",repo="blank-app"):
             return response.json()
     except Exception as e:
         st.badge(f"GitHub request failed: {e}.",color="red")
-        return ""
+        return {}
         
 
 #### Individual requests to GitHub API ####
@@ -52,7 +52,7 @@ def getCustomerList(user):
         customer_list.remove("schema") # only show real customers
         return customer_list
     except:
-        return ""
+        return []
 
 def getCustomerDataMap(user,customer,bool=0):
     if f"{customer}_current_data_map" not in st.session_state:
@@ -60,12 +60,9 @@ def getCustomerDataMap(user,customer,bool=0):
     path=f"{customer}/data_map.json"
     req_type,d="GET",None
     data=makeRequest(req_type,d,user,0,path)
-    if bool:
-        try:
-            st.session_state.data_map_sha=data["sha"] # used by getCustomerDatamap() called within edit activity
-        except:
-            pass
     try:
+        if bool:
+            st.session_state.data_map_sha=data["sha"] # used by getCustomerDatamap() called within edit activity
         content=data["content"]
         decoded_content = base64.b64decode(content)
         data_map = decoded_content.decode('utf-8')
@@ -164,5 +161,4 @@ def updateGithub(user,customer,target,req_data):
         data=makeRequest(req_type,data,user,1,path)
         return data
     except Exception as e:
-        st.badge(f"Error: {e}",color="red")
-        return "failure"
+        st.badge(f""Failed to update: {customer}'s {target}. Error: {e}",color="red")
