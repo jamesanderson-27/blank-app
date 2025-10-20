@@ -10,8 +10,10 @@ def housekeeping():
     st.set_page_config(layout="wide")
     st.logo("DexCare_logo.jpg",size="large")
     styleButtons()
-    if "data_map_sha" not in st.session_state:
-        st.session_state.data_map_sha=""
+    if 'data_map_sha' not in st.session_state:
+        st.session_state.data_map_sha=''
+    if 'data_sources_sha' not in st.session_state:
+        st.session_state.data_sources_sha=''
     if 'customer_locked' not in st.session_state:
         st.session_state.customer_locked = False
     if 'file_locked' not in st.session_state:
