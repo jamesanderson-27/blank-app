@@ -1,5 +1,5 @@
 import streamlit as st
-from utilities.handle_github_data import getCustomerDataMap
+from utilities.handle_github import getCustomerDataMap
 from utilities.handle_markdown import schemaToMarkdown
     
 def customerLock(user,customer=""):
