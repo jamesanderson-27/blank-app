@@ -4,12 +4,12 @@
   "mapping": {
     "Department": {
       "abbreviation": {
-        "primary_file": "",
-        "primary_attribute": null,
+        "primary_file": "DEP_20250827.csv",
+        "primary_attribute": "DEPT_ABBR",
         "secondary_file": "",
         "secondary_attribute": null,
-        "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value_type": "Boolean",
+        "fallback_value": "True"
       },
       "accreditations": {
         "primary_file": "",
