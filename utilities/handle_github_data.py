@@ -75,7 +75,7 @@ def getCustomerDataMap(user,customer,bool=0):
     except:
         data_map = {
                 "last_modified_time":datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "last_modified_user":st.session_state_user,
+                "last_modified_user":st.session_state.user,
                 "mapping":{}
             }
         return dict(data_map)
