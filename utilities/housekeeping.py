@@ -42,8 +42,8 @@ def createExclusion():
         "departments",
         "careTeamClinicianIdentifiers",
         "careTeamIds",
-        "Provider.departmentIds",
-        "Provider.departmentPrimaryId"
+        "departmentIds",
+        "departmentPrimaryId"
     ]
 
 def loadSchemas():
