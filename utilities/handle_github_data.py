@@ -2,6 +2,7 @@ import json
 import base64
 import requests as req
 import streamlit as st
+import datetime as datetime
 
 #### Helper functions to build requests ####
 def makeUrl(user,repo,path):
@@ -73,8 +74,8 @@ def getCustomerDataMap(user,customer,bool=0):
         return data_map
     except:
         data_map = {
-                "last_modified_time":"",
-                "last_modified_user":"",
+                "last_modified_time":"datetime.now().strftime("%Y-%m-%d %H:%M:%S")",
+                "last_modified_user":st.session_state_user,
                 "mapping":{}
             }
         return dict(data_map)
