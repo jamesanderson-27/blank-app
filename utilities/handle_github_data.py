@@ -2,7 +2,7 @@ import json
 import base64
 import requests as req
 import streamlit as st
-import datetime as datetime
+from datetime import datetime
 
 #### Helper functions to build requests ####
 def makeUrl(user,repo,path):
