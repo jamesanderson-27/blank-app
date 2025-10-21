@@ -9,9 +9,7 @@ def makeUrl(user,repo,path):
         url=f"https://api.github.com/repos/{user}/{repo}/contents/customers"
     elif repo=="entities-schema": # used by getEntitiesSchema()
         url=f"https://api.github.com/repos/{user}/{repo}/contents/packages/entities-schema-ingest/schema/{path}"
-    elif path=="commit": # used by NOTHING
-        url=f"https://api.github.com/repos/{user}/{repo}/git/commits"
-    else: # used by getCustomerDataSources(), getCustomerDataMap() and updateGitHub()
+    else: # used by getCustomerDataSources(), getCustomerDataMap() & updateGitHub()
         url=f"https://api.github.com/repos/{user}/{repo}/contents/customers/{path}"
     return url
     
