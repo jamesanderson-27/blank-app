@@ -97,12 +97,12 @@ def sidebarMapping(view_customer,customer,data_map):
             st.markdown("*No draft in progress*")
             st.write("a")
         elif view_customer!=customer:
-            st.markdown(schemaToMarkdown(st.session_state[f"{view_customer}_current_data_map"]),unsafe_allow_html=True)
+            st.markdown(schemaToMarkdown(getCustomerDataMap(view_customer)),unsafe_allow_html=True)
             st.write("b")
         elif view_customer==customer:
             st.markdown(schemaToMarkdown(data_map),unsafe_allow_html=True)
             st.write("c")
     else: 
         st.badge("Current Mapping",color="grey")
-        st.markdown(schemaToMarkdown(st.session_state[f"{view_customer}_current_data_map"]),unsafe_allow_html=True)
+        st.markdown(schemaToMarkdown(getCustomerDataMap(view_customer)),unsafe_allow_html=True)
         st.write("d")
