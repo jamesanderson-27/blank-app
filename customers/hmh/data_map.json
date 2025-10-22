@@ -4,12 +4,12 @@
   "mapping": {
     "Department": {
       "abbreviation": {
-        "primary_file": "DEP_20250827.csv",
-        "primary_attribute": "DEPT_ABBR",
+        "primary_file": "",
+        "primary_attribute": null,
         "secondary_file": "",
         "secondary_attribute": null,
-        "fallback_value_type": "Boolean",
-        "fallback_value": "True"
+        "fallback_value_type": "None",
+        "fallback_value": null
       },
       "accreditations": {
         "primary_file": "",
@@ -120,8 +120,8 @@
         "primary_attribute": null,
         "secondary_file": "",
         "secondary_attribute": null,
-        "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value_type": "String",
+        "fallback_value": "hmh"
       },
       "clockwise": {
         "primary_file": "",
@@ -746,8 +746,8 @@
         "primary_attribute": null,
         "secondary_file": "",
         "secondary_attribute": null,
-        "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value_type": "String",
+        "fallback_value": "hmh"
       },
       "childLocations": {
         "primary_file": "",
@@ -1104,8 +1104,8 @@
         "fallback_value": null
       },
       "agesSeen": {
-        "primary_file": "",
-        "primary_attribute": null,
+        "primary_file": "mcgill.json",
+        "primary_attribute": "age_groups_seen",
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
@@ -1416,16 +1416,16 @@
         "fallback_value": null
       },
       "isNewPatientEnabled": {
-        "primary_file": "",
-        "primary_attribute": null,
+        "primary_file": "SER_20250925.csv",
+        "primary_attribute": "OPEN_SCHEDULING",
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
         "fallback_value": null
       },
       "isReturningPatientEnabled": {
-        "primary_file": "",
-        "primary_attribute": null,
+        "primary_file": "SER_20250925.csv",
+        "primary_attribute": "DIRECT_SCHEDULING",
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
@@ -1448,10 +1448,10 @@
         "fallback_value": null
       },
       "name": {
-        "primary_file": "",
-        "primary_attribute": null,
-        "secondary_file": "",
-        "secondary_attribute": null,
+        "primary_file": "SER_20250925.csv",
+        "primary_attribute": "NAME",
+        "secondary_file": "mcgill.json",
+        "secondary_attribute": "name.full",
         "fallback_value_type": "None",
         "fallback_value": null
       },
@@ -1464,8 +1464,8 @@
         "fallback_value": null
       },
       "npi": {
-        "primary_file": "",
-        "primary_attribute": null,
+        "primary_file": "mcgill.json",
+        "primary_attribute": "npi",
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
