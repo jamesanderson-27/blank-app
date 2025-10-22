@@ -18,6 +18,8 @@ def housekeeping():
         st.session_state.customer_locked = False
     if 'file_locked' not in st.session_state:
         st.session_state.file_locked = False
+    if 'saved_data_map' not in st.session_state:
+        st.session_state.saved_data_map={}
 
 def createExclusion():
     st.session_state.exclusion_list=[
