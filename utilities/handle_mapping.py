@@ -103,6 +103,6 @@ def sidebarMapping(view_customer,customer,data_map,user):
             st.markdown(schemaToMarkdown(data_map),unsafe_allow_html=True)
             st.write("c")
     else: 
-        st.badge("Current Mapping",color="grey")
+        st.badge("Saved Mapping",color="grey")
         st.markdown(schemaToMarkdown(getCustomerDataMap(user,view_customer)),unsafe_allow_html=True)
         st.write("d")
