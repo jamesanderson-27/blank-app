@@ -59,8 +59,6 @@ def getCustomerList(user):
         return []
 
 def getCustomerDataMap(user,customer,bool=0):
-    if f"{customer}_current_data_map" not in st.session_state:
-        st.session_state[f"{customer}_current_data_map"]={}
     path=f"{customer}/data_map.json"
     req_type,d="GET",None
     data=makeRequest(req_type,d,user,0,path)
@@ -70,7 +68,6 @@ def getCustomerDataMap(user,customer,bool=0):
         content=data["content"]
         decoded_content = base64.b64decode(content)
         data_map = json.loads(decoded_content.decode('utf-8'))
-        st.session_state[f"{customer}_current_data_map"]=data_map
         return data_map
     except:
         data_map = {
