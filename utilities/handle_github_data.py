@@ -63,11 +63,12 @@ def getCustomerDataMap(user,customer,bool=0):
     req_type,d="GET",None
     data=makeRequest(req_type,d,user,0,path)
     try:
-        if bool:
-            st.session_state.data_map_sha=data["sha"] # used by getCustomerDatamap() called within edit activity
         content=data["content"]
         decoded_content = base64.b64decode(content)
         data_map = json.loads(decoded_content.decode('utf-8'))
+        if bool:
+            st.session_state.data_map_sha=data["sha"] # called within edit activity
+            st.session_state.saved_data_map=data_map
         return data_map
     except:
         data_map = {
