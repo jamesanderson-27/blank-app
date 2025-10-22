@@ -38,33 +38,33 @@ def fieldMapper(field,data_sources,data_map,schema):
         col1,col2=st.columns(2)
         index=0
         with col1:
-            index=getIndex(data_map,schema,field,attributes,"primary_source") # indexes currently mapped selection
+            index=getIndex(st.session_state.saved_data_map,schema,field,attributes,"primary_source") # indexes currently mapped selection
             primary_source=st.selectbox("Primary File",
                                         list(attributes), # displays the attributes per data source
                                         key=f"{schema}_{field}_primary_source", # streamlit global value (must be unique)
                                         index=index) # load the existing mapping, index that option func
-            index=getIndex(data_map,schema,field,attributes,"secondary_source")
+            index=getIndex(st.session_state.saved_data_map,schema,field,attributes,"secondary_source")
             secondary_source=st.selectbox("Secondary File",
                                         list(attributes),
                                         key=f"{schema}_{field}_secondary_source",
                                         index=index)
-            #index=getIndex(data_map,schema,field,attributes,"fallback_value_type")
+            #index=getIndex(st.session_state.saved_data_map,schema,field,attributes,"fallback_value_type")
             fallback_value_type=st.selectbox("Fallback Type",
                                         ["None","String","Boolean"],
                                         key=f"{schema}_{field}_fallback_value_type",
                                         index=index)
         with col2:
-            #index=getIndex(data_map,schema,field,attributes,"primary_attribute")
+            index=getIndex(st.session_state.saved_data_map,schema,field,attributes,"primary_attribute")
             primary_attribute=st.selectbox("Primary Attribute",
                                         list(data_sources["files"][primary_source]["attributes"]),
                                         key=f"{schema}_{field}_primary_attribute",
                                         index=index) # load the existing mapping, index that option func
-            #index=getIndex(data_map,schema,field,attributes,"secondary_attribute")
+            index=getIndex(st.session_state.saved_data_map,schema,field,attributes,"secondary_attribute")
             secondary_attribute=st.selectbox("Secondary Attribute",
                                         list(data_sources["files"][secondary_source]["attributes"]),
                                         key=f"{schema}_{field}_secondary_attribute",
                                         index=index) # load the existing mapping, index that option func
-            #index=getIndex(data_map,schema,field,attributes,"fallback_value")
+            #index=getIndex(st.session_state.saved_data_map,schema,field,attributes,"fallback_value")
             if fallback_value_type=="Boolean":
                 fallback_value=st.selectbox("Fallback Value",
                                         ["True","False"],
