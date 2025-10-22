@@ -89,7 +89,7 @@ def fieldMapper(field,data_sources,data_map,schema):
                                     fallback_value)
     return data_map
 
-def sidebarMapping(view_customer,customer,data_map):
+def sidebarMapping(view_customer,customer,data_map,user):
     toggle_state = st.toggle("",label_visibility="collapsed") # controls which data map shows (toggle current/draft)
     if toggle_state:
         st.badge("Draft Mapping",color="red")
@@ -97,12 +97,12 @@ def sidebarMapping(view_customer,customer,data_map):
             st.markdown("*No draft in progress*")
             st.write("a")
         elif view_customer!=customer:
-            st.markdown(schemaToMarkdown(getCustomerDataMap(view_customer)),unsafe_allow_html=True)
+            st.markdown(schemaToMarkdown(getCustomerDataMap(user,view_customer)),unsafe_allow_html=True)
             st.write("b")
         elif view_customer==customer:
             st.markdown(schemaToMarkdown(data_map),unsafe_allow_html=True)
             st.write("c")
     else: 
         st.badge("Current Mapping",color="grey")
-        st.markdown(schemaToMarkdown(getCustomerDataMap(view_customer)),unsafe_allow_html=True)
+        st.markdown(schemaToMarkdown(getCustomerDataMap(user,view_customer)),unsafe_allow_html=True)
         st.write("d")
