@@ -14,9 +14,9 @@ def fileLock():
     st.session_state.file_locked=True
     # update customer/data_sources.json (TO DO)
 
-def getIndex(data_map,object,field,attributes,data_source_type):
+def getIndex(data_map,schema,field,attributes,data_source_type):
     try:
-        value=data_map["mapping"][object][field][data_source_type]
+        value=data_map["mapping"][schema][field][data_source_type]
         return attributes.index(value)
     except:
         return 0
