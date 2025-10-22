@@ -76,6 +76,6 @@ if st.session_state.customer_locked:
 ####### View Customer (Sidebar) #######
 with st.sidebar:
     if view_customer:
-        sidebarMapping(view_customer,customer,st.session_state.data_map)
+        sidebarMapping(view_customer,customer,st.session_state.data_map,st.session_state.user)
     else:
         st.markdown("*Select a customer to view current mapping*")
