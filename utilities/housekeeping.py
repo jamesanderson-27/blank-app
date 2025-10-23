@@ -42,7 +42,7 @@ def createExclusion():
         "excludedVisitTypes",
         "extended",
         "brandRefs",
-        "departments"
+        "departments",
         "careTeamClinicianIdentifiers",
         "careTeamIds",
         "departmentIds",

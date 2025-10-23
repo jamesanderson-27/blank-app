@@ -33,21 +33,24 @@ def saveFieldMapping(data_map,schema,field,primary_file,primary_attribute,second
     return data_map
 
 def fieldMapper(field,data_sources,data_map,schema):
-    with st.expander(f"{schema}.*{field}*"): # schema field name; e.g. abbreviation, externalIdentifiers, etc...
+    with st.expander(f"{schema}.*{field}*"): # field (e.g. abbreviation, externalIdentifiers)
         saved_files=list(data_sources["files"].keys())
         col1,col2=st.columns(2)
         idx=0
         with col1:
+            ## Primary File box
             idx=getIndex(st.session_state.saved_data_map,schema,field,saved_files,"primary_file") # indexes currently mapped selection
-            primary_file=st.selectbox("Primary File",
+            primary_file=st.selectbox("Primary File", # Box title
                                         saved_files, # displays the attributes per data source
                                         key=f"{schema}_{field}_primary_file", # streamlit global value (must be unique)
                                         index=idx) # load the existing mapping, index that option func
+            ## Secondary File box
             idx=getIndex(st.session_state.saved_data_map,schema,field,saved_files,"secondary_file")
             secondary_file=st.selectbox("Secondary File",
                                         saved_files,
                                         key=f"{schema}_{field}_secondary_file",
                                         index=idx)
+            ## Fallback Type box
             list_options=["None","String","Boolean"]
             idx=getIndex(st.session_state.saved_data_map,schema,field,list_options,"fallback_value_type")
             fallback_value_type=st.selectbox("Fallback Type",
@@ -55,37 +58,39 @@ def fieldMapper(field,data_sources,data_map,schema):
                                         key=f"{schema}_{field}_fallback_value_type",
                                         index=idx)
         with col2:
+            ## Primary Attributes box
             list_options=list(data_sources["files"][primary_file]["attributes"])
             idx=getIndex(st.session_state.saved_data_map,schema,field,list_options,"primary_attribute")
             primary_attribute=st.selectbox("Primary Attribute",
                                         list_options,
                                         key=f"{schema}_{field}_primary_attribute",
-                                        index=idx) # load the existing mapping, index that option func
+                                        index=idx)
+            ## Secondary Attributes box
             list_options=list(data_sources["files"][secondary_file]["attributes"])
             idx=getIndex(st.session_state.saved_data_map,schema,field,list_options,"secondary_attribute")
             secondary_attribute=st.selectbox("Secondary Attribute",
                                         list_options,
                                         key=f"{schema}_{field}_secondary_attribute",
-                                        index=idx) # load the existing mapping, index that option func
-            if fallback_value_type=="Boolean":
-                list_options=["True","False"]
+                                        index=idx)
+            ## Fallback Value box
+            if fallback_value_type=="None": # if none type, lock the fallback value box
+                fallback_value=st.text_input("Fallback Value",
+                                        disabled=True,
+                                        key=f"{schema}_{field}_data_value_b")
+            if fallback_value_type=="Boolean": # if boolean type, display true/false
+                list_options=["True","False"] 
                 idx=getIndex(st.session_state.saved_data_map,schema,field,list_options,"fallback_value")
                 fallback_value=st.selectbox("Fallback Value",
                                         list_options,
                                         key=f"{schema}_{field}_data_value_a",
                                         index=idx)
-            if fallback_value_type=="None":
-                fallback_value=st.selectbox("Fallback Value",
-                                        [None],
-                                        disabled=True,
-                                        key=f"{schema}_{field}_data_value_b",
-                                        index=idx)
-            if fallback_value_type=="String":
+            if fallback_value_type=="String": # if string type, display stored value as default
                 try:
-                    val=st.session_state.saved_data_map["mapping"][schema][field]["fallback_value"] # use for saved values
+                    val=st.session_state.saved_data_map["mapping"][schema][field]["fallback_value"]
                 except:
                     val=""
                 fallback_value=st.text_input("Fallback Value",
+                                             value=val,
                                              key=f"{schema}_{field}_data_value_c")
         data_map = saveFieldMapping(data_map,
                                     schema,
@@ -99,19 +104,15 @@ def fieldMapper(field,data_sources,data_map,schema):
     return data_map
 
 def sidebarMapping(view_customer,customer,data_map,user):
-    toggle_state = st.toggle("",label_visibility="collapsed") # controls which data map shows (toggle current/draft)
+    toggle_state = st.toggle("",label_visibility="collapsed") # controls which data map shows (toggle saved/draft)
     if toggle_state:
         st.badge("Draft Mapping",color="red")
         if not st.session_state.file_locked:
             st.markdown("*No draft in progress*")
-            st.write("a")
         elif view_customer!=customer:
             st.markdown(schemaToMarkdown(getCustomerDataMap(user,view_customer)),unsafe_allow_html=True)
-            st.write("b")
         elif view_customer==customer:
             st.markdown(schemaToMarkdown(data_map),unsafe_allow_html=True)
-            st.write("c")
     else: 
         st.badge("Saved Mapping",color="grey")
         st.markdown(schemaToMarkdown(getCustomerDataMap(user,view_customer)),unsafe_allow_html=True)
-        st.write("d")

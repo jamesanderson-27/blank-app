@@ -52,7 +52,7 @@ if st.session_state.customer_locked:
     if st.button("Save Files"):                                       # saves data_sources to github
         fileLock()
         response=updateGithub(user,customer,"data_sources",st.session_state.data_sources)
-        st.write(st.session_state.data_sources_sha)
+        st.rerun()
 
     ####### Data Mapping #######
     if st.session_state.file_locked:                                  # User continues to mapping
