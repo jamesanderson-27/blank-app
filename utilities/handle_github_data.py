@@ -90,6 +90,7 @@ def getEntitiesSchema(schemas,exclusion_list):
         schema_json = getSchemaSmall(user, schema_path)
         properties = schema_json.get("properties", {})
         for field, field_data in properties.items():
+            st.write(field)
             if field in exclusion_list:
                 continue
             ref_path = None

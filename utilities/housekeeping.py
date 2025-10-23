@@ -32,9 +32,9 @@ def createExclusion():
         "visitTypeDepartmentOverrides",
         "address.externalIdentifiers",
         "cmsContent.sections",
-        "phone.vanityNumber",
-        "phone.isSmsEnabled",
-        "phone.notificationsEnabled",
+        "vanityNumber",
+        "isSmsEnabled",
+        "notificationsEnabled",
         "policies.externalIdentifiers",
         "ratingDistribution",
         "specialties.externalIdentifiers",
@@ -46,7 +46,8 @@ def createExclusion():
         "careTeamClinicianIdentifiers",
         "careTeamIds",
         "departmentIds",
-        "departmentPrimaryId"
+        "departmentPrimaryId",
+        "address.externalIdentifiers"
     ]
 
 def loadSchemas():
