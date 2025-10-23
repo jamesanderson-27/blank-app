@@ -64,10 +64,11 @@ if st.session_state.customer_locked:
                 st.session_state.data_map["mapping"][schema]={}
             with st.expander(f"**{schema}**"):                        # drives mapping UI dropdowns
                 for field in schemas[schema]["field_names"].keys():
-                    if schemas[schema]["field_names"][field].keys():  # shows nested fields (e.g. address_line_1) under fields (e.g. address)
-                        with st.expander(f"{schema}.*{field}*"):
-                            for nested_field in schemas[schema]["field_names"][field].keys():
-                                st.session_state.data_map=fieldMapper(f"{field}.{nested_field}",st.session_state.data_sources,st.session_state.data_map,schema)
+                    if schemas[schema]["field_names"][field].keys():  # shows nested fields (e.g. address_line_1) under fields (e.g. address)                    
+                            with st.expander(f"{schema}.*{field}*"):
+                                for nested_field in schemas[schema]["field_names"][field].keys():
+                                    if not (f"{field}.{nested_field}" in st.session_state.exclusion_list):
+                                        st.session_state.data_map=fieldMapper(f"{field}.{nested_field}",st.session_state.data_sources,st.session_state.data_map,schema)
                     else:
                         st.session_state.data_map=fieldMapper(field,st.session_state.data_sources,st.session_state.data_map,schema)
         if st.button("Save Mapping"):

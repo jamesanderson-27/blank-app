@@ -47,7 +47,14 @@ def createExclusion():
         "careTeamIds",
         "departmentIds",
         "departmentPrimaryId",
-        "address.externalIdentifiers"
+        "address.externalIdentifiers",
+        "fax",
+        "insurances.isReturningPatientEnabled",
+        "insurances.isNewPatientEnabled",
+        "insurances.externalIdentifiers",
+        "phone.externalIdentifiers",
+        "phone.isPrimary",
+        "phone.isExternal"
     ]
 
 def loadSchemas():
