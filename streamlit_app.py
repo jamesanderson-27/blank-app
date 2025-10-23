@@ -20,7 +20,6 @@ with st.sidebar:
                 customer_list,
                 key="view_customer",
                 index=idx)
-    st.session_state.data_map = getCustomerDataMap(user,view_customer)
     st.divider()
 
 ####### Edit Customer (Main Tab) #######
@@ -30,6 +29,7 @@ customer=st.selectbox("Select Customer",
                     key="customer",
                     index=0,
                     disabled=st.session_state.customer_locked)
+st.session_state.data_map = getCustomerDataMap(user,customer)
 if st.button("Save Customer"):
     customerLock(user,customer)
     st.rerun()
