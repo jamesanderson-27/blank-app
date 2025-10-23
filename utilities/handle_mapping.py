@@ -14,19 +14,19 @@ def fileLock():
     st.session_state.file_locked=True
     # update customer/data_sources.json (TO DO)
 
-def getIndex(data_map,schema,field,attributes,data_source_type):
+def getIndex(data_map,schema,field,list_options,key):
     try:
-        value=data_map["mapping"][schema][field][data_source_type]
-        return attributes.index(value)
+        value=data_map["mapping"][schema][field][key]
+        return list_options.index(value)
     except:
-        return 0
+        return None
     
-def saveFieldMapping(data_map,schema,field,primary_source,primary_attribute,secondary_source,secondary_attribute,fallback_value_type,fallback_value):
+def saveFieldMapping(data_map,schema,field,primary_file,primary_attribute,secondary_file,secondary_attribute,fallback_value_type,fallback_value):
     if field not in data_map["mapping"][schema]:
         data_map["mapping"][schema][field]={}
-    data_map["mapping"][schema][field]["primary_file"]=primary_source
+    data_map["mapping"][schema][field]["primary_file"]=primary_file
     data_map["mapping"][schema][field]["primary_attribute"]=primary_attribute
-    data_map["mapping"][schema][field]["secondary_file"]=secondary_source
+    data_map["mapping"][schema][field]["secondary_file"]=secondary_file
     data_map["mapping"][schema][field]["secondary_attribute"]=secondary_attribute
     data_map["mapping"][schema][field]["fallback_value_type"]=fallback_value_type
     data_map["mapping"][schema][field]["fallback_value"]=fallback_value
@@ -34,56 +34,65 @@ def saveFieldMapping(data_map,schema,field,primary_source,primary_attribute,seco
 
 def fieldMapper(field,data_sources,data_map,schema):
     with st.expander(f"{schema}.*{field}*"): # schema field name; e.g. abbreviation, externalIdentifiers, etc...
-        attributes=data_sources["files"].keys()
+        saved_files=list(data_sources["files"].keys())
         col1,col2=st.columns(2)
-        index=0
+        idx=0
         with col1:
-            index=getIndex(st.session_state.saved_data_map,schema,field,attributes,"primary_source") # indexes currently mapped selection
-            primary_source=st.selectbox("Primary File",
-                                        list(attributes), # displays the attributes per data source
-                                        key=f"{schema}_{field}_primary_source", # streamlit global value (must be unique)
-                                        index=index) # load the existing mapping, index that option func
-            index=getIndex(st.session_state.saved_data_map,schema,field,attributes,"secondary_source")
-            secondary_source=st.selectbox("Secondary File",
-                                        list(attributes),
-                                        key=f"{schema}_{field}_secondary_source",
-                                        index=index)
-            #index=getIndex(st.session_state.saved_data_map,schema,field,attributes,"fallback_value_type")
+            idx=getIndex(st.session_state.saved_data_map,schema,field,saved_files,"primary_file") # indexes currently mapped selection
+            primary_file=st.selectbox("Primary File",
+                                        saved_files, # displays the attributes per data source
+                                        key=f"{schema}_{field}_primary_file", # streamlit global value (must be unique)
+                                        index=idx) # load the existing mapping, index that option func
+            idx=getIndex(st.session_state.saved_data_map,schema,field,saved_files,"secondary_file")
+            secondary_file=st.selectbox("Secondary File",
+                                        saved_files,
+                                        key=f"{schema}_{field}_secondary_file",
+                                        index=idx)
+            list_options=["None","String","Boolean"]
+            idx=getIndex(st.session_state.saved_data_map,schema,field,list_options,"fallback_value_type")
             fallback_value_type=st.selectbox("Fallback Type",
-                                        ["None","String","Boolean"],
+                                        list_options,
                                         key=f"{schema}_{field}_fallback_value_type",
-                                        index=index)
+                                        index=idx)
         with col2:
-            index=getIndex(st.session_state.saved_data_map,schema,field,attributes,"primary_attribute")
+            list_options=list(data_sources["files"][primary_file]["attributes"])
+            idx=getIndex(st.session_state.saved_data_map,schema,field,list_options,"primary_attribute")
             primary_attribute=st.selectbox("Primary Attribute",
-                                        list(data_sources["files"][primary_source]["attributes"]),
+                                        list_options,
                                         key=f"{schema}_{field}_primary_attribute",
-                                        index=index) # load the existing mapping, index that option func
-            index=getIndex(st.session_state.saved_data_map,schema,field,attributes,"secondary_attribute")
+                                        index=idx) # load the existing mapping, index that option func
+            list_options=list(data_sources["files"][secondary_file]["attributes"])
+            idx=getIndex(st.session_state.saved_data_map,schema,field,list_options,"secondary_attribute")
             secondary_attribute=st.selectbox("Secondary Attribute",
-                                        list(data_sources["files"][secondary_source]["attributes"]),
+                                        list_options,
                                         key=f"{schema}_{field}_secondary_attribute",
-                                        index=index) # load the existing mapping, index that option func
-            #index=getIndex(st.session_state.saved_data_map,schema,field,attributes,"fallback_value")
+                                        index=idx) # load the existing mapping, index that option func
             if fallback_value_type=="Boolean":
+                list_options=["True","False"]
+                idx=getIndex(st.session_state.saved_data_map,schema,field,list_options,"fallback_value")
                 fallback_value=st.selectbox("Fallback Value",
-                                        ["True","False"],
+                                        list_options,
                                         key=f"{schema}_{field}_data_value_a",
-                                        index=index)
+                                        index=idx)
             if fallback_value_type=="None":
                 fallback_value=st.selectbox("Fallback Value",
                                         [None],
                                         disabled=True,
                                         key=f"{schema}_{field}_data_value_b",
-                                        index=index)
+                                        index=idx)
             if fallback_value_type=="String":
-                fallback_value=st.text_input("Fallback Value",key=f"{schema}_{field}_data_value_c")
+                try:
+                    val=st.session_state.saved_data_map["mapping"][schema][field]["fallback_value"] # use for saved values
+                except:
+                    val=""
+                fallback_value=st.text_input("Fallback Value",
+                                             key=f"{schema}_{field}_data_value_c")
         data_map = saveFieldMapping(data_map,
                                     schema,
                                     field,
-                                    primary_source,
+                                    primary_file,
                                     primary_attribute,
-                                    secondary_source,
+                                    secondary_file,
                                     secondary_attribute,
                                     fallback_value_type,
                                     fallback_value)

@@ -50,9 +50,9 @@ if st.session_state.customer_locked:
         n_attributes=len(st.session_state.data_sources["files"][file]["attributes"])   # its number of attributes
         st.write(f"*{file}* has {n_attributes} attributes.")          
     if st.button("Save Files"):                                       # saves data_sources to github
-        fileLock()                                                    # locks file upload activity
-        st.rerun()
+        fileLock()
         response=updateGithub(user,customer,"data_sources",st.session_state.data_sources)
+        st.write(st.session_state.data_sources_sha)
 
     ####### Data Mapping #######
     if st.session_state.file_locked:                                  # User continues to mapping

@@ -38,12 +38,6 @@ def makeRequest(req_type,d,user,write=0,path="",repo="blank-app",target="data_ma
         st.badge(f"GitHub request failed: {e}.",color="red")
         return {}
 
-def decodeContent(data):
-        content=data["content"]
-        decoded_content = base64.b64decode(content)
-        json = decoded_content.decode('utf-8')
-        return json.load(json)
-
 #### Individual requests to GitHub API ####
 @st.cache_data
 def getCustomerList(user):
@@ -124,10 +118,11 @@ def getCustomerDataSources(user,customer):
     data=makeRequest(req_type,d,user,0,path,target="data_sources")
     try:
         st.session_state.data_sources_sha=data["sha"] # while we're here, grab the sha for PUT request
-        st.session_state.data_sources=decodeContent(data)
-        st.write(st.session_state.data_sources_sha)
+        content=data["content"]
+        decoded_content = base64.b64decode(content)
+        data_sources = json.loads(decoded_content.decode('utf-8'))
     except:
-        st.session_state.data_sources = {
+        data_sources = {
                     "files":{
                         "":{
                             "uploaded_at":"",
@@ -136,7 +131,7 @@ def getCustomerDataSources(user,customer):
                         }
                     }
                 }
-    return st.session_state.data_sources
+    return data_sources
     
 def updateGithub(user,customer,target,req_data):
     req_type="PUT"
@@ -157,4 +152,4 @@ def updateGithub(user,customer,target,req_data):
         data=makeRequest(req_type,data,user,1,path,target=target)
         return data
     except Exception as e:
-        st.badge(f"Failed to update: {customer}'s {target}. Error: {e}",color="red")
+        return f"Failed to update: {customer}'s {target}. Error: {e}"

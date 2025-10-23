@@ -7,7 +7,6 @@ def housekeeping():
     st.session_state.user="jamesanderson-27" # Change to generic CX user (when created)
     st.session_state.API_KEY=os.environ.get('API_KEY') # set in streamlit settings' secrets
     st.session_state.API_KEY_WRITE=os.environ.get('API_KEY_WRITE') # set in streamlit settings' secrets
-    st.set_page_config(layout="wide")
     st.logo("DexCare_logo.jpg",size="large")
     styleButtons()
     if 'data_map_sha' not in st.session_state:
