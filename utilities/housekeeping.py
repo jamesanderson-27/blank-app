@@ -1,7 +1,7 @@
 import os
 import streamlit as st
 from utilities.handle_markdown import styleButtons
-from utilities.handle_github_data import getEntitiesSchema
+from utilities.handle_github import getEntitiesSchema
 
 def housekeeping():
     st.session_state.user="jamesanderson-27" # Change to generic CX user (when created)
@@ -10,12 +10,16 @@ def housekeeping():
     st.set_page_config(layout="wide")
     st.logo("DexCare_logo.jpg",size="large")
     styleButtons()
-    if "data_map_sha" not in st.session_state:
-        st.session_state.data_map_sha=""
+    if 'data_map_sha' not in st.session_state:
+        st.session_state.data_map_sha=''
+    if 'data_sources_sha' not in st.session_state:
+        st.session_state.data_sources_sha=''
     if 'customer_locked' not in st.session_state:
         st.session_state.customer_locked = False
     if 'file_locked' not in st.session_state:
         st.session_state.file_locked = False
+    if 'exclusion_list' not in st.session_state:
+        st.session_state.exclusion_list=[]
 
 @st.cache_data
 def createExclusion():
@@ -37,7 +41,8 @@ def createExclusion():
         "exclusionVisitTypeListMdm",
         "excludedVisitTypes",
         "extended",
-        "brandRefs"
+        "brandRefs",
+        "departments"
     ]
 
 @st.cache_data
