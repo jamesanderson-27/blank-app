@@ -52,26 +52,6 @@ def getCustomerList(user):
     except:
         return []
 
-def getCustomerDataMap(user,customer,bool=0):
-    path=f"{customer}/data_map.json"
-    req_type,d="GET",None
-    data=makeRequest(req_type,d,user,0,path)
-    try:
-        content=data["content"]
-        decoded_content = base64.b64decode(content)
-        data_map = json.loads(decoded_content.decode('utf-8'))
-        if bool:
-            st.session_state.data_map_sha=data["sha"] # called within edit activity
-            st.session_state.saved_data_map=data_map
-        return data_map
-    except:
-        data_map = {
-                "last_modified_time":datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "last_modified_user":st.session_state.user,
-                "mapping":{}
-            }
-        return dict(data_map)
-
 def getSchemaSmall(user,path):
     data=makeRequest("GET","",user,0,path,"entities-schema")
     content=data["content"]
@@ -111,6 +91,28 @@ def getEntitiesSchema(schemas,exclusion_list):
         schemas[schema_name]["field_names"] = fields
     return schemas
 
+def getCustomerDataMap(user,customer,bool=0):
+    path=f"{customer}/data_map.json"
+    req_type,d="GET",None
+    data=makeRequest(req_type,d,user,0,path)
+    try:
+        content=data["content"]
+        decoded_content = base64.b64decode(content)
+        data_map = json.loads(decoded_content.decode('utf-8'))
+        if bool:
+            st.session_state.data_map_sha=data["sha"] # called within edit activity
+            st.session_state.saved_data_map=data_map
+            data=makeRequest(req_type,d,user,0,f"{customer}/data_map.md") # stores the sha of the md file for later use
+            st.session_state.data_map_md_sha=data["sha"]
+        return data_map
+    except:
+        data_map = {
+                "last_modified_time":datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "last_modified_user":st.session_state.user,
+                "mapping":{}
+            }
+        return dict(data_map)
+
 @st.cache_data
 def getCustomerDataSources(user,customer):
     path=f"{customer}/data_sources.json"
@@ -133,10 +135,14 @@ def getCustomerDataSources(user,customer):
                 }
     return data_sources
     
-def updateGithub(user,customer,target,req_data):
-    req_type="PUT"
-    json_string = json.dumps(req_data, indent=2)
-    encoded_data = base64.b64encode(json_string.encode()).decode()  # convert to base64 encoding for GitHub API
+def updateGithub(user,customer,target,req_data,req_type="PUT"):
+    if req_type=="PUT":
+        data_str = json.dumps(req_data, indent=2)
+        path=f"{customer}/{target}.json"
+    if req_type=="PUT MD":
+        data_str=str(req_data)
+        path=f"{customer}/{target}.md"
+    encoded_data = base64.b64encode(data_str.encode()).decode()  # convert to base64 encoding for GitHub API
     data={
         "committer":{
             "name":"James Anderson",
@@ -147,7 +153,7 @@ def updateGithub(user,customer,target,req_data):
         "content":encoded_data,
         "branch":"main"
         }
-    path=f"{customer}/{target}.json"
+    
     try:
         data=makeRequest(req_type,data,user,1,path,target=target)
         return data

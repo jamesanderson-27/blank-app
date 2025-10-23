@@ -1,5 +1,5 @@
 import streamlit as st
-from utilities.handle_github_data import getCustomerDataMap
+from utilities.handle_github_data import getCustomerDataMap,updateGithub
 from utilities.handle_markdown import schemaToMarkdown
     
 def customerLock(user,customer=""):
@@ -10,9 +10,14 @@ def customerLock(user,customer=""):
     except:
         pass
 
-def fileLock():
+def fileLock(user,customer):
     st.session_state.file_locked=True
-    # update customer/data_sources.json (TO DO)
+    response=updateGithub(user,customer,"data_sources",st.session_state.data_sources)
+
+def mapLock(user,customer):
+    st.session_state.map_locked=True
+    response=updateGithub(user,customer,"data_map",st.session_state.data_map)
+    response=updateGithub(user,customer,"data_map",schemaToMarkdown(st.session_state.data_map),req_type="PUT MD")
 
 def getIndex(data_map,schema,field,list_options,key):
     try:

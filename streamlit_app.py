@@ -1,11 +1,11 @@
 import streamlit as st
 from utilities.handle_files import handleFiles
 from utilities.housekeeping import housekeeping,loadSchemas
-from utilities.handle_mapping import fieldMapper,customerLock,fileLock,sidebarMapping
-from utilities.handle_github_data import getCustomerList,getCustomerDataMap,getCustomerDataSources,updateGithub
+from utilities.handle_mapping import fieldMapper,customerLock,fileLock,mapLock,sidebarMapping
+from utilities.handle_github_data import getCustomerList,getCustomerDataMap,getCustomerDataSources
 
-housekeeping() # there's a lot that needs to run on app launch
-schemas=loadSchemas()
+housekeeping() # run on app launch: env variables, button styling, secret reading
+schemas=loadSchemas() # gets entities schema, exclusion list
 
 ####### View Customer (Sidebar) #######
 with st.sidebar:
@@ -51,8 +51,7 @@ if st.session_state.customer_locked:
         n_attributes=len(st.session_state.data_sources["files"][file]["attributes"])   # its number of attributes
         st.write(f"*{file}* has {n_attributes} attributes.")          
     if st.button("Save Files"):                                       # saves data_sources to github
-        fileLock()
-        response=updateGithub(user,customer,"data_sources",st.session_state.data_sources)
+        fileLock(user,customer)
         st.rerun()
 
     ####### Data Mapping #######
@@ -73,7 +72,7 @@ if st.session_state.customer_locked:
                     else:
                         st.session_state.data_map=fieldMapper(field,st.session_state.data_sources,st.session_state.data_map,schema)
         if st.button("Save Mapping"):
-            response=updateGithub(user,customer,"data_map",st.session_state.data_map)
+            mapLock(user,customer)
 
 ####### View Customer (Sidebar) #######
 with st.sidebar:
