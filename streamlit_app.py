@@ -2,7 +2,7 @@ import streamlit as st
 from utilities.handle_files import handleFiles
 from utilities.housekeeping import housekeeping,loadSchemas
 from utilities.handle_mapping import fieldMapper,customerLock,fileLock,sidebarMapping
-from utilities.handle_github import getCustomerList,getCustomerDataMap,getCustomerDataSources,updateGithub
+from utilities.handle_github_data import getCustomerList,getCustomerDataMap,getCustomerDataSources,updateGithub
 
 housekeeping() # there's a lot that needs to run on app launch
 schemas=loadSchemas()

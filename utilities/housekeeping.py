@@ -1,7 +1,7 @@
 import os
 import streamlit as st
 from utilities.handle_markdown import styleButtons
-from utilities.handle_github import getEntitiesSchema
+from utilities.handle_github_data import getEntitiesSchema
 
 def housekeeping():
     st.session_state.user="jamesanderson-27" # Change to generic CX user (when created)

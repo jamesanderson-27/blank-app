@@ -1,73 +1,19 @@
-import os
 import streamlit as st
-from utilities.handle_markdown import styleButtons
-from utilities.handle_github import getEntitiesSchema
+from utilities.handle_github_data import getCustomerDataMap
+from utilities.handle_markdown import schemaToMarkdown
+    
+def customerLock(user,customer=""):
+    st.session_state.customer_locked=True
+    try:
+        data=getCustomerDataMap(user,customer,1) # calls to a customer/data_map.json
+        st.session_state.data_map_sha=data["sha"] # stores the sha of the github file for later use
+    except:
+        pass
 
-def housekeeping():
-    st.session_state.user="jamesanderson-27" # Change to generic CX user (when created)
-    st.session_state.API_KEY=os.environ.get('API_KEY') # set in streamlit settings' secrets
-    st.session_state.API_KEY_WRITE=os.environ.get('API_KEY_WRITE') # set in streamlit settings' secrets
-    st.set_page_config(layout="wide")
-    st.logo("DexCare_logo.jpg",size="large")
-    styleButtons()
-    if 'data_map_sha' not in st.session_state:
-        st.session_state.data_map_sha=''
-    if 'data_sources_sha' not in st.session_state:
-        st.session_state.data_sources_sha=''
-    if 'customer_locked' not in st.session_state:
-        st.session_state.customer_locked = False
-    if 'file_locked' not in st.session_state:
-        st.session_state.file_locked = False
-    if 'saved_data_map' not in st.session_state:
-        st.session_state.saved_data_map={}
+def fileLock():
+    st.session_state.file_locked=True
+    # update customer/data_sources.json (TO DO)
 
-<<<<<<< HEAD
-def createExclusion():
-    st.session_state.exclusion_list=[
-        "adventCustom",
-        "businessLineName",
-        "businessUnitName",
-        "visitTypes",
-        "visitTypeOverrides",
-        "visitTypeDepartmentOverrides",
-        "address.externalIdentifiers",
-        "cmsContent.sections",
-        "phone.vanityNumber",
-        "phone.isSmsEnabled",
-        "phone.notificationsEnabled",
-        "policies.externalIdentifiers",
-        "ratingDistribution",
-        "specialties.externalIdentifiers",
-        "exclusionVisitTypeListMdm",
-        "excludedVisitTypes",
-        "extended",
-        "brandRefs",
-        "departments",
-        "careTeamClinicianIdentifiers",
-        "careTeamIds",
-        "departmentIds",
-        "departmentPrimaryId"
-    ]
-
-def loadSchemas():
-    schemas={
-            "Provider":{
-                "file_name":"clinicianIngest.json",
-                "field_names":{}
-            },                 
-            "Department":{
-                "file_name":"departmentIngest.json",
-                "field_names":{}
-            },
-            "Location":{
-                "file_name":"locationIngest.json",
-                "field_names":{}
-            }
-        }
-    createExclusion()
-    schemas=getEntitiesSchema(schemas,st.session_state.exclusion_list)
-    return schemas
-=======
 def getIndex(data_map,schema,field,attributes,data_source_type):
     try:
         value=data_map["mapping"][schema][field][data_source_type]
@@ -160,4 +106,3 @@ def sidebarMapping(view_customer,customer,data_map,user):
         st.badge("Saved Mapping",color="grey")
         st.markdown(schemaToMarkdown(getCustomerDataMap(user,view_customer)),unsafe_allow_html=True)
         st.write("d")
->>>>>>> e1ba637c1339214eb6596770902f00626bcdbe4f
