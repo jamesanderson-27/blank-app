@@ -18,10 +18,14 @@ def housekeeping():
         st.session_state.customer_locked = False
     if 'file_locked' not in st.session_state:
         st.session_state.file_locked = False
+<<<<<<< HEAD
     if 'exclusion_list' not in st.session_state:
         st.session_state.exclusion_list=[]
+=======
+    if 'saved_data_map' not in st.session_state:
+        st.session_state.saved_data_map={}
+>>>>>>> e1ba637c1339214eb6596770902f00626bcdbe4f
 
-@st.cache_data
 def createExclusion():
     st.session_state.exclusion_list=[
         "adventCustom",
@@ -42,10 +46,17 @@ def createExclusion():
         "excludedVisitTypes",
         "extended",
         "brandRefs",
+<<<<<<< HEAD
         "departments"
+=======
+        "departments",
+        "careTeamClinicianIdentifiers",
+        "careTeamIds",
+        "departmentIds",
+        "departmentPrimaryId"
+>>>>>>> e1ba637c1339214eb6596770902f00626bcdbe4f
     ]
 
-@st.cache_data
 def loadSchemas():
     schemas={
             "Provider":{
