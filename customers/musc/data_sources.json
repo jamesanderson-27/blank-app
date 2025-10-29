@@ -1,9 +1,9 @@
 {
-    "files":{
-        "":{
-            "uploaded_at":"",
-            "file_type":"",
-            "attributes":[]
-        }
+  "files": {
+    "": {
+      "uploaded_at": "",
+      "file_type": "",
+      "attributes": []
     }
+  }
 }
