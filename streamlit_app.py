@@ -5,7 +5,7 @@ from utilities.handle_mapping import fieldMapper,customerLock,fileLock,mapLock,s
 from utilities.handle_github_data import getCustomerList,getCustomerDataMap,getCustomerDataSources
 
 housekeeping() # run on app launch: env variables, button styling, secret reading
-schemas=loadSchemas() # gets entities schema, exclusion list
+schemas=loadSchemas() # gets entities schema, exclusion lists
 
 ####### View Customer (Sidebar) #######
 with st.sidebar:
@@ -64,13 +64,15 @@ if st.session_state.customer_locked:
                 st.session_state.data_map["mapping"][schema]={}
             with st.expander(f"**{schema}**"):                        # drives mapping UI dropdowns
                 for field in schemas[schema]["field_names"].keys():
-                    if schemas[schema]["field_names"][field].keys():  # shows nested fields (e.g. address_line_1) under fields (e.g. address)                    
-                            with st.expander(f"{schema}.*{field}*"):
-                                for nested_field in schemas[schema]["field_names"][field].keys():
-                                    if not (f"{field}.{nested_field}" in st.session_state.exclusion_list):
-                                        st.session_state.data_map=fieldMapper(f"{field}.{nested_field}",st.session_state.data_sources,st.session_state.data_map,schema)
+                    if schemas[schema]["field_names"][field].get("nested",False):  # shows nested fields (e.g. address_line_1) under fields (e.g. address)  
+                        with st.expander(f"{schema}.*{field}*"):
+                            for nested_field in schemas[schema]["field_names"][field]["nested"].keys():
+                                description=schemas[schema]["field_names"][field]["nested"][nested_field].get("description","")
+                                if not ((f"{field}.{nested_field}" in st.session_state.exclusion_list) or (nested_field=="description")):
+                                    st.session_state.data_map=fieldMapper(f"{field}.{nested_field}",st.session_state.data_sources,st.session_state.data_map,schema,description)
                     else:
-                        st.session_state.data_map=fieldMapper(field,st.session_state.data_sources,st.session_state.data_map,schema)
+                        description=schemas[schema]["field_names"][field].get("description","")
+                        st.session_state.data_map=fieldMapper(field,st.session_state.data_sources,st.session_state.data_map,schema,description)
         if st.button("Save Mapping"):
             mapLock(user,customer)
 

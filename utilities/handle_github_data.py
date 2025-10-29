@@ -31,7 +31,7 @@ def makeRequest(req_type,d,user,write=0,path="",repo="blank-app",target="data_ma
         if req_type=="GET":
             response = req.get(url, headers=headers)
             return response.json()
-        if req_type=="PUT": # used by updateGitHub()
+        if req_type=="PUT" or "PUT MD": # used by updateGitHub()
             response = req.put(url, headers=headers,json=d)
             return response.json()
     except Exception as e:
@@ -80,9 +80,13 @@ def getEntitiesSchema(schemas,exclusion_list):
                 ref_path = field_data["items"]["$ref"].strip("./")
             if ref_path:
                 nested_fields = collectFields(schema_name, ref_path, seen_paths)
-                field_dict[field] = nested_fields
+                field_dict[field] = {"nested":nested_fields}
             else:
                 field_dict[field] = {}
+                try:
+                    field_dict[field]["description"]=field_data["description"]
+                except:
+                    pass
         return field_dict
     for schema_name, schema_info in schemas.items():
         path = schema_info["file_name"]
@@ -139,9 +143,11 @@ def updateGithub(user,customer,target,req_data,req_type="PUT"):
     if req_type=="PUT":
         data_str = json.dumps(req_data, indent=2)
         path=f"{customer}/{target}.json"
+        sha=st.session_state[f"{target}_sha"]
     if req_type=="PUT MD":
         data_str=str(req_data)
         path=f"{customer}/{target}.md"
+        sha=st.session_state.data_map_md_sha
     encoded_data = base64.b64encode(data_str.encode()).decode()  # convert to base64 encoding for GitHub API
     data={
         "committer":{
@@ -149,13 +155,13 @@ def updateGithub(user,customer,target,req_data,req_type="PUT"):
             "email":"james.anderson@dexcarehealth.com"
         },
         "message":"update from mapping tool",
-        "sha":st.session_state[f"{target}_sha"],
+        "sha":sha,
         "content":encoded_data,
         "branch":"main"
         }
-    
     try:
-        data=makeRequest(req_type,data,user,1,path,target=target)
-        return data
+        response=makeRequest(req_type,data,user,1,path,target=target)
+        st.write(response)
+        return response
     except Exception as e:
         return f"Failed to update: {customer}'s {target}. Error: {e}"

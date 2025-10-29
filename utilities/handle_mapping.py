@@ -16,7 +16,7 @@ def fileLock(user,customer):
 
 def mapLock(user,customer):
     st.session_state.map_locked=True
-    response=updateGithub(user,customer,"data_map",st.session_state.data_map)
+    #response=updateGithub(user,customer,"data_map",st.session_state.data_map)
     response=updateGithub(user,customer,"data_map",schemaToMarkdown(st.session_state.data_map),req_type="PUT MD")
 
 def getIndex(data_map,schema,field,list_options,key):
@@ -37,8 +37,9 @@ def saveFieldMapping(data_map,schema,field,primary_file,primary_attribute,second
     data_map["mapping"][schema][field]["fallback_value"]=fallback_value
     return data_map
 
-def fieldMapper(field,data_sources,data_map,schema):
+def fieldMapper(field,data_sources,data_map,schema,description):
     with st.expander(f"{schema}.*{field}*"): # field (e.g. abbreviation, externalIdentifiers)
+        st.code(description,language=None,wrap_lines=True)
         saved_files=list(data_sources["files"].keys())
         col1,col2=st.columns(2)
         idx=0
