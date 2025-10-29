@@ -9,7 +9,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "accreditations": {
         "primary_file": "",
@@ -17,7 +17,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "address.addressLine1": {
         "primary_file": "",
@@ -25,7 +25,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "address.addressLine2": {
         "primary_file": "",
@@ -33,7 +33,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "address.city": {
         "primary_file": "",
@@ -41,7 +41,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "address.country": {
         "primary_file": "",
@@ -49,7 +49,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "address.county": {
         "primary_file": "",
@@ -57,7 +57,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "address.externalIdentifiers": {
         "primary_file": "",
@@ -73,7 +73,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "address.longitude": {
         "primary_file": "",
@@ -81,7 +81,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "address.postalCode": {
         "primary_file": "",
@@ -89,7 +89,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "address.state": {
         "primary_file": "",
@@ -97,7 +97,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "adhoc": {
         "primary_file": "",
@@ -105,7 +105,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "banner": {
         "primary_file": "",
@@ -113,7 +113,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "brandName": {
         "primary_file": "",
@@ -121,7 +121,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "clockwise": {
         "primary_file": "",
@@ -129,7 +129,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "cmsContent.externalIdentifiers": {
         "primary_file": "",
@@ -137,7 +137,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "cmsContent.pageId": {
         "primary_file": "",
@@ -145,7 +145,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "cmsContent.sections": {
         "primary_file": "",
@@ -161,7 +161,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "contextMetadata": {
         "primary_file": "",
@@ -169,7 +169,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "description": {
         "primary_file": "",
@@ -177,7 +177,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "dexcareBuildsPage": {
         "primary_file": "",
@@ -185,7 +185,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "displayName": {
         "primary_file": "",
@@ -193,7 +193,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "emrIdentifier.emrId": {
         "primary_file": "",
@@ -201,7 +201,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "emrIdentifier.emrIdType": {
         "primary_file": "",
@@ -209,7 +209,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "emrIdentifier.emrSystemId": {
         "primary_file": "",
@@ -217,7 +217,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "externalIdentifiers": {
         "primary_file": "",
@@ -225,7 +225,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "facilityTypes": {
         "primary_file": "",
@@ -233,7 +233,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "fax": {
         "primary_file": "",
@@ -249,7 +249,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "hours.custom": {
         "primary_file": "",
@@ -257,7 +257,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "hours.fri": {
         "primary_file": "",
@@ -265,7 +265,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "hours.mon": {
         "primary_file": "",
@@ -273,7 +273,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "hours.sat": {
         "primary_file": "",
@@ -281,7 +281,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "hours.sun": {
         "primary_file": "",
@@ -289,7 +289,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "hours.thu": {
         "primary_file": "",
@@ -297,7 +297,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "hours.tue": {
         "primary_file": "",
@@ -305,7 +305,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "hours.wed": {
         "primary_file": "",
@@ -313,7 +313,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "imageUrl": {
         "primary_file": "",
@@ -321,7 +321,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "insurances.externalIdentifiers": {
         "primary_file": "",
@@ -353,7 +353,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "isAcceptingNewPatients": {
         "primary_file": "",
@@ -361,7 +361,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "isActive": {
         "primary_file": "",
@@ -369,7 +369,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "isBookableOnline": {
         "primary_file": "",
@@ -377,7 +377,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "isBookablePhone": {
         "primary_file": "",
@@ -385,7 +385,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "isBookableVirtual": {
         "primary_file": "",
@@ -393,7 +393,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "isHidden": {
         "primary_file": "",
@@ -401,7 +401,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "isNewPatientEnabled": {
         "primary_file": "",
@@ -409,7 +409,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "isReturningPatientEnabled": {
         "primary_file": "",
@@ -417,7 +417,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "pageDescription": {
         "primary_file": "",
@@ -425,7 +425,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "pageTitle": {
         "primary_file": "",
@@ -433,7 +433,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "phone.phoneNumber": {
         "primary_file": "",
@@ -441,7 +441,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "phone.vanityNumber": {
         "primary_file": "",
@@ -457,7 +457,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "phone.externalIdentifiers": {
         "primary_file": "",
@@ -513,7 +513,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "policies.url": {
         "primary_file": "",
@@ -521,7 +521,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "reviews.commentCount": {
         "primary_file": "",
@@ -529,7 +529,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "reviews.commentDistribution": {
         "primary_file": "",
@@ -537,7 +537,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "reviews.comments": {
         "primary_file": "",
@@ -545,7 +545,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "reviews.externalIdentifiers": {
         "primary_file": "",
@@ -553,7 +553,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "reviews.questionRatings": {
         "primary_file": "",
@@ -561,7 +561,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "reviews.rating": {
         "primary_file": "",
@@ -569,7 +569,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "reviews.ratingCount": {
         "primary_file": "",
@@ -577,7 +577,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "reviews.ratingSystemId": {
         "primary_file": "",
@@ -585,7 +585,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "services.name": {
         "primary_file": "",
@@ -593,7 +593,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "services.url": {
         "primary_file": "",
@@ -601,7 +601,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "specialties.externalIdentifiers": {
         "primary_file": "",
@@ -617,7 +617,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "tier": {
         "primary_file": "",
@@ -625,7 +625,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "timezone": {
         "primary_file": "",
@@ -633,7 +633,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "url": {
         "primary_file": "",
@@ -641,7 +641,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "walkInsWelcome": {
         "primary_file": "",
@@ -649,7 +649,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       }
     },
     "Location": {
@@ -659,7 +659,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "address.addressLine2": {
         "primary_file": "",
@@ -667,7 +667,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "address.city": {
         "primary_file": "",
@@ -675,7 +675,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "address.country": {
         "primary_file": "",
@@ -683,7 +683,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "address.county": {
         "primary_file": "",
@@ -691,7 +691,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "address.externalIdentifiers": {
         "primary_file": "",
@@ -707,7 +707,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "address.longitude": {
         "primary_file": "",
@@ -715,7 +715,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "address.postalCode": {
         "primary_file": "",
@@ -723,7 +723,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "address.state": {
         "primary_file": "",
@@ -731,7 +731,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "adhoc": {
         "primary_file": "",
@@ -739,7 +739,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "brandName": {
         "primary_file": "",
@@ -747,7 +747,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "childLocations": {
         "primary_file": "",
@@ -755,7 +755,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "cmsContent.externalIdentifiers": {
         "primary_file": "",
@@ -763,7 +763,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "cmsContent.pageId": {
         "primary_file": "",
@@ -771,7 +771,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "cmsContent.sections": {
         "primary_file": "",
@@ -787,7 +787,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "contextMetadata": {
         "primary_file": "",
@@ -795,7 +795,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "departmentPrimaryIdentifier.emrIdentifier": {
         "primary_file": "",
@@ -803,7 +803,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "departmentPrimaryIdentifier.externalIdentifiers": {
         "primary_file": "",
@@ -811,7 +811,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "description": {
         "primary_file": "",
@@ -819,7 +819,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "dexcareBuildsPage": {
         "primary_file": "",
@@ -827,7 +827,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "displayName": {
         "primary_file": "",
@@ -835,7 +835,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "externalIdentifiers": {
         "primary_file": "",
@@ -843,7 +843,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "fax": {
         "primary_file": "",
@@ -859,7 +859,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "hours.custom": {
         "primary_file": "",
@@ -867,7 +867,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "hours.fri": {
         "primary_file": "",
@@ -875,7 +875,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "hours.mon": {
         "primary_file": "",
@@ -883,7 +883,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "hours.sat": {
         "primary_file": "",
@@ -891,7 +891,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "hours.sun": {
         "primary_file": "",
@@ -899,7 +899,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "hours.thu": {
         "primary_file": "",
@@ -907,7 +907,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "hours.tue": {
         "primary_file": "",
@@ -915,7 +915,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "hours.wed": {
         "primary_file": "",
@@ -923,7 +923,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "imageUrl": {
         "primary_file": "",
@@ -931,7 +931,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "isActive": {
         "primary_file": "",
@@ -939,7 +939,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "isHidden": {
         "primary_file": "",
@@ -947,7 +947,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "pageDescription": {
         "primary_file": "",
@@ -955,7 +955,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "pageTitle": {
         "primary_file": "",
@@ -963,7 +963,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "phone.phoneNumber": {
         "primary_file": "",
@@ -971,7 +971,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "phone.vanityNumber": {
         "primary_file": "",
@@ -987,7 +987,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "phone.externalIdentifiers": {
         "primary_file": "",
@@ -1043,7 +1043,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "policies.url": {
         "primary_file": "",
@@ -1051,7 +1051,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "services.name": {
         "primary_file": "",
@@ -1059,7 +1059,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "services.url": {
         "primary_file": "",
@@ -1067,7 +1067,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "tier": {
         "primary_file": "",
@@ -1075,7 +1075,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "timezone": {
         "primary_file": "",
@@ -1083,7 +1083,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "url": {
         "primary_file": "",
@@ -1091,7 +1091,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       }
     },
     "Provider": {
@@ -1101,7 +1101,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "agesSeen": {
         "primary_file": "",
@@ -1109,7 +1109,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "bio": {
         "primary_file": "",
@@ -1117,7 +1117,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "certifications": {
         "primary_file": "",
@@ -1125,7 +1125,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "cmsContent.externalIdentifiers": {
         "primary_file": "",
@@ -1133,7 +1133,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "cmsContent.pageId": {
         "primary_file": "",
@@ -1141,7 +1141,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "cmsContent.sections": {
         "primary_file": "",
@@ -1157,7 +1157,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "contextMetadata": {
         "primary_file": "",
@@ -1165,7 +1165,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "credentialedStates": {
         "primary_file": "",
@@ -1173,7 +1173,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "credentials": {
         "primary_file": "",
@@ -1181,7 +1181,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "dateOfBirth": {
         "primary_file": "",
@@ -1189,7 +1189,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "departmentIdentifiers.emrIdentifier": {
         "primary_file": "",
@@ -1197,7 +1197,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "departmentIdentifiers.externalIdentifiers": {
         "primary_file": "",
@@ -1205,7 +1205,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "departmentPrimaryIdentifier": {
         "primary_file": "",
@@ -1213,7 +1213,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "dexcareBuildsPage": {
         "primary_file": "",
@@ -1221,7 +1221,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "education": {
         "primary_file": "",
@@ -1229,7 +1229,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "email": {
         "primary_file": "",
@@ -1237,7 +1237,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "emrIdentifiers": {
         "primary_file": "",
@@ -1245,7 +1245,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "externalIdentifiers": {
         "primary_file": "",
@@ -1253,7 +1253,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "gender": {
         "primary_file": "",
@@ -1261,7 +1261,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "hospitalAffiliations": {
         "primary_file": "",
@@ -1269,7 +1269,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "imageUrl": {
         "primary_file": "",
@@ -1277,7 +1277,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "insurances.externalIdentifiers": {
         "primary_file": "",
@@ -1309,7 +1309,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "isAcceptingNewPatients": {
         "primary_file": "",
@@ -1317,7 +1317,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "isActive": {
         "primary_file": "",
@@ -1325,7 +1325,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "isHidden": {
         "primary_file": "",
@@ -1333,7 +1333,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "isAffiliate": {
         "primary_file": "",
@@ -1341,7 +1341,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "isBookableOnline": {
         "primary_file": "",
@@ -1349,7 +1349,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "isBookablePhone": {
         "primary_file": "",
@@ -1357,7 +1357,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "isBookableVirtual": {
         "primary_file": "",
@@ -1365,7 +1365,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "isNewPatientEnabled": {
         "primary_file": "",
@@ -1373,7 +1373,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "isReturningPatientEnabled": {
         "primary_file": "",
@@ -1381,7 +1381,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "languages": {
         "primary_file": "",
@@ -1389,7 +1389,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "medicalInterests": {
         "primary_file": "",
@@ -1397,7 +1397,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "name": {
         "primary_file": "",
@@ -1405,7 +1405,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "networks": {
         "primary_file": "",
@@ -1413,7 +1413,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "npi": {
         "primary_file": "",
@@ -1421,7 +1421,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "pageDescription": {
         "primary_file": "",
@@ -1429,7 +1429,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "pageTitle": {
         "primary_file": "",
@@ -1437,7 +1437,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "phone.phoneNumber": {
         "primary_file": "",
@@ -1445,7 +1445,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "phone.vanityNumber": {
         "primary_file": "",
@@ -1461,7 +1461,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "phone.externalIdentifiers": {
         "primary_file": "",
@@ -1509,7 +1509,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "practiceGroups": {
         "primary_file": "",
@@ -1517,7 +1517,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "profileUrls": {
         "primary_file": "",
@@ -1525,7 +1525,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "reviews.commentCount": {
         "primary_file": "",
@@ -1533,7 +1533,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "reviews.commentDistribution": {
         "primary_file": "",
@@ -1541,7 +1541,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "reviews.comments": {
         "primary_file": "",
@@ -1549,7 +1549,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "reviews.externalIdentifiers": {
         "primary_file": "",
@@ -1557,7 +1557,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "reviews.questionRatings": {
         "primary_file": "",
@@ -1565,7 +1565,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "reviews.rating": {
         "primary_file": "",
@@ -1573,7 +1573,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "reviews.ratingCount": {
         "primary_file": "",
@@ -1581,7 +1581,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "reviews.ratingSystemId": {
         "primary_file": "",
@@ -1589,7 +1589,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "specialties.externalIdentifiers": {
         "primary_file": "",
@@ -1605,7 +1605,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "specialty": {
         "primary_file": "",
@@ -1613,7 +1613,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "subSpecialties": {
         "primary_file": "",
@@ -1621,7 +1621,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "tier": {
         "primary_file": "",
@@ -1629,7 +1629,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       },
       "videoUrl": {
         "primary_file": "",
@@ -1637,7 +1637,7 @@
         "secondary_file": "",
         "secondary_attribute": null,
         "fallback_value_type": "None",
-        "fallback_value": null
+        "fallback_value": ""
       }
     }
   }
