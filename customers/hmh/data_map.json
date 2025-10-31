@@ -1,922 +1,1643 @@
 {
-  "Provider": {
-    "file_name": "clinicianIngest.json",
-    "field_names": {
-      "adhoc": {
-        "description": "Adhoc properties for the clinician. These will be key/value pairs of strings ",
-        "type": "object"
-      },
-      "agesSeen": {
-        "description": "Age groups seen by the clinician.\n\n@example\n ```\n[\n  \"Geriatrics\",\n  \"Adults\"\n]\n``` \nscope - `OmniData`",
-        "type": "array"
-      },
-      "bio": {
-        "description": "Biography of clinician. string or html.\n\n@example\n```\"<div>Zahidul I. Chowdhury, MD., earned his medical degree from Ross University...</div>\"``` \n\nscope - `OmniSearch` `OmniData`",
-        "type": "string"
-      },
-      "certifications": {
-        "description": "Certifications linked to a clinician.\n\n@example\n```\n[\n  \"American Board of Emergency Medicine\"\n]\n```\nscope - `OmniData`",
-        "type": "array"
-      },
-      "cmsContent": {
-        "nested": {
-          "externalIdentifiers": {
-            "nested": {
-              "source": {},
-              "id": {},
-              "sourceField": {},
-              "dataType": {}
-            }
-          },
-          "pageId": {
-            "description": "Content Management System Page ID\n\n@example\n```\"1234abc\"``` \n\nscope - `OmniSearch` `OmniData`",
-            "type": "string"
-          },
-          "sections": {
-            "description": "Content Management Sections in the order they will be displayed on the page. Supports HTML String format. HTML is sanitized by ingest process. \n\nscope - `OmniData`",
-            "type": "array"
-          }
-        }
-      },
-      "conditionsTreated": {
-        "description": "List of conditions treated by the clinician\n\n@example\n```\n[\n  \"Cold and Flu\",\n  \"COVID-19\",\n  \"Ear Infections\"\n]\n```\nscope - `OmniData`",
-        "type": "array"
-      },
-      "contextMetadata": {
-        "description": "Metadata attributes associated with the staff. These will be key-value pairs of string keys to an array of string values.",
-        "type": "object"
-      },
-      "credentialedStates": {
-        "description": "states (two letter abbreviation) in which a clinician is licensed to practice in",
-        "type": "array"
-      },
-      "credentials": {
-        "description": "Credentials linked to a clinician such as DO, MD, etc.\n\n@example\n```\n[\n  \"MD\"\n]\n```\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-        "type": "array"
-      },
-      "dateOfBirth": {
-        "description": "Clinician's date of birth.\n\n@example\n```\"01/01/1970\"```",
-        "type": "string"
-      },
-      "departmentIdentifiers": {
-        "nested": {
-          "emrIdentifier": {
-            "nested": {
-              "emrId": {
-                "description": "Identifier within the source EMR system\n\n@example\n```\"129878\"```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-                "type": "string"
-              },
-              "emrIdType": {
-                "description": "Type of identifier within the source EMR system\n\n@example\n```\"EXTERNAL\"```\n\nscope - `none`",
-                "type": "string"
-              },
-              "emrSystemId": {
-                "description": "Name of source EMR system\n\n@example\n```\"universityhealth.epic\"``` \n\nscope - `OmniSearch` `OmniData`",
-                "type": "string"
-              }
-            }
-          },
-          "externalIdentifiers": {
-            "nested": {}
-          }
-        }
-      },
-      "departmentPrimaryIdentifier": {
-        "nested": {}
-      },
-      "dexcareBuildsPage": {
-        "description": "Flag to determine if DexCare should build a page for this clinician.\n\n@example\n```true```\n\nscope - `OmniData`",
-        "type": "boolean"
-      },
-      "education": {
-        "description": "Clinician's education history \n\nscope - `OmniData`",
-        "type": "array"
-      },
-      "email": {},
-      "emrIdentifiers": {
-        "nested": {}
-      },
-      "externalIdentifiers": {
-        "nested": {}
-      },
-      "gender": {
-        "description": "Gender of clinician.\n\n@example\n```\"Male\"```\n\nscope - `OmniData`",
-        "type": "string"
-      },
-      "hospitalAffiliations": {
-        "description": "Hospitals that a clinician is affiliated with.\n\n@example\n```\n[\n  \"University Health\"\n]\n``` \nscope - `OmniSearch` `OmniData`",
-        "type": "array"
-      },
-      "imageUrl": {
-        "description": "URL where the clinician's image is stored. Full url with production origin.\n\n@example\n```\"https://www.universityhealth.com/photos/200/chowdhury-zahidul-1023458890.jpg\"```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-        "type": "string"
-      },
-      "insurances": {
-        "nested": {
-          "externalIdentifiers": {
-            "nested": {}
-          },
-          "isNewPatientEnabled": {
-            "description": "Insurance accepts new patients. If not provided, defaults to yes\n\nscope - `OmniData`",
-            "type": "boolean"
-          },
-          "isReturningPatientEnabled": {
-            "description": "Insurance accepts returning patients. If not provided, defaults to yes\n\n@example\n```true```\n\nscope - `OmniData`",
-            "type": "boolean"
-          },
-          "name": {
-            "description": "insurance name\n\n@example\n```\"Aetna\"```\n\nscope - `OmniData`",
-            "type": "string"
-          }
-        }
-      },
-      "isAcceptingNewPatients": {
-        "description": "Flag to determine if a clinician is accepting new patients.\n\n@example\n```true```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-        "type": "boolean"
-      },
-      "isActive": {
-        "description": "Temporary flag to mark a clinician as active or inactive in the system.",
-        "type": "boolean"
-      },
-      "isHidden": {
-        "description": "flag to determine if a clinician should be hidden from all patients looking for providers",
-        "type": "boolean"
-      },
-      "isAffiliate": {
-        "description": "Flag to determine if a clinician is a direct employee or an affiliate group employee.\n\n@example\n```true``` \n\nscope - `OmniData`",
-        "type": "boolean"
-      },
-      "isBookableOnline": {
-        "description": "Flag to determine if a clinician webpage should display the timeslot widget\n\n@example\n```true```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-        "type": "boolean"
-      },
-      "isBookablePhone": {
-        "description": "Flag to determine if a clinician webpage should display phone visit types on the timeslot widget.\n\n@example\n```true```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-        "type": "boolean"
-      },
-      "isBookableVirtual": {
-        "description": "Flag to determine if a clinician webpage should display virtual visit types on the timeslot widget.\n\n@example\n```true```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-        "type": "boolean"
-      },
-      "isNewPatientEnabled": {
-        "description": "Flag to determine if a clinician accepts new patients (open scheduling in epic).\n\n@example\n```true```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-        "type": "boolean"
-      },
-      "isReturningPatientEnabled": {
-        "description": "Flag to determine if a clinician accepts returning patients (direct scheduling in epic).\n\n@example\n```true```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-        "type": "boolean"
-      },
-      "languages": {
-        "description": "Languages a clinician speaks.\n\n@example\n```\n[\n  \"English\",\n  \"Klingon\"\n]\n```\n\nscope - `OmniData`",
-        "type": "array"
-      },
-      "medicalInterests": {
-        "description": "Similar to specialities but typically more granular.  Examples of this include 'groin pain' or 'learning disabilities'.\n\n@example\n```\n[\n  \"learning disabilities\",\n  \"abdominal migraine\",\n  \"lateral epicondylitis\"\n]\n```\n\nscope - `OmniData`",
-        "type": "array"
-      },
-      "name": {
-        "description": "The sections of a clinician's name\n\n@example\n```\n{\n  \"first\": \"Andrea\",\n  \"last\": \"Ford\",\n  \"middles\": [\n    \"Price\"\n  ],\n  \"prefix\": \"Prof.\",\n  \"suffix\": \"IV\"\n}\n```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-        "type": "object"
-      },
-      "networks": {
-        "description": "Networks the clinician is associated with.\n\n@example\n```\n[\n  \"University Health\",\n  \"Employed\"\n]\n```\n\nscope - `OmniSearch` `OmniData`",
-        "type": "array"
-      },
-      "npi": {
-        "description": "National Provider Id associated with clinician.\n\n@example\n```\"1234567890\"```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-        "type": "string"
-      },
-      "pageDescription": {
-        "description": "SEO page description. meta[name='description'] tag content\n\n@example\n```\"Dr. Yassmeen Abdel-Aty is an Otolaryngologist Head and Neck Surgeon who received additional training in the treatment of voice, airway, and swallowing disorders. She is currently practicing at the University Health General Hospital and is on faculty there.\"```\n\nscope - `OmniSearch` `OmniData`",
-        "type": "string"
-      },
-      "pageTitle": {
-        "description": "SEO title. title tag content. String visible in the browser's tab\n\n@example\n```\"Zahidul Islam Chowdhury, MD - Seattle, WA\"```\n\nscope - `OmniData`",
-        "type": "string"
-      },
-      "phone": {
-        "nested": {
-          "phoneNumber": {
-            "description": "Phone number associated with the result.\n\n@example\n```\"+16175551212\"```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "string"
-          },
-          "extension": {
-            "description": "phone number extension\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "string"
-          },
-          "externalIdentifiers": {
-            "nested": {}
-          },
-          "isPrimary": {},
-          "isExternal": {}
-        }
-      },
-      "practiceGroup": {
-        "description": "(deprecated - use practiceGroups) Practice group that the clinician is associated with",
-        "type": "string"
-      },
-      "practiceGroups": {
-        "description": "Practice groups that the clinician is associated with",
-        "type": [
-          "array",
-          "null"
-        ]
-      },
-      "profileUrls": {
-        "description": "(deprecated - use brandRefs) Clinician detail page URL(s)\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-        "type": "array"
-      },
-      "reviews": {
-        "nested": {
-          "commentCount": {
-            "description": "Number of reviews with comments for the clinician. Required in OmniSearch response.\n\n@example\n```512```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "integer"
-          },
-          "commentDistribution": {
-            "nested": {
-              "count": {
-                "description": "The number of ratings that match this rating\n\n@example\n```143```\n\nscope - `OmniData`",
-                "type": "integer"
-              },
-              "externalIdentifiers": {
-                "nested": {}
-              },
-              "percentage": {
-                "description": "The percentage of ratings that match this rating\n\n@example\n```90.51``` \n\nscope - `OmniData`",
-                "type": "number"
-              },
-              "rating": {
-                "description": "The rating number\n\n@example\n```5``` \n\nscope - `OmniData`",
-                "type": "integer"
-              }
-            }
-          },
-          "comments": {
-            "description": "The review comments for the clinician. First 5 comments required in OmniData response. \n\nscope - `OmniData`",
-            "type": "array"
-          },
-          "externalIdentifiers": {
-            "nested": {}
-          },
-          "questionRatings": {
-            "description": "Breakdown of the ratings by each question",
-            "type": "array"
-          },
-          "rating": {
-            "description": "Average rating for the clinician. Required in OmniSearch response.\n\n@example\n```4.79166667```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "number"
-          },
-          "ratingCount": {
-            "description": "Number of ratings for the clinician. Required in OmniSearch response.\n\n@example\n```2089```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "integer"
-          },
-          "ratingSystemId": {
-            "description": "Rating System Identifier\n\n@example\n```\"ratingsCompany\"```",
-            "type": "string"
-          }
-        }
-      },
-      "specialties": {
-        "nested": {
-          "externalIdentifiers": {
-            "nested": {}
-          },
-          "name": {
-            "description": "medical specialty name\n\n@example\n```\"Family Medicine\"```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "string"
-          }
-        }
-      },
-      "specialty": {
-        "nested": {}
-      },
-      "subSpecialties": {
-        "nested": {}
-      },
-      "tier": {
-        "description": "\nUsed as a weight for the clinician search algorithm. 1 ranks higher than 2.\n\nexample:\n(1) in-network, (2) affiliate network, (3) out of network\n\n@example\n```1```",
-        "type": "integer"
-      },
-      "videoUrl": {
-        "description": "URL where the clinician's video bio is stored. Full url with production origin.\n\n@example\n```\"https://www.universityhealth.com/videos/Jane+Scot+Doe/389345\"```\n\nscope - `OmniData`",
-        "type": "string"
-      }
-    }
-  },
-  "Department": {
-    "file_name": "departmentIngest.json",
-    "field_names": {
+  "last_modified_time": "",
+  "last_modified_user": "",
+  "mapping": {
+    "Department": {
       "abbreviation": {
-        "description": "Abbreviation of the department.",
-        "type": "string"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "accreditations": {
-        "description": "Accreditations or accolades associated with the department.\n\n@example\n```\"<a href=\\\"https://www.intersocietal.org/vascular/\\\" class=\\\"link\\\"><img style=\\\"height: 175px; width: 175px;\\\" src=\\\"https://www.universityhealth.com/UHealth/media/Images/Awards%20and%20Logos/Wisconsin/vascular-testing-accredited-facility.jpg?ext=.jpg\\\"></a>\"```\n\nscope - `OmniData`",
-        "type": "string"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
-      "address": {
-        "nested": {
-          "addressLine1": {
-            "description": "Street number where the department resides.\n\n@example\n```\"822 Industrial Boulevard\"```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "string"
-          },
-          "addressLine2": {
-            "description": "Secondary street number where the department resides. Such as units, apt, suite, etc.\n\n@example\n```\"Suite 100\"```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "string"
-          },
-          "city": {
-            "description": "City where the department resides.\n\n@example\n```\"Ellijay\"```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "string"
-          },
-          "country": {
-            "description": "Country where the department resides.\n\n@example\n```\"US\"```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "string"
-          },
-          "county": {
-            "description": "County where the department resides.\n\n@example\n```\"Gilmer County\"```\n\nscope - `OmniSearch` `OmniSearchNested`",
-            "type": "string"
-          },
-          "externalIdentifiers": {
-            "nested": {
-              "source": {},
-              "id": {},
-              "sourceField": {},
-              "dataType": {}
-            }
-          },
-          "latitude": {
-            "description": "Latitude of the department\n\n@example\n```33.79267```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "number"
-          },
-          "longitude": {
-            "description": "Longitude of the department.\n\n@example\n```-84.39556```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "number"
-          },
-          "postalCode": {
-            "description": "Postal Code or Zip code where the department resides.\n\n@example\n```\"30540\"```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "string"
-          },
-          "state": {
-            "description": "Region or state where the department resides. This is alpha codes such as 'WI' for Wisconsin.\n\n@example\n```\"GA\"```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "string"
-          }
-        }
+      "address.addressLine1": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "address.addressLine2": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "address.city": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "address.country": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "address.county": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "address.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "address.latitude": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "address.longitude": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "address.postalCode": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "address.state": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "adhoc": {
-        "description": "Adhoc properties for the department. These will be key/value pairs of strings ",
-        "type": "object"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "banner": {
-        "description": "Banner to display on the top of a department's web page.\n\n@example\n```\"<div>marketing banner for this page</div>\"```\n\nscope - `OmniData`",
-        "type": "string"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "brandName": {
-        "description": "(deprecated - use brandRefs) Brand associated with the department.\n\n@example\n```\"University Health\"```\n\nscope - `OmniSearch` `OmniData`",
-        "type": "string"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "clockwise": {
-        "description": "Clockwise Care Tile integration data \n\nscope - `OmniSearch` `OmniData`",
-        "type": "object"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
-      "cmsContent": {
-        "nested": {
-          "externalIdentifiers": {
-            "nested": {}
-          },
-          "pageId": {
-            "description": "Content Management System Page ID\n\n@example\n```\"1234abc\"``` \n\nscope - `OmniSearch` `OmniData`",
-            "type": "string"
-          },
-          "sections": {
-            "description": "Content Management Sections in the order they will be displayed on the page. Supports HTML String format. HTML is sanitized by ingest process. \n\nscope - `OmniData`",
-            "type": "array"
-          }
-        }
+      "cmsContent.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "cmsContent.pageId": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "cmsContent.sections": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
       },
       "conditionsTreated": {
-        "description": "List of conditions treated at a department\n\n@example\n```\n[\n    \"Cold and Flu\",\n    \"COVID-19\",\n    \"Ear Infections\"\n]\n```\n\nscope - `OmniData`",
-        "type": "array"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "contextMetadata": {
-        "description": "Metadata attributes associated with the department. These will be key-value pairs of string keys to an array of string values.",
-        "type": "object"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "description": {
-        "description": "Description of department.\n\n@example\n```\"<h2>Ear, Nose and Throat (ENT) Care in Seattle</h2>\\r\\n\\r\\n<p>Located in Seattle, WA, University Physicians ENT Seattle is a specialty practice dedicated to helping you get better - and stay well.</p>\"```\n\nscope - `OmniSearch` `OmniData`",
-        "type": "string"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "dexcareBuildsPage": {
-        "description": "Flag to determine if DexCare should build a page for this department.\n\n@example\n```true```\n\nscope - `OmniData`",
-        "type": "boolean"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "displayName": {
-        "description": "Display name of the department.\n\n@example\n```\"University Health Urgent Care Summerhill\"```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-        "type": "string"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
-      "emrIdentifier": {
-        "nested": {
-          "emrId": {
-            "description": "Identifier within the source EMR system\n\n@example\n```\"129878\"```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "string"
-          },
-          "emrIdType": {
-            "description": "Type of identifier within the source EMR system\n\n@example\n```\"EXTERNAL\"```\n\nscope - `none`",
-            "type": "string"
-          },
-          "emrSystemId": {
-            "description": "Name of source EMR system\n\n@example\n```\"universityhealth.epic\"``` \n\nscope - `OmniSearch` `OmniData`",
-            "type": "string"
-          }
-        }
+      "emrIdentifier.emrId": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "emrIdentifier.emrIdType": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "emrIdentifier.emrSystemId": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "externalIdentifiers": {
-        "nested": {}
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "facilityTypes": {
-        "description": "Facility Types associated with the department.\n\nCustomer-facing names used for location search facility type filtering.\n\n@example\n```\n[\n    \"Primary Care\"\n]\n```",
-        "type": "array"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "fax": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
       },
       "googlePlaceUrl": {
-        "description": "Google Maps department URL. Provides a better view of the department in Google Maps.\n\n@example\n```\"https://www.google.com/maps/place/University+Health+Medical+Group/@42.9202749,-89.2107675,17z/data=!.....\"```\n\nscope - `OmniData` `OmniDataNested`",
-        "type": "string"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
-      "hours": {
-        "nested": {
-          "custom": {
-            "description": "Field to populate during holidays or inclement weather as needed, eg. 'Closed on Christmas' or 'Office closure on Jan 16th due to extreme weather'.\n\n@example\n```\"Closed on Christmas\"``` \n\nscope - `OmniSearch` `OmniData`",
-            "type": "string"
-          },
-          "fri": {
-            "nested": {
-              "close": {
-                "description": "Closing hour for department. Format is in military time.\n\n@example\n```\"19:00\"```\n\nscope - `OmniSearch` `OmniData` `OmniDataNested`",
-                "type": "string"
-              },
-              "custom": {
-                "description": "Custom text that can be used to provide additional insight into the hours. Displayed in addition to open, close, or open24Hours properties.\n\n@example\n```\"Closed from 12-12:30 for lunch.\"```\n\nscope - `OmniSearch` `OmniData` `OmniDataNested`",
-                "type": "string"
-              },
-              "open": {
-                "description": "Opening hour for department. Format is in military time.\n\n@example\n```\"07:00\"```\n\nscope - `OmniSearch` `OmniData` `OmniDataNested`",
-                "type": "string"
-              },
-              "open24Hours": {
-                "description": "Flag to determine if a department is open 24 hours. Overrides open and close properties.\n\nscope - `OmniSearch` `OmniData` `OmniDataNested`",
-                "type": "boolean"
-              }
-            }
-          },
-          "mon": {
-            "nested": {}
-          },
-          "sat": {
-            "nested": {}
-          },
-          "sun": {
-            "nested": {}
-          },
-          "thu": {
-            "nested": {}
-          },
-          "tue": {
-            "nested": {}
-          },
-          "wed": {
-            "nested": {}
-          }
-        }
+      "hours.custom": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "hours.fri": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "hours.mon": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "hours.sat": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "hours.sun": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "hours.thu": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "hours.tue": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "hours.wed": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "imageUrl": {
-        "description": "URL where the department's image is stored. Full url with production origin.\n\n@example\n```\"https://www.universityhealth.com/photos/200/location-2-1023458890.jpg\"```\n\nscope - `OmniSearch` `OmniData`",
-        "type": "string"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
-      "insurances": {
-        "nested": {
-          "externalIdentifiers": {
-            "nested": {}
-          },
-          "isNewPatientEnabled": {
-            "description": "Insurance accepts new patients. If not provided, defaults to yes\n\nscope - `OmniData`",
-            "type": "boolean"
-          },
-          "isReturningPatientEnabled": {
-            "description": "Insurance accepts returning patients. If not provided, defaults to yes\n\n@example\n```true```\n\nscope - `OmniData`",
-            "type": "boolean"
-          },
-          "name": {
-            "description": "insurance name\n\n@example\n```\"Aetna\"```\n\nscope - `OmniData`",
-            "type": "string"
-          }
-        }
+      "insurances.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "insurances.isNewPatientEnabled": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "insurances.isReturningPatientEnabled": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "insurances.name": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "isAcceptingNewPatients": {
-        "description": "Whether the department is accepting new patients.\n Used for search & sort in Location Search.\n Used to show new patient care tiles.\n\n@example\n```true``` \n\nscope - `OmniSearch` `OmniData`",
-        "type": "boolean"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "isActive": {
-        "description": "Mark a department as active in the system.",
-        "type": "boolean"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "isBookableOnline": {
-        "description": "Whether the department is bookable online\n\n@example\n```true``` \n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-        "type": "boolean"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "isBookablePhone": {
-        "description": "Whether the department is bookable by calling a phone number\n\n@example\n```true```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-        "type": "boolean"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "isBookableVirtual": {
-        "description": "Whether the department accepts virtual care appointments\n\n@example\n```true```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-        "type": "boolean"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "isHidden": {
-        "description": "Mark a department as hidden in the system. Used to temorarily disable",
-        "type": "boolean"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "isNewPatientEnabled": {
-        "description": "Flag to determine if a department accepts new patients (open scheduling in epic).\n\n@example\n```true```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-        "type": "boolean"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "isReturningPatientEnabled": {
-        "description": "Flag to determine if a department accepts returning patients (direct scheduling in epic).\n\n@example\n```true```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-        "type": "boolean"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "pageDescription": {
-        "description": "SEO page description. meta[name='description'] tag content\n\n@example\n```\"Ear, Nose and Throat (ENT) Clinic in Seattle. ENT is a specialty practice dedicated to helping you get better and stay well\"```\n\nscope - `OmniSearch` `OmniData`",
-        "type": "string"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "pageTitle": {
-        "description": "SEO title. title tag content. String visible in the browser's tab\n\n@example\n```\"Ear, Nose and Throat (ENT) Clinic in Seattle\"```\n\nscope - `OmniData`",
-        "type": "string"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
-      "phone": {
-        "nested": {
-          "phoneNumber": {
-            "description": "Phone number associated with the result.\n\n@example\n```\"+16175551212\"```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "string"
-          },
-          "extension": {
-            "description": "phone number extension\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "string"
-          },
-          "externalIdentifiers": {
-            "nested": {}
-          },
-          "isPrimary": {},
-          "isExternal": {}
-        }
+      "phone.phoneNumber": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
-      "policies": {
-        "nested": {
-          "externalIdentifiers": {
-            "nested": {}
-          },
-          "name": {
-            "description": "Pre-visit forms such as consent forms.\n\n@example\n```\"Over-the-Counter (OTC) Medication Prescription Request Form\"```\n\nscope - `OmniData`",
-            "type": "string"
-          },
-          "url": {
-            "description": "URL where the form lives.\n\n@example\n```\"/UHealth/media/Documents/Locations/Non-Hospital/otc-medication-prescription-form.pdf\"```\n\nscope - `OmniData`",
-            "type": "string"
-          }
-        }
+      "phone.vanityNumber": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
       },
-      "reviews": {
-        "nested": {
-          "commentCount": {
-            "description": "Number of reviews with comments for the clinician. Required in OmniSearch response.\n\n@example\n```512```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "integer"
-          },
-          "commentDistribution": {
-            "nested": {
-              "count": {
-                "description": "The number of ratings that match this rating\n\n@example\n```143```\n\nscope - `OmniData`",
-                "type": "integer"
-              },
-              "externalIdentifiers": {
-                "nested": {}
-              },
-              "percentage": {
-                "description": "The percentage of ratings that match this rating\n\n@example\n```90.51``` \n\nscope - `OmniData`",
-                "type": "number"
-              },
-              "rating": {
-                "description": "The rating number\n\n@example\n```5``` \n\nscope - `OmniData`",
-                "type": "integer"
-              }
-            }
-          },
-          "comments": {
-            "description": "The review comments for the clinician. First 5 comments required in OmniData response. \n\nscope - `OmniData`",
-            "type": "array"
-          },
-          "externalIdentifiers": {
-            "nested": {}
-          },
-          "questionRatings": {
-            "description": "Breakdown of the ratings by each question",
-            "type": "array"
-          },
-          "rating": {
-            "description": "Average rating for the clinician. Required in OmniSearch response.\n\n@example\n```4.79166667```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "number"
-          },
-          "ratingCount": {
-            "description": "Number of ratings for the clinician. Required in OmniSearch response.\n\n@example\n```2089```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "integer"
-          },
-          "ratingSystemId": {
-            "description": "Rating System Identifier\n\n@example\n```\"ratingsCompany\"```",
-            "type": "string"
-          }
-        }
+      "phone.extension": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
-      "services": {
-        "nested": {
-          "name": {
-            "description": "Name of service practiced.\n\n@example\n```\"Optometry\"```\n\nscope - `OmniData`",
-            "type": "string"
-          },
-          "url": {
-            "description": "URL where more information on the service can be found.\n\n@example\n```\"https://www.universityhealth.com/services/eye-care/optometry\"```\n\nscope - `OmniData`",
-            "type": "string"
-          }
-        }
+      "phone.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
       },
-      "specialties": {
-        "nested": {
-          "externalIdentifiers": {
-            "nested": {}
-          },
-          "name": {
-            "description": "medical specialty name\n\n@example\n```\"Family Medicine\"```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "string"
-          }
-        }
+      "phone.isPrimary": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "phone.isExternal": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "phone.isSmsEnabled": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "phone.notificationsEnabled": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "policies.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "policies.name": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "policies.url": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "reviews.commentCount": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "reviews.commentDistribution": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "reviews.comments": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "reviews.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "reviews.questionRatings": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "reviews.rating": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "reviews.ratingCount": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "reviews.ratingSystemId": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "services.name": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "services.url": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "specialties.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "specialties.name": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "tier": {
-        "description": "Used as a weight for the location search algorithm. 1 ranks higher than 2.\n\n@example\n```1```",
-        "type": "integer"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "timezone": {
-        "description": "Timezone the department is located in. - IANA/Olson format\n@examples\n\"America/Adak\",\n\"America/Anchorage\",\n\"America/Boise\",\n\"America/Chicago\",\n\"America/Denver\",\n\"America/Detroit\",\n\"America/Indiana/Indianapolis\",\n\"America/Indiana/Knox\",\n\"America/Indiana/Marengo\",\n\"America/Indiana/Petersburg\",\n\"America/Indiana/Tell_City\",\n\"America/Indiana/Vevay\",\n\"America/Indiana/Vincennes\",\n\"America/Indiana/Winamac\",\n\"America/Juneau\",\n\"America/Kentucky/Louisville\",\n\"America/Kentucky/Monticello\",\n\"America/Los_Angeles\",\n\"America/Menominee\",\n\"America/Metlakatla\",\n\"America/New_York\",\n\"America/Nome\",\n\"America/North_Dakota/Beulah\",\n\"America/North_Dakota/Center\",\n\"America/North_Dakota/New_Salem\"\n\n@example\n```\"America/Los_Angeles\"```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-        "type": "string"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "url": {
-        "description": "(deprecated - use brandRefs) URL where the department's page is stored. Full url with production origin.\n Mixed-case urls are supported. Pages will be 301 redirected if browser path characters match but the casing doesn't.\n\n@example\n```\"https://www.universityhealth.com/Locations/urgent-care-teasley-denton\"```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-        "type": "string"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "walkInsWelcome": {
-        "description": "Flag to determine if a department should allow walk-ins if no timeslots are available.\n\n@example\n```true```\n\nscope - `OmniSearch` `OmniData`",
-        "type": "boolean"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       }
-    }
-  },
-  "Location": {
-    "file_name": "locationIngest.json",
-    "field_names": {
-      "address": {
-        "nested": {
-          "addressLine1": {
-            "description": "Street number where the department resides.\n\n@example\n```\"822 Industrial Boulevard\"```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "string"
-          },
-          "addressLine2": {
-            "description": "Secondary street number where the department resides. Such as units, apt, suite, etc.\n\n@example\n```\"Suite 100\"```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "string"
-          },
-          "city": {
-            "description": "City where the department resides.\n\n@example\n```\"Ellijay\"```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "string"
-          },
-          "country": {
-            "description": "Country where the department resides.\n\n@example\n```\"US\"```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "string"
-          },
-          "county": {
-            "description": "County where the department resides.\n\n@example\n```\"Gilmer County\"```\n\nscope - `OmniSearch` `OmniSearchNested`",
-            "type": "string"
-          },
-          "externalIdentifiers": {
-            "nested": {
-              "source": {},
-              "id": {},
-              "sourceField": {},
-              "dataType": {}
-            }
-          },
-          "latitude": {
-            "description": "Latitude of the department\n\n@example\n```33.79267```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "number"
-          },
-          "longitude": {
-            "description": "Longitude of the department.\n\n@example\n```-84.39556```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "number"
-          },
-          "postalCode": {
-            "description": "Postal Code or Zip code where the department resides.\n\n@example\n```\"30540\"```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "string"
-          },
-          "state": {
-            "description": "Region or state where the department resides. This is alpha codes such as 'WI' for Wisconsin.\n\n@example\n```\"GA\"```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "string"
-          }
-        }
+    },
+    "Location": {
+      "address.addressLine1": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "address.addressLine2": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "address.city": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "address.country": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "address.county": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "address.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "address.latitude": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "address.longitude": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "address.postalCode": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "address.state": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "adhoc": {
-        "description": "Adhoc properties for the location. These will be key/value pairs of strings ",
-        "type": "object"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "brandName": {
-        "description": "Brand associated with the location.\n\n@example\n```\"University Health\"```\n\nscope - `OmniSearch` `OmniData`",
-        "type": "string"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "childLocations": {
-        "nested": {}
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
-      "cmsContent": {
-        "nested": {
-          "externalIdentifiers": {
-            "nested": {}
-          },
-          "pageId": {
-            "description": "Content Management System Page ID\n\n@example\n```\"1234abc\"``` \n\nscope - `OmniSearch` `OmniData`",
-            "type": "string"
-          },
-          "sections": {
-            "description": "Content Management Sections in the order they will be displayed on the page. Supports HTML String format. HTML is sanitized by ingest process. \n\nscope - `OmniData`",
-            "type": "array"
-          }
-        }
+      "cmsContent.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
-      "conditionsTreated": {},
+      "cmsContent.pageId": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "cmsContent.sections": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "conditionsTreated": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
       "contextMetadata": {
-        "description": "Metadata attributes associated with the location. These will be key-value pairs of string keys to an array of string values.",
-        "type": "object"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
-      "departmentPrimaryIdentifier": {
-        "nested": {
-          "emrIdentifier": {
-            "nested": {
-              "emrId": {
-                "description": "Identifier within the source EMR system\n\n@example\n```\"129878\"```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-                "type": "string"
-              },
-              "emrIdType": {
-                "description": "Type of identifier within the source EMR system\n\n@example\n```\"EXTERNAL\"```\n\nscope - `none`",
-                "type": "string"
-              },
-              "emrSystemId": {
-                "description": "Name of source EMR system\n\n@example\n```\"universityhealth.epic\"``` \n\nscope - `OmniSearch` `OmniData`",
-                "type": "string"
-              }
-            }
-          },
-          "externalIdentifiers": {
-            "nested": {}
-          }
-        }
+      "departmentPrimaryIdentifier.emrIdentifier": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "departmentPrimaryIdentifier.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "description": {
-        "description": "Description of location.\n\nscope - `OmniSearch` `OmniData`",
-        "type": "string"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "dexcareBuildsPage": {
-        "description": "Flag to determine if DexCare should build a page for this location.\n\nscope - `OmniData`",
-        "type": "boolean"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "displayName": {
-        "description": "Display name of the location.\n\n@example\n```\"University Health Medical Pavillion\"```\n\nscope - `OmniSearch` `OmniData`",
-        "type": "string"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "externalIdentifiers": {
-        "nested": {}
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "fax": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
       },
       "googlePlaceUrl": {
-        "description": "Google Maps location URL. Provides a better view of the location in Google Maps.\n\n@example\n```\"https://www.google.com/maps/place/University+Health+Medical+Group/@42.9202749,-89.2107675,17z/data=!.....\"```\n\nscope - `OmniData`",
-        "type": "string"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
-      "hours": {
-        "nested": {
-          "custom": {
-            "description": "Field to populate during holidays or inclement weather as needed, eg. 'Closed on Christmas' or 'Office closure on Jan 16th due to extreme weather'.\n\n@example\n```\"Closed on Christmas\"``` \n\nscope - `OmniSearch` `OmniData`",
-            "type": "string"
-          },
-          "fri": {
-            "nested": {
-              "close": {
-                "description": "Closing hour for department. Format is in military time.\n\n@example\n```\"19:00\"```\n\nscope - `OmniSearch` `OmniData` `OmniDataNested`",
-                "type": "string"
-              },
-              "custom": {
-                "description": "Custom text that can be used to provide additional insight into the hours. Displayed in addition to open, close, or open24Hours properties.\n\n@example\n```\"Closed from 12-12:30 for lunch.\"```\n\nscope - `OmniSearch` `OmniData` `OmniDataNested`",
-                "type": "string"
-              },
-              "open": {
-                "description": "Opening hour for department. Format is in military time.\n\n@example\n```\"07:00\"```\n\nscope - `OmniSearch` `OmniData` `OmniDataNested`",
-                "type": "string"
-              },
-              "open24Hours": {
-                "description": "Flag to determine if a department is open 24 hours. Overrides open and close properties.\n\nscope - `OmniSearch` `OmniData` `OmniDataNested`",
-                "type": "boolean"
-              }
-            }
-          },
-          "mon": {
-            "nested": {}
-          },
-          "sat": {
-            "nested": {}
-          },
-          "sun": {
-            "nested": {}
-          },
-          "thu": {
-            "nested": {}
-          },
-          "tue": {
-            "nested": {}
-          },
-          "wed": {
-            "nested": {}
-          }
-        }
+      "hours.custom": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "hours.fri": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "hours.mon": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "hours.sat": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "hours.sun": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "hours.thu": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "hours.tue": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "hours.wed": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "imageUrl": {
-        "description": "URL where the location's image is stored. Full url with production origin.\n\nscope - `OmniSearch` `OmniData`",
-        "type": "string"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "isActive": {
-        "description": "Mark a location as active in the system.",
-        "type": "boolean"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "isHidden": {
-        "description": "Mark a location as hidden in the system. Used to temorarily disable",
-        "type": "boolean"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "pageDescription": {
-        "description": "SEO page description. meta[name='description'] tag content\n\n@example\n```\"Ear, Nose and Throat (ENT) Clinic in Seattle. ENT is a specialty practice dedicated to helping you get better and stay well\"```\n\nscope - `OmniSearch` `OmniData`",
-        "type": "string"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "pageTitle": {
-        "description": "SEO title. title tag content. String visible in the browser's tab\n\n@example\n```\"Ear, Nose and Throat (ENT) Clinic in Seattle\"```\n\nscope - `OmniData`",
-        "type": "string"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
-      "phone": {
-        "nested": {
-          "phoneNumber": {
-            "description": "Phone number associated with the result.\n\n@example\n```\"+16175551212\"```\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "string"
-          },
-          "extension": {
-            "description": "phone number extension\n\nscope - `OmniSearch` `OmniData` `OmniSearchNested` `OmniDataNested`",
-            "type": "string"
-          },
-          "externalIdentifiers": {
-            "nested": {}
-          },
-          "isPrimary": {},
-          "isExternal": {}
-        }
+      "phone.phoneNumber": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
-      "policies": {
-        "nested": {
-          "externalIdentifiers": {
-            "nested": {}
-          },
-          "name": {
-            "description": "Pre-visit forms such as consent forms.\n\n@example\n```\"Over-the-Counter (OTC) Medication Prescription Request Form\"```\n\nscope - `OmniData`",
-            "type": "string"
-          },
-          "url": {
-            "description": "URL where the form lives.\n\n@example\n```\"/UHealth/media/Documents/Locations/Non-Hospital/otc-medication-prescription-form.pdf\"```\n\nscope - `OmniData`",
-            "type": "string"
-          }
-        }
+      "phone.vanityNumber": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
       },
-      "services": {
-        "nested": {
-          "name": {
-            "description": "Name of service practiced.\n\n@example\n```\"Optometry\"```\n\nscope - `OmniData`",
-            "type": "string"
-          },
-          "url": {
-            "description": "URL where more information on the service can be found.\n\n@example\n```\"https://www.universityhealth.com/services/eye-care/optometry\"```\n\nscope - `OmniData`",
-            "type": "string"
-          }
-        }
+      "phone.extension": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "phone.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "phone.isPrimary": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "phone.isExternal": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "phone.isSmsEnabled": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "phone.notificationsEnabled": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "policies.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "policies.name": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "policies.url": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "services.name": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "services.url": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "tier": {
-        "description": "Used as a weight for the location search algorithm. 1 ranks higher than 2.\n\n@example\n```1```",
-        "type": "integer"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "timezone": {
-        "description": "Timezone the location is located in. - IANA/Olson format\n@examples\n\"America/Adak\",\n\"America/Anchorage\",\n\"America/Boise\",\n\"America/Chicago\",\n\"America/Denver\",\n\"America/Detroit\",\n\"America/Indiana/Indianapolis\",\n\"America/Indiana/Knox\",\n\"America/Indiana/Marengo\",\n\"America/Indiana/Petersburg\",\n\"America/Indiana/Tell_City\",\n\"America/Indiana/Vevay\",\n\"America/Indiana/Vincennes\",\n\"America/Indiana/Winamac\",\n\"America/Juneau\",\n\"America/Kentucky/Louisville\",\n\"America/Kentucky/Monticello\",\n\"America/Los_Angeles\",\n\"America/Menominee\",\n\"America/Metlakatla\",\n\"America/New_York\",\n\"America/Nome\",\n\"America/North_Dakota/Beulah\",\n\"America/North_Dakota/Center\",\n\"America/North_Dakota/New_Salem\"\n\n@example\n```\"America/Los_Angeles\"```\n\nscope - `OmniSearch` `OmniData`",
-        "type": "string"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       },
       "url": {
-        "description": "(deprecated - use brandRefs) URL where the location's page is stored. Full url with production origin. \n Mixed-case urls are supported. Pages will be 301 redirected if browser path characters match but the casing doesn't.\n\n@example\n```\"https://www.universityhealth.com/Locations/urgent-care-teasley-denton\"```\n\nscope - `OmniSearch` `OmniData`",
-        "type": "string"
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      }
+    },
+    "Provider": {
+      "adhoc": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "agesSeen": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "bio": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "certifications": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "cmsContent.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "cmsContent.pageId": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "cmsContent.sections": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "conditionsTreated": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "contextMetadata": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "credentialedStates": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "credentials": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "dateOfBirth": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "departmentIdentifiers.emrIdentifier": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "departmentIdentifiers.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "departmentPrimaryIdentifier": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "dexcareBuildsPage": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "education": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "email": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "emrIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "gender": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "hospitalAffiliations": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "imageUrl": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "insurances.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "insurances.isNewPatientEnabled": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "insurances.isReturningPatientEnabled": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "insurances.name": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "isAcceptingNewPatients": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "isActive": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "isHidden": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "isAffiliate": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "isBookableOnline": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "isBookablePhone": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "isBookableVirtual": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "isNewPatientEnabled": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "isReturningPatientEnabled": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "languages": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "medicalInterests": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "name": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "networks": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "npi": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "pageDescription": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "pageTitle": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "phone.phoneNumber": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "phone.vanityNumber": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "phone.extension": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "phone.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "phone.isPrimary": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "phone.isExternal": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "phone.isSmsEnabled": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "phone.notificationsEnabled": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "practiceGroup": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "practiceGroups": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "profileUrls": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "reviews.commentCount": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "reviews.commentDistribution": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "reviews.comments": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "reviews.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "reviews.questionRatings": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "reviews.rating": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "reviews.ratingCount": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "reviews.ratingSystemId": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "specialties.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": null
+      },
+      "specialties.name": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "specialty": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "subSpecialties": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "tier": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
+      },
+      "videoUrl": {
+        "primary_file": "",
+        "primary_attribute": null,
+        "secondary_file": "",
+        "secondary_attribute": null,
+        "fallback_value_type": "None",
+        "fallback_value": ""
       }
     }
   }
