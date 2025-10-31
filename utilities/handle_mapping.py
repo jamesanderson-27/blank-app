@@ -16,7 +16,7 @@ def fileLock(user,customer):
 
 def mapLock(user,customer):
     st.session_state.map_locked=True
-    #response=updateGithub(user,customer,"data_map",st.session_state.data_map)
+    response=updateGithub(user,customer,"data_map",st.session_state.data_map)
     response=updateGithub(user,customer,"data_map",schemaToMarkdown(st.session_state.data_map),req_type="PUT MD")
 
 def getIndex(data_map,schema,field,list_options,key):

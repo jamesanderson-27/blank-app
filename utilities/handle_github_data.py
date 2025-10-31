@@ -85,6 +85,7 @@ def getEntitiesSchema(schemas,exclusion_list):
                 field_dict[field] = {}
                 try:
                     field_dict[field]["description"]=field_data["description"]
+                    field_dict[field]["type"]=field_data["type"]
                 except:
                     pass
         return field_dict
