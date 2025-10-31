@@ -162,7 +162,6 @@ def updateGithub(user,customer,target,req_data,req_type="PUT"):
         }
     try:
         response=makeRequest(req_type,data,user,1,path,target=target)
-        st.write(response)
         return response
     except Exception as e:
         return f"Failed to update: {customer}'s {target}. Error: {e}"
