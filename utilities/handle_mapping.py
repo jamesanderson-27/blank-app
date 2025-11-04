@@ -24,7 +24,7 @@ def getIndex(data_map,schema,field,list_options,key):
         value=data_map["mapping"][schema][field][key]
         return list_options.index(value)
     except:
-        return None
+        return 0
     
 def saveFieldMapping(data_map,schema,field,primary_file,primary_attribute,secondary_file,secondary_attribute,fallback_value_type,fallback_value):
     if field not in data_map["mapping"][schema]:
@@ -37,7 +37,7 @@ def saveFieldMapping(data_map,schema,field,primary_file,primary_attribute,second
     data_map["mapping"][schema][field]["fallback_value"]=fallback_value
     return data_map
 
-def fieldMapper(field,data_sources,data_map,schema,description):
+def fieldMapper(field,data_sources,data_map,schema,description,field_type):
     with st.expander(f"{schema}.*{field}*"): # field (e.g. abbreviation, externalIdentifiers)
         st.code(description,language=None,wrap_lines=True)
         saved_files=list(data_sources["files"].keys())
@@ -57,7 +57,10 @@ def fieldMapper(field,data_sources,data_map,schema,description):
                                         key=f"{schema}_{field}_secondary_file",
                                         index=idx)
             ## Fallback Type box
-            list_options=["None","String","Boolean"]
+            if not field_type:
+                list_options=["None","string","boolean","object","array"]
+            else:
+                list_options=["None",field_type]
             idx=getIndex(st.session_state.saved_data_map,schema,field,list_options,"fallback_value_type")
             fallback_value_type=st.selectbox("Fallback Type",
                                         list_options,
@@ -83,14 +86,14 @@ def fieldMapper(field,data_sources,data_map,schema,description):
                 fallback_value=st.text_input("Fallback Value",
                                         disabled=True,
                                         key=f"{schema}_{field}_data_value_b")
-            if fallback_value_type=="Boolean": # if boolean type, display true/false
+            elif fallback_value_type=="boolean": # if boolean type, display true/false
                 list_options=["True","False"] 
                 idx=getIndex(st.session_state.saved_data_map,schema,field,list_options,"fallback_value")
                 fallback_value=st.selectbox("Fallback Value",
                                         list_options,
                                         key=f"{schema}_{field}_data_value_a",
                                         index=idx)
-            if fallback_value_type=="String": # if string type, display stored value as default
+            else: # if string type, display stored value as default
                 try:
                     val=st.session_state.saved_data_map["mapping"][schema][field]["fallback_value"]
                 except:

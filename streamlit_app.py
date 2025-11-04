@@ -68,11 +68,23 @@ if st.session_state.customer_locked:
                         with st.expander(f"{schema}.*{field}*"):
                             for nested_field in schemas[schema]["field_names"][field]["nested"].keys():
                                 description=schemas[schema]["field_names"][field]["nested"][nested_field].get("description","")
+                                field_type=schemas[schema]["field_names"][field]["nested"][nested_field].get("type","")
                                 if not ((f"{field}.{nested_field}" in st.session_state.exclusion_list) or (nested_field=="description")):
-                                    st.session_state.data_map=fieldMapper(f"{field}.{nested_field}",st.session_state.data_sources,st.session_state.data_map,schema,description)
+                                    st.session_state.data_map=fieldMapper(f"{field}.{nested_field}",
+                                                                          st.session_state.data_sources,
+                                                                          st.session_state.data_map,
+                                                                          schema,
+                                                                          description,
+                                                                          field_type)
                     else:
                         description=schemas[schema]["field_names"][field].get("description","")
-                        st.session_state.data_map=fieldMapper(field,st.session_state.data_sources,st.session_state.data_map,schema,description)
+                        field_type=schemas[schema]["field_names"][field].get("type","")
+                        st.session_state.data_map=fieldMapper(field,
+                                                              st.session_state.data_sources,
+                                                              st.session_state.data_map,
+                                                              schema,
+                                                              description,
+                                                              field_type)
         if st.button("Save Mapping"):
             mapLock(user,customer)
 
