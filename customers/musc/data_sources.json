@@ -4,6 +4,19 @@
       "uploaded_at": "",
       "file_type": "",
       "attributes": []
+    },
+    "SER_20251104.csv": {
+      "uploaded_at": "2025-11-05 18:31:23",
+      "file_type": "application/vnd.ms-excel",
+      "attributes": [
+        "SER_ID",
+        "NAME",
+        "SEX",
+        "DEP_ID",
+        "NATIONAL_PROVIDER_ID",
+        "OPEN_SCHEDULING",
+        "DIRECT_SCHEDULING"
+      ]
     }
   }
 }
