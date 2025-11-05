@@ -4,25 +4,34 @@ from utilities.housekeeping import housekeeping,loadSchemas
 from utilities.handle_mapping import fieldMapper,customerLock,fileLock,mapLock,sidebarMapping
 from utilities.handle_github_data import getCustomerList,getCustomerDataMap,getCustomerDataSources
 
-housekeeping() # run on app launch: env variables, button styling, secret reading
-schemas=loadSchemas() # gets entities schema, exclusion lists
+####### Run on app launch #######
+housekeeping() # env variables, button styling, secret reading
+if 'schemas' not in st.session_state:
+    st.session_state.schemas = None
+user=st.session_state.user
+if 'customer_list' not in st.session_state:
+    st.session_state.customer_list = getCustomerList(user)
+customer_list = st.session_state.customer_list
 
 ####### View Customer (Sidebar) #######
-#with st.sidebar:
-#    st.title("View Customer Mapping")
- #   user=st.session_state.user
-  #  customer_list=getCustomerList(user)
-   # try:
-#        idx=customer_list.index(view_customer) # type: ignore
- #   except:
-  #      idx=0
-   # view_customer=st.selectbox("Select Customer",
-#                customer_list,
- #               key="view_customer",
-  #              index=idx)
-   # st.divider()
-user=st.session_state.user
-customer_list=getCustomerList(user)
+with st.sidebar:
+    st.title("View Customer Mapping")
+    
+    # Only initialize view_customer if not already set
+    if 'view_customer' not in st.session_state:
+        st.session_state.view_customer = ""
+    
+    try:
+        idx=customer_list.index(st.session_state.view_customer)
+    except:
+        idx=0
+    
+    view_customer=st.selectbox("Select Customer",
+                customer_list,
+                key="view_customer",
+                index=idx)
+    st.divider()
+
 ####### Edit Customer (Main Tab) #######
 st.subheader("Edit Customer Mapping")
 
@@ -31,21 +40,38 @@ customer=st.selectbox("Select Customer",
                     key="customer",
                     index=0,
                     disabled=st.session_state.customer_locked)
-st.session_state.data_map = getCustomerDataMap(user,customer)
+
+# Now render sidebar mapping after customer is defined
+with st.sidebar:
+    # Only render sidebar mapping if a customer is selected
+    if view_customer:
+        sidebarMapping(view_customer,customer,st.session_state.data_map,st.session_state.user)
+    else:
+        st.markdown("*Select a customer to view current mapping*")
+
+if not st.session_state.customer_locked:
+    st.session_state.data_map = getCustomerDataMap(user,customer)
+
 if st.button("Save Customer"):
     customerLock(user,customer)
     st.rerun()
+    
 if st.session_state.customer_locked:
     st.divider()
 
     ####### File Upload #######
     st.subheader("Upload Files")
+    
+    # Load data_sources once when customer is locked
+    if 'data_sources' not in st.session_state:
+        st.session_state.data_sources=getCustomerDataSources(user,customer)
+    
     uploaded_files = st.file_uploader("Choose one or more files",
                                     type=['csv', 'txt','json'],
                                     accept_multiple_files=True,
                                     disabled=st.session_state.file_locked)
-    st.session_state.data_sources=getCustomerDataSources(user,customer)              # loads previous files                   
-    st.session_state.data_sources=handleFiles(uploaded_files,st.session_state.data_sources)             # allows upload of new files
+    if not st.session_state.file_locked and uploaded_files:                
+        st.session_state.data_sources=handleFiles(uploaded_files)             # allows upload of new files
     if len(list(st.session_state.data_sources["files"].keys())[1:])>0:
         st.write("Uploaded files")
     for file in list(st.session_state.data_sources["files"].keys())[1:]:               # shows user each file and
@@ -57,12 +83,21 @@ if st.session_state.customer_locked:
 
     ####### Data Mapping #######
     if st.session_state.file_locked:                                  # User continues to mapping
+        if st.session_state.schemas is None:
+            st.session_state.schemas = loadSchemas()
+        schemas = st.session_state.schemas
+        
         st.toast("Use ctrl F to find schema objects", icon=":material/search:", duration="infinite")
         st.divider()
         st.subheader("Map to DexCare Schema")
+        
+        if 'mapping_initialized' not in st.session_state:
+            for schema in sorted(list(schemas.keys())):                # Build the map once, not every run                  
+                if schema not in st.session_state.data_map["mapping"]:
+                    st.session_state.data_map["mapping"][schema]={}
+            st.session_state.mapping_initialized = True
+        
         for schema in sorted(list(schemas.keys())):                  
-            if schema not in st.session_state.data_map["mapping"]:
-                st.session_state.data_map["mapping"][schema]={}
             with st.expander(f"**{schema}**"):                        # drives mapping UI dropdowns
                 for field in schemas[schema]["field_names"].keys():
                     if schemas[schema]["field_names"][field].get("nested",False):  # shows nested fields (e.g. address_line_1) under fields (e.g. address)  
@@ -88,10 +123,3 @@ if st.session_state.customer_locked:
                                                               field_type)
         if st.button("Save Mapping"):
             mapLock(user,customer)
-
-####### View Customer (Sidebar) #######
-#with st.sidebar:
-#    if view_customer:
-#        sidebarMapping(view_customer,customer,st.session_state.data_map,st.session_state.user)
-#    else:
-#        st.markdown("*Select a customer to view current mapping*")

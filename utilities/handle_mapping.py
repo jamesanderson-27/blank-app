@@ -49,6 +49,9 @@ def saveFieldMapping(data_map,schema,field,primary_file,primary_attribute,second
             mapping["fallback_value"] = config["default_fallback"]
     else:
         mapping["fallback_value"] = fallback_value or ""
+    
+    st.session_state['data_map_changed'] = True
+    
     return data_map
 
 def fieldMapper(field,data_sources,data_map,schema,description,field_type):
@@ -133,7 +136,20 @@ def sidebarMapping(view_customer,customer,data_map,user):
         if (not st.session_state.file_locked) or (view_customer!=customer):
             st.markdown("*No draft in progress*")
         elif view_customer==customer:
-            st.markdown(schemaToMarkdown(data_map),unsafe_allow_html=True)
+            draft_cache_key = f"draft_markdown_{customer}"
+            if draft_cache_key not in st.session_state or st.session_state.get('data_map_changed', False):
+                st.session_state[draft_cache_key] = schemaToMarkdown(data_map)
+                st.session_state['data_map_changed'] = False
+            st.markdown(st.session_state[draft_cache_key],unsafe_allow_html=True)
     else: 
         st.badge("Saved Mapping",color="grey")
-        st.markdown(schemaToMarkdown(getCustomerDataMap(user,view_customer)),unsafe_allow_html=True)
+        cache_key = f"saved_mapping_{view_customer}"
+        markdown_cache_key = f"saved_markdown_{view_customer}"
+        
+        if cache_key not in st.session_state:
+            st.session_state[cache_key] = getCustomerDataMap(user,view_customer)
+        
+        if markdown_cache_key not in st.session_state:
+            st.session_state[markdown_cache_key] = schemaToMarkdown(st.session_state[cache_key])
+        
+        st.markdown(st.session_state[markdown_cache_key],unsafe_allow_html=True)

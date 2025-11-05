@@ -118,7 +118,6 @@ def getCustomerDataMap(user,customer,bool=0):
             }
         return dict(data_map)
 
-@st.cache_data
 def getCustomerDataSources(user,customer):
     path=f"{customer}/data_sources.json"
     req_type,d="GET",None

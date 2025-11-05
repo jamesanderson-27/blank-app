@@ -39,18 +39,25 @@ def csvTxTReader(file):
         st.badge(f"Error reading file: {e}",color='red')
     return list(next(reader))
 
-def handleFiles(uploaded_files,data_sources):
+def handleFiles(uploaded_files):
+
+    st.session_state.debug={}
+
+
     for file in uploaded_files:
-        try:
-            if file.type=='application/json': # json
-                attributes=jsonReader(file)
-            else:
-                attributes=csvTxTReader(file)
-            data_sources["files"][str(file.name)]={
-                "uploaded_at":datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "file_type":file.type,
-                "attributes":attributes
-            }
-        except:
-            st.write("Something went wrong with the file upload... please reach out to James!")
-    return data_sources
+        if str(file.name) in st.session_state.data_sources["files"]:
+            pass
+        else:
+            try:
+                if file.type=='application/json': # json
+                    attributes=jsonReader(file)
+                else:
+                    attributes=csvTxTReader(file)
+                st.session_state.data_sources["files"][str(file.name)]={
+                    "uploaded_at":datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                    "file_type":file.type,
+                    "attributes":attributes
+                }
+            except:
+                st.write(f"Something went wrong with the upload of {str(file.name)}... please reach out to James!")
+    return st.session_state.data_sources
