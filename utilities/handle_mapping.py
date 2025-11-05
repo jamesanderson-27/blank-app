@@ -1,7 +1,7 @@
 import streamlit as st
 from utilities.handle_github_data import getCustomerDataMap,updateGithub
 from utilities.handle_markdown import schemaToMarkdown
-    
+
 def customerLock(user,customer=""):
     st.session_state.customer_locked=True
     try:
@@ -27,18 +27,32 @@ def getIndex(data_map,schema,field,list_options,key):
         return 0
     
 def saveFieldMapping(data_map,schema,field,primary_file,primary_attribute,secondary_file,secondary_attribute,fallback_value_type,fallback_value):
+    if "mapping" not in data_map:
+        data_map["mapping"] = {}
+    if schema not in data_map["mapping"]:
+        data_map["mapping"][schema] = {}
     if field not in data_map["mapping"][schema]:
-        data_map["mapping"][schema][field]={}
-    data_map["mapping"][schema][field]["primary_file"]=primary_file
-    data_map["mapping"][schema][field]["primary_attribute"]=primary_attribute
-    data_map["mapping"][schema][field]["secondary_file"]=secondary_file
-    data_map["mapping"][schema][field]["secondary_attribute"]=secondary_attribute
-    data_map["mapping"][schema][field]["fallback_value_type"]=fallback_value_type
-    data_map["mapping"][schema][field]["fallback_value"]=fallback_value
+        data_map["mapping"][schema][field] = {}
+    
+    mapping = data_map["mapping"][schema][field] 
+    mapping["primary_file"] = primary_file or ""                    # null fallbacks
+    mapping["primary_attribute"] = primary_attribute or ""
+    mapping["secondary_file"] = secondary_file or ""
+    mapping["secondary_attribute"] = secondary_attribute or ""
+    mapping["fallback_value_type"] = fallback_value_type or "None"
+    
+    if fallback_value_type in st.session_state.validation_config: 
+        config = st.session_state.validation_config[fallback_value_type]
+        if config["validation"](fallback_value): 
+            mapping["fallback_value"] = fallback_value
+        else:                                                       # if the user enters a nonvalid typ
+            mapping["fallback_value"] = config["default_fallback"]
+    else:
+        mapping["fallback_value"] = fallback_value or ""
     return data_map
 
 def fieldMapper(field,data_sources,data_map,schema,description,field_type):
-    with st.expander(f"{schema}.*{field}*"): # field (e.g. abbreviation, externalIdentifiers)
+    with st.expander(f"{schema}.*{field}*"):                        # field (e.g. abbreviation, externalIdentifiers)
         st.code(description,language=None,wrap_lines=True)
         saved_files=list(data_sources["files"].keys())
         col1,col2=st.columns(2)
@@ -58,7 +72,7 @@ def fieldMapper(field,data_sources,data_map,schema,description,field_type):
                                         index=idx)
             ## Fallback Type box
             if not field_type:
-                list_options=["None","string","boolean","object","array"]
+                list_options=list(st.session_state.validation_config.keys())
             else:
                 list_options=["None",field_type]
             idx=getIndex(st.session_state.saved_data_map,schema,field,list_options,"fallback_value_type")

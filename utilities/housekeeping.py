@@ -9,6 +9,7 @@ def housekeeping():
     st.session_state.API_KEY_WRITE=os.environ.get('API_KEY_WRITE') # set in streamlit settings' secrets
     st.logo("DexCare_logo.jpg",size="large")
     styleButtons()
+    setValidationConfig()
     if 'data_map_sha' not in st.session_state:
         st.session_state.data_map_sha=''
     if 'data_sources_sha' not in st.session_state:
@@ -22,6 +23,7 @@ def housekeeping():
     if 'saved_data_map' not in st.session_state:
         st.session_state.saved_data_map={}
 
+@st.cache_data
 def createExclusion():
     st.session_state.exclusion_list=[
         "adventCustom",
@@ -57,6 +59,7 @@ def createExclusion():
         "phone.isExternal"
     ]
 
+@st.cache_data
 def loadSchemas():
     schemas={
             "Provider":{
@@ -75,3 +78,27 @@ def loadSchemas():
     createExclusion()
     schemas=getEntitiesSchema(schemas,st.session_state.exclusion_list)
     return schemas
+
+def setValidationConfig():
+    st.session_state.validation_config = {
+    "string": {
+        "validation": lambda x: isinstance(x, str),
+        "default_fallback": ""
+    },
+    "boolean": {
+        "validation": lambda x: x in ["True", "False", True, False],
+        "default_fallback": "True"
+    },
+    "object": {
+        "validation": lambda x: True,  # Could add JSON validation
+        "default_fallback": "{}"
+    },
+    "array": {
+        "validation": lambda x: True,  # Could add array validation
+        "default_fallback": "[]"
+    },
+    "number": {
+        "validation": lambda x: isinstance(x, (int, float)) or str(x).replace('.', '').isdigit(),
+        "default_fallback": 0
+    }
+}

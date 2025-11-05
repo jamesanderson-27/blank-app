@@ -8,20 +8,21 @@ housekeeping() # run on app launch: env variables, button styling, secret readin
 schemas=loadSchemas() # gets entities schema, exclusion lists
 
 ####### View Customer (Sidebar) #######
-with st.sidebar:
-    st.title("View Customer Mapping")
-    user=st.session_state.user
-    customer_list=getCustomerList(user)
-    try:
-        idx=customer_list.index(view_customer) # type: ignore
-    except:
-        idx=0
-    view_customer=st.selectbox("Select Customer",
-                customer_list,
-                key="view_customer",
-                index=idx)
-    st.divider()
-
+#with st.sidebar:
+#    st.title("View Customer Mapping")
+ #   user=st.session_state.user
+  #  customer_list=getCustomerList(user)
+   # try:
+#        idx=customer_list.index(view_customer) # type: ignore
+ #   except:
+  #      idx=0
+   # view_customer=st.selectbox("Select Customer",
+#                customer_list,
+ #               key="view_customer",
+  #              index=idx)
+   # st.divider()
+user=st.session_state.user
+customer_list=getCustomerList(user)
 ####### Edit Customer (Main Tab) #######
 st.subheader("Edit Customer Mapping")
 
@@ -89,8 +90,8 @@ if st.session_state.customer_locked:
             mapLock(user,customer)
 
 ####### View Customer (Sidebar) #######
-with st.sidebar:
-    if view_customer:
-        sidebarMapping(view_customer,customer,st.session_state.data_map,st.session_state.user)
-    else:
-        st.markdown("*Select a customer to view current mapping*")
+#with st.sidebar:
+#    if view_customer:
+#        sidebarMapping(view_customer,customer,st.session_state.data_map,st.session_state.user)
+#    else:
+#        st.markdown("*Select a customer to view current mapping*")
