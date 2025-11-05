@@ -44,6 +44,27 @@
         "OPEN_SCHEDULING",
         "DIRECT_SCHEDULING"
       ]
+    },
+    "JTCC Providers as of 2025-06-13.csv": {
+      "uploaded_at": "2025-11-05 20:56:32",
+      "file_type": "application/vnd.ms-excel",
+      "attributes": [
+        "NPI",
+        "SER ID",
+        "First Name",
+        "Middle Name",
+        "Last Name",
+        "Facility Name",
+        "Location EHR ID",
+        "Street1",
+        "Street2",
+        "Suite",
+        "City",
+        "State",
+        "Zip",
+        "Location Type",
+        "Phone Number"
+      ]
     }
   }
 }
