@@ -4,7 +4,7 @@
 **Department.abbreviation**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `DEP_20250827.csv` | `DEPT_ABBR` | `` | `` | `None` | `` |
+| `DEP_2025_11_04.csv` | `DEP_NAME` | `` | `` | `None` | `` |
 
 
 
@@ -18,7 +18,7 @@
 **Department.address.addressLine1**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `DEP_20250827.csv` | `Street_Address` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `None` | `` |
 
 
 
@@ -32,14 +32,14 @@
 **Department.address.city**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `DEP_20250827.csv` | `City` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `None` | `` |
 
 
 
 **Department.address.country**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `String` | `USA` |
+| `` | `` | `` | `` | `None` | `` |
 
 
 
@@ -53,7 +53,7 @@
 **Department.address.externalIdentifiers**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
@@ -74,14 +74,14 @@
 **Department.address.postalCode**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `DEP_20250827.csv` | `Zip` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `None` | `` |
 
 
 
 **Department.address.state**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `DEP_20250827.csv` | `State` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `None` | `` |
 
 
 
@@ -102,7 +102,7 @@
 **Department.brandName**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `String` | `hmh` |
+| `` | `` | `` | `` | `None` | `` |
 
 
 
@@ -116,7 +116,7 @@
 **Department.cmsContent.externalIdentifiers**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
@@ -172,28 +172,28 @@
 **Department.emrIdentifier.emrId**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `DEP_20250827.csv` | `DEP_ID` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `None` | `` |
 
 
 
 **Department.emrIdentifier.emrIdType**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `String` | `External` |
+| `` | `` | `` | `` | `None` | `` |
 
 
 
 **Department.emrIdentifier.emrSystemId**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `String` | `hmh.epic` |
+| `` | `` | `` | `` | `None` | `` |
 
 
 
 **Department.externalIdentifiers**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
@@ -228,49 +228,49 @@
 **Department.hours.fri**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Department.hours.mon**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Department.hours.sat**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Department.hours.sun**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Department.hours.thu**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Department.hours.tue**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Department.hours.wed**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
@@ -284,7 +284,7 @@
 **Department.insurances.externalIdentifiers**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
@@ -354,14 +354,14 @@
 **Department.isNewPatientEnabled**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `DEP_20250827.csv` | `Open_Schd` | `` | `` | `Boolean` | `False` |
+| `` | `` | `` | `` | `None` | `` |
 
 
 
 **Department.isReturningPatientEnabled**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `DEP_20250827.csv` | `Direct_Schd` | `` | `` | `Boolean` | `False` |
+| `` | `` | `` | `` | `None` | `` |
 
 
 
@@ -382,7 +382,7 @@
 **Department.phone.phoneNumber**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `DEP_20250827.csv` | `Phone` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `None` | `` |
 
 
 
@@ -403,42 +403,42 @@
 **Department.phone.externalIdentifiers**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Department.phone.isPrimary**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Department.phone.isExternal**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Department.phone.isSmsEnabled**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Department.phone.notificationsEnabled**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Department.policies.externalIdentifiers**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
@@ -466,7 +466,7 @@
 **Department.reviews.commentDistribution**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
@@ -480,7 +480,7 @@
 **Department.reviews.externalIdentifiers**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
@@ -529,7 +529,7 @@
 **Department.specialties.externalIdentifiers**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
@@ -562,6 +562,181 @@
 
 
 **Department.walkInsWelcome**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Department.brandRefs.brand**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Department.brandRefs.isPrimary**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Department.brandRefs.url**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Department.businessLineName**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Department.businessUnitName**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Department.extended**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Department.reviews.ratingDistribution**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Department.visitTypeDepartmentOverrides.dateRangeLookAhead**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Department.visitTypeDepartmentOverrides.dateRangeStartBuffer**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Department.visitTypeDepartmentOverrides.displayName**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Department.visitTypeDepartmentOverrides.emrIdentifier**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Department.visitTypeDepartmentOverrides.isEstablishedPatient**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Department.visitTypeDepartmentOverrides.isNewPatient**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Department.visitTypes.ageUnit**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Department.visitTypes.contextMetadata**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Department.visitTypes.displayName**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Department.visitTypes.maxAge**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Department.visitTypes.minAge**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Department.visitTypes.dateRangeLookAhead**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Department.visitTypes.dateRangeStartBuffer**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Department.visitTypes.duration**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Department.visitTypes.externalIdentifiers**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Department.visitTypes.isBookableOnline**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Department.visitTypes.relationshipCheck**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Department.visitTypes.visitTypeCore**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | `` | `` | `` | `` | `None` | `` |
@@ -607,7 +782,7 @@
 **Location.address.externalIdentifiers**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
@@ -649,21 +824,21 @@
 **Location.brandName**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `String` | `hmh` |
+| `` | `` | `` | `` | `None` | `` |
 
 
 
 **Location.childLocations**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Location.cmsContent.externalIdentifiers**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
@@ -684,7 +859,7 @@
 **Location.conditionsTreated**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
@@ -698,14 +873,14 @@
 **Location.departmentPrimaryIdentifier.emrIdentifier**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Location.departmentPrimaryIdentifier.externalIdentifiers**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
@@ -733,7 +908,7 @@
 **Location.externalIdentifiers**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
@@ -952,6 +1127,377 @@
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | `` | `` | `` | `` | `None` | `` |
 
+
+
+**Location.brandRefs.brand**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Location.brandRefs.isPrimary**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.brandRefs.url**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.abbreviation**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.accreditations**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.address**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Location.departments.adhoc**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.banner**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.brandName**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.brandRefs**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Location.departments.businessLineName**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.businessUnitName**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.clockwise**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.cmsContent**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Location.departments.conditionsTreated**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.contextMetadata**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.dexcareBuildsPage**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.displayName**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.emrIdentifier**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Location.departments.extended**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.externalIdentifiers**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Location.departments.facilityTypes**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.fax**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.googlePlaceUrl**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.hours**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Location.departments.imageUrl**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.insurances**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Location.departments.isAcceptingNewPatients**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.isActive**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.isBookableOnline**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.isBookablePhone**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.isBookableVirtual**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.isHidden**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.isNewPatientEnabled**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.isReturningPatientEnabled**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.pageDescription**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.pageTitle**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.phone**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Location.departments.policies**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Location.departments.reviews**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Location.departments.services**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Location.departments.specialties**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Location.departments.tier**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.timezone**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.url**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.departments.visitTypeDepartmentOverrides**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Location.departments.visitTypes**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Location.departments.walkInsWelcome**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.extended**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Location.hours**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Location.phone**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Location.policies**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Location.services**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
 ## Provider
 
 
@@ -965,39 +1511,11 @@
 **Provider.agesSeen**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `mcgill.json` | `age_groups_seen` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `None` | `` |
 
 
 
 **Provider.bio**
-| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `mcgill.json` | `about_the_provider` | `` | `` | `None` | `` |
-
-
-
-**Provider.careTeamClinicianIdentifiers.emrIdentifiers**
-| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
-
-
-
-**Provider.careTeamClinicianIdentifiers.externalIdentifiers**
-| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
-
-
-
-**Provider.careTeamClinicianIdentifiers.npi**
-| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
-
-
-
-**Provider.careTeamIds**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | `` | `` | `` | `` | `None` | `` |
@@ -1014,7 +1532,7 @@
 **Provider.cmsContent.externalIdentifiers**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
@@ -1035,7 +1553,7 @@
 **Provider.conditionsTreated**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `mcgill.json` | `clinical_keywords.searchable.name` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `None` | `` |
 
 
 
@@ -1070,35 +1588,21 @@
 **Provider.departmentIdentifiers.emrIdentifier**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Provider.departmentIdentifiers.externalIdentifiers**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
-
-
-
-**Provider.departmentIds**
-| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
-
-
-
-**Provider.departmentPrimaryId**
-| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Provider.departmentPrimaryIdentifier**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
@@ -1119,21 +1623,21 @@
 **Provider.email**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Provider.emrIdentifiers**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `SER_20250925.csv` | `SER_ID` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Provider.externalIdentifiers**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
@@ -1161,7 +1665,7 @@
 **Provider.insurances.externalIdentifiers**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
@@ -1238,14 +1742,14 @@
 **Provider.isNewPatientEnabled**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `SER_20250925.csv` | `OPEN_SCHEDULING` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `None` | `` |
 
 
 
 **Provider.isReturningPatientEnabled**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `SER_20250925.csv` | `DIRECT_SCHEDULING` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `None` | `` |
 
 
 
@@ -1266,7 +1770,7 @@
 **Provider.name**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `SER_20250925.csv` | `NAME` | `mcgill.json` | `name.full` | `None` | `` |
+| `` | `` | `` | `` | `None` | `` |
 
 
 
@@ -1280,7 +1784,7 @@
 **Provider.npi**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `mcgill.json` | `npi` | `SER_20250925.csv` | `NATIONAL_PROVIDER_ID` | `None` | `` |
+| `` | `` | `` | `` | `None` | `` |
 
 
 
@@ -1322,35 +1826,35 @@
 **Provider.phone.externalIdentifiers**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Provider.phone.isPrimary**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Provider.phone.isExternal**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Provider.phone.isSmsEnabled**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Provider.phone.notificationsEnabled**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
@@ -1385,7 +1889,7 @@
 **Provider.reviews.commentDistribution**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
@@ -1399,7 +1903,7 @@
 **Provider.reviews.externalIdentifiers**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
@@ -1434,7 +1938,7 @@
 **Provider.specialties.externalIdentifiers**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
@@ -1448,14 +1952,14 @@
 **Provider.specialty**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Provider.subSpecialties**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
@@ -1470,3 +1974,402 @@
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.adventCustom.showDynamicFaq**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.adventCustom.eLinkSchedulingUrl**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.adventCustom.hideRequestAppointment**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.adventCustom.hideRequestAppointmentBlock**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.adventCustom.isCareAdvocateProvider**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.adventCustom.isPCP**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.adventCustom.consumerSpecialties**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.adventCustom.carePhilosophy**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.adventCustom.personalInterests**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.adventCustom.awardAndRecognitions**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.adventCustom.professionalAffiliations**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.adventCustom.professionalLinks**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.adventCustom.publications**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.adventCustom.searchKeywords**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.adventCustom.careCategories**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.adventCustom.treatmentsOffered**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.adventCustom.proceduresAndTests**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.adventCustom.reasonForReferral**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.adventCustom.inNetworkStatus**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.adventCustom.isMedStaff**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.brandRefs.brand**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Provider.brandRefs.isPrimary**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.brandRefs.url**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.careTeamClinicianIdentifiers.emrIdentifiers**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Provider.careTeamClinicianIdentifiers.externalIdentifiers**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Provider.careTeamClinicianIdentifiers.npi**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.careTeamIds**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Provider.departmentIds**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Provider.departmentPrimaryId**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Provider.excludedVisitTypes.ageUnit**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Provider.excludedVisitTypes.contextMetadata**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.excludedVisitTypes.displayName**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.excludedVisitTypes.maxAge**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.excludedVisitTypes.minAge**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.excludedVisitTypes.dateRangeLookAhead**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.excludedVisitTypes.dateRangeStartBuffer**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.excludedVisitTypes.duration**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.excludedVisitTypes.externalIdentifiers**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Provider.excludedVisitTypes.isBookableOnline**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.excludedVisitTypes.relationshipCheck**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Provider.excludedVisitTypes.visitTypeCore**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.exclusionVisitTypeListMdm**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.extended**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.reviews.ratingDistribution**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Provider.visitTypeOverrides.disabled**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.visitTypeOverrides.displayName**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.visitTypeOverrides.sexTypeI18s**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |
+
+
+
+**Provider.visitTypeOverrides.ageUnit**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.visitTypeOverrides.maxAge**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.visitTypeOverrides.minAge**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.visitTypeOverrides.dateRangeLookAhead**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.visitTypeOverrides.dateRangeStartBuffer**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.visitTypeOverrides.duration**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.visitTypeOverrides.isBookableOnline**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.visitTypeOverrides.isNewPatient**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.visitTypeOverrides.relationshipCheck**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `None` | `` |
+
+
+
+**Provider.visitTypeOverrides.visitType**
+| *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| `` | `` | `` | `` | `string` | `` |

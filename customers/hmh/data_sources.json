@@ -1,1 +1,49 @@
-
+{
+  "files": {
+    "": {
+      "uploaded_at": "",
+      "file_type": "",
+      "attributes": []
+    },
+    "DEP_2025_11_04.csv": {
+      "uploaded_at": "2025-11-04 17:09:16",
+      "file_type": "application/vnd.ms-excel",
+      "attributes": [
+        "DEP_ID",
+        "DEP_NAME",
+        "STREET_ADDRESS",
+        "STREET_ADDRESS_2",
+        "CITY",
+        "STATE",
+        "ZIP",
+        "PHONE",
+        "DEPT_ABBR",
+        "SPECIALTY",
+        "CENTER",
+        "SERVICE_AREA",
+        "DIRECT_SCHD",
+        "OPEN_SCHD",
+        "VISIT_ID_DVOVR",
+        "VISIT_TITLE_DVOVR",
+        "DIRECT_SCH_ON_DVOR",
+        "BUFFER_DAYS_DVOVR",
+        "LOOKAHEAD_DAYS_DVOVR",
+        "OPEN_SCH_ON_DVOVR",
+        "GROUPER"
+      ]
+    },
+    "SER_2025_11_04.csv": {
+      "uploaded_at": "2025-11-04 17:09:16",
+      "file_type": "application/vnd.ms-excel",
+      "attributes": [
+        "SER_ID",
+        "Name",
+        "Sex",
+        "DEP_ID",
+        "NATIONAL_PROVIDER_ID",
+        "OPEN_SCHEDULING",
+        "DIRECT_SCHEDULING"
+      ]
+    }
+  }
+}
