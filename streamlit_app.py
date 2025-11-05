@@ -32,7 +32,7 @@ with st.sidebar:
                 index=idx)
     st.divider()
 
-####### Edit Customer (Main Tab) #######
+####### Edit Customer #######
 st.subheader("Edit Customer Mapping")
 
 customer=st.selectbox("Select Customer",
@@ -41,16 +41,16 @@ customer=st.selectbox("Select Customer",
                     index=0,
                     disabled=st.session_state.customer_locked)
 
-# Now render sidebar mapping after customer is defined
+if not st.session_state.customer_locked:
+    if 'current_customer' not in st.session_state or st.session_state.current_customer != customer:
+        st.session_state.data_map = getCustomerDataMap(user,customer)
+        st.session_state.current_customer = customer
+
 with st.sidebar:
-    # Only render sidebar mapping if a customer is selected
-    if view_customer:
+    if view_customer: # Only render sidebar mapping if a customer is selecteds
         sidebarMapping(view_customer,customer,st.session_state.data_map,st.session_state.user)
     else:
         st.markdown("*Select a customer to view current mapping*")
-
-if not st.session_state.customer_locked:
-    st.session_state.data_map = getCustomerDataMap(user,customer)
 
 if st.button("Save Customer"):
     customerLock(user,customer)
