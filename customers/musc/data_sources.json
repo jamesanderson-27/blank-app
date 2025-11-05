@@ -4,6 +4,70 @@
       "uploaded_at": "",
       "file_type": "",
       "attributes": []
+    },
+    "SER_20251104.csv": {
+      "uploaded_at": "2025-11-05 18:31:23",
+      "file_type": "application/vnd.ms-excel",
+      "attributes": [
+        "SER_ID",
+        "NAME",
+        "SEX",
+        "DEP_ID",
+        "NATIONAL_PROVIDER_ID",
+        "OPEN_SCHEDULING",
+        "DIRECT_SCHEDULING"
+      ]
+    },
+    "JTCC Providers as of 2025-06-13.csv": {
+      "uploaded_at": "2025-11-05 21:09:29",
+      "file_type": "application/vnd.ms-excel",
+      "attributes": [
+        "NPI",
+        "SER ID",
+        "First Name",
+        "Middle Name",
+        "Last Name",
+        "Facility Name",
+        "Location EHR ID",
+        "Street1",
+        "Street2",
+        "Suite",
+        "City",
+        "State",
+        "Zip",
+        "Location Type",
+        "Phone Number"
+      ]
+    },
+    "Kyruus Extract - pde_v5_locations_20250808-0638.csv": {
+      "uploaded_at": "2025-11-05 21:09:29",
+      "file_type": "application/vnd.ms-excel",
+      "attributes": [
+        "provider_id",
+        "last_name",
+        "first_name",
+        "npi",
+        "location_id",
+        "location_rank",
+        "location_name",
+        "zip",
+        "city",
+        "address1",
+        "address2",
+        "lon",
+        "lat",
+        "fax",
+        "phone",
+        "state",
+        "type",
+        "suite",
+        "commercial_entity_name",
+        "external_id",
+        "searchable",
+        "primary_marketable_location_id",
+        "external_name",
+        "billing_tin"
+      ]
     }
   }
 }
