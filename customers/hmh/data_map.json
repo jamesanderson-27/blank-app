@@ -5,7 +5,7 @@
     "Department": {
       "abbreviation": {
         "primary_file": "DEP_2025_11_04.csv",
-        "primary_attribute": "DEP_NAME",
+        "primary_attribute": "DEPT_ABBR",
         "secondary_file": "",
         "secondary_attribute": "",
         "fallback_value_type": "None",
@@ -20,26 +20,26 @@
         "fallback_value": ""
       },
       "address.addressLine1": {
-        "primary_file": "",
-        "primary_attribute": "",
-        "secondary_file": "",
-        "secondary_attribute": "",
+        "primary_file": "DEP_2025_11_04.csv",
+        "primary_attribute": "STREET_ADDRESS",
+        "secondary_file": "Kyruus Extract - pde_v5_locations_20250808-0638.csv",
+        "secondary_attribute": "address1",
         "fallback_value_type": "None",
         "fallback_value": ""
       },
       "address.addressLine2": {
-        "primary_file": "",
-        "primary_attribute": "",
-        "secondary_file": "",
-        "secondary_attribute": "",
+        "primary_file": "DEP_2025_11_04.csv",
+        "primary_attribute": "STREET_ADDRESS_2",
+        "secondary_file": "Kyruus Extract - pde_v5_locations_20250808-0638.csv",
+        "secondary_attribute": "address2",
         "fallback_value_type": "None",
         "fallback_value": ""
       },
       "address.city": {
-        "primary_file": "",
-        "primary_attribute": "",
-        "secondary_file": "",
-        "secondary_attribute": "",
+        "primary_file": "DEP_2025_11_04.csv",
+        "primary_attribute": "CITY",
+        "secondary_file": "Kyruus Extract - pde_v5_locations_20250808-0638.csv",
+        "secondary_attribute": "city",
         "fallback_value_type": "None",
         "fallback_value": ""
       },
@@ -48,8 +48,8 @@
         "primary_attribute": "",
         "secondary_file": "",
         "secondary_attribute": "",
-        "fallback_value_type": "None",
-        "fallback_value": ""
+        "fallback_value_type": "string",
+        "fallback_value": "USA"
       },
       "address.county": {
         "primary_file": "",
@@ -84,16 +84,16 @@
         "fallback_value": ""
       },
       "address.postalCode": {
-        "primary_file": "",
-        "primary_attribute": "",
-        "secondary_file": "",
-        "secondary_attribute": "",
+        "primary_file": "DEP_2025_11_04.csv",
+        "primary_attribute": "ZIP",
+        "secondary_file": "Kyruus Extract - pde_v5_locations_20250808-0638.csv",
+        "secondary_attribute": "zip",
         "fallback_value_type": "None",
         "fallback_value": ""
       },
       "address.state": {
-        "primary_file": "",
-        "primary_attribute": "",
+        "primary_file": "DEP_2025_11_04.csv",
+        "primary_attribute": "STATE",
         "secondary_file": "",
         "secondary_attribute": "",
         "fallback_value_type": "None",
@@ -120,8 +120,8 @@
         "primary_attribute": "",
         "secondary_file": "",
         "secondary_attribute": "",
-        "fallback_value_type": "None",
-        "fallback_value": ""
+        "fallback_value_type": "string",
+        "fallback_value": "hmh"
       },
       "clockwise": {
         "primary_file": "",
@@ -172,7 +172,7 @@
         "fallback_value": ""
       },
       "description": {
-        "primary_file": "",
+        "primary_file": "Kyruus Extract - pde_v5_locations_20250808-0638.csv",
         "primary_attribute": "",
         "secondary_file": "",
         "secondary_attribute": "",
@@ -1063,66 +1063,66 @@
       },
       "hours.custom": {
         "primary_file": "",
-        "primary_attribute": null,
+        "primary_attribute": "",
         "secondary_file": "",
-        "secondary_attribute": null,
+        "secondary_attribute": "",
         "fallback_value_type": "None",
         "fallback_value": ""
       },
       "hours.fri": {
         "primary_file": "",
-        "primary_attribute": null,
+        "primary_attribute": "",
         "secondary_file": "",
-        "secondary_attribute": null,
-        "fallback_value_type": "None",
+        "secondary_attribute": "",
+        "fallback_value_type": "string",
         "fallback_value": ""
       },
       "hours.mon": {
         "primary_file": "",
-        "primary_attribute": null,
+        "primary_attribute": "",
         "secondary_file": "",
-        "secondary_attribute": null,
-        "fallback_value_type": "None",
+        "secondary_attribute": "",
+        "fallback_value_type": "string",
         "fallback_value": ""
       },
       "hours.sat": {
         "primary_file": "",
-        "primary_attribute": null,
+        "primary_attribute": "",
         "secondary_file": "",
-        "secondary_attribute": null,
-        "fallback_value_type": "None",
+        "secondary_attribute": "",
+        "fallback_value_type": "string",
         "fallback_value": ""
       },
       "hours.sun": {
         "primary_file": "",
-        "primary_attribute": null,
+        "primary_attribute": "",
         "secondary_file": "",
-        "secondary_attribute": null,
-        "fallback_value_type": "None",
+        "secondary_attribute": "",
+        "fallback_value_type": "string",
         "fallback_value": ""
       },
       "hours.thu": {
         "primary_file": "",
-        "primary_attribute": null,
+        "primary_attribute": "",
         "secondary_file": "",
-        "secondary_attribute": null,
-        "fallback_value_type": "None",
+        "secondary_attribute": "",
+        "fallback_value_type": "string",
         "fallback_value": ""
       },
       "hours.tue": {
         "primary_file": "",
-        "primary_attribute": null,
+        "primary_attribute": "",
         "secondary_file": "",
-        "secondary_attribute": null,
-        "fallback_value_type": "None",
+        "secondary_attribute": "",
+        "fallback_value_type": "string",
         "fallback_value": ""
       },
       "hours.wed": {
         "primary_file": "",
-        "primary_attribute": null,
+        "primary_attribute": "",
         "secondary_file": "",
-        "secondary_attribute": null,
-        "fallback_value_type": "None",
+        "secondary_attribute": "",
+        "fallback_value_type": "string",
         "fallback_value": ""
       },
       "imageUrl": {
@@ -1167,9 +1167,9 @@
       },
       "phone.phoneNumber": {
         "primary_file": "",
-        "primary_attribute": null,
+        "primary_attribute": "",
         "secondary_file": "",
-        "secondary_attribute": null,
+        "secondary_attribute": "",
         "fallback_value_type": "None",
         "fallback_value": ""
       },
@@ -1183,9 +1183,9 @@
       },
       "phone.extension": {
         "primary_file": "",
-        "primary_attribute": null,
+        "primary_attribute": "",
         "secondary_file": "",
-        "secondary_attribute": null,
+        "secondary_attribute": "",
         "fallback_value_type": "None",
         "fallback_value": ""
       },
@@ -1239,33 +1239,33 @@
       },
       "policies.name": {
         "primary_file": "",
-        "primary_attribute": null,
+        "primary_attribute": "",
         "secondary_file": "",
-        "secondary_attribute": null,
+        "secondary_attribute": "",
         "fallback_value_type": "None",
         "fallback_value": ""
       },
       "policies.url": {
         "primary_file": "",
-        "primary_attribute": null,
+        "primary_attribute": "",
         "secondary_file": "",
-        "secondary_attribute": null,
+        "secondary_attribute": "",
         "fallback_value_type": "None",
         "fallback_value": ""
       },
       "services.name": {
         "primary_file": "",
-        "primary_attribute": null,
+        "primary_attribute": "",
         "secondary_file": "",
-        "secondary_attribute": null,
+        "secondary_attribute": "",
         "fallback_value_type": "None",
         "fallback_value": ""
       },
       "services.url": {
         "primary_file": "",
-        "primary_attribute": null,
+        "primary_attribute": "",
         "secondary_file": "",
-        "secondary_attribute": null,
+        "secondary_attribute": "",
         "fallback_value_type": "None",
         "fallback_value": ""
       },
@@ -1816,8 +1816,8 @@
         "fallback_value": ""
       },
       "departmentIdentifiers.emrIdentifier": {
-        "primary_file": "",
-        "primary_attribute": "",
+        "primary_file": "Kyruus Extract - pde_v5_locations_20250808-0638.csv",
+        "primary_attribute": "external_id",
         "secondary_file": "",
         "secondary_attribute": "",
         "fallback_value_type": "string",
@@ -1864,8 +1864,8 @@
         "fallback_value": ""
       },
       "emrIdentifiers": {
-        "primary_file": "",
-        "primary_attribute": "",
+        "primary_file": "SER_2025_11_04.csv",
+        "primary_attribute": "SER_ID",
         "secondary_file": "",
         "secondary_attribute": "",
         "fallback_value_type": "string",
@@ -1936,8 +1936,8 @@
         "fallback_value": ""
       },
       "isAcceptingNewPatients": {
-        "primary_file": "",
-        "primary_attribute": "",
+        "primary_file": "SER_2025_11_04.csv",
+        "primary_attribute": "OPEN_SCHEDULING",
         "secondary_file": "",
         "secondary_attribute": "",
         "fallback_value_type": "None",
