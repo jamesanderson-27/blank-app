@@ -93,15 +93,11 @@ if st.session_state.customer_locked:
         for schema in sorted(list(schemas.keys())):
             with st.expander(f"**{schema}**"):
                 processed_fields = set() # Group nested fields under their parent field expanders
-                
                 for field in schemas[schema]["field_names"].keys():
                     if field in processed_fields:
-                        continue
-                        
+                        continue   
                     field_data = schemas[schema]["field_names"][field]
-                    
-                    if field_data.get("nested", False):
-                        
+                    if field_data.get("nested", False):                      
                         with st.expander(f"{schema}.*{field}*"): # Handle nested fields grouped under parent
                             for nested_field in field_data["nested"].keys():
                                 if nested_field != "description" and f"{field}.{nested_field}" not in st.session_state.exclusion_list:
@@ -118,10 +114,8 @@ if st.session_state.customer_locked:
                                         field_type
                                     )
                     else:
-                        # Handle regular fields
-                        description = field_data.get("description", "")
+                        description = field_data.get("description", "")# Handle regular fields
                         field_type = field_data.get("type", "")
-                        
                         st.session_state.data_map = fieldMapper(
                             field,
                             st.session_state.data_sources,
@@ -130,7 +124,6 @@ if st.session_state.customer_locked:
                             description,
                             field_type
                         )
-                    
                     processed_fields.add(field)
         if st.button("Save Mapping"):
             mapLock(user,customer)
