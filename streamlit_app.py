@@ -92,38 +92,58 @@ if st.session_state.customer_locked:
         st.divider()
         st.subheader("Map to DexCare Schema")
         
+        # Initialize mapping structure once
         if 'mapping_initialized' not in st.session_state:
             for schema in sorted(list(schemas.keys())):                # Build the map once, not every run                  
                 if schema not in st.session_state.data_map["mapping"]:
                     st.session_state.data_map["mapping"][schema]={}
             st.session_state.mapping_initialized = True
         
-        # Initialize lazy loading state tracking - removed button-based approach
-        # but keeping mapping initialization for performance
-        
+        # Render schemas with natural lazy loading via Streamlit expanders
+        # Streamlit expanders inherently provide lazy loading - content inside expanders
+        # is only processed when the expander is opened by the user
         for schema in sorted(list(schemas.keys())):
-            with st.expander(f"**{schema}**"):                        # drives mapping UI dropdowns
+            with st.expander(f"**{schema}**"):
+                # Group nested fields under their parent field expanders
+                processed_fields = set()
+                
                 for field in schemas[schema]["field_names"].keys():
-                    if schemas[schema]["field_names"][field].get("nested",False):  # shows nested fields (e.g. address_line_1) under fields (e.g. address)  
+                    if field in processed_fields:
+                        continue
+                        
+                    field_data = schemas[schema]["field_names"][field]
+                    
+                    if field_data.get("nested", False):
+                        # Handle nested fields grouped under parent
                         with st.expander(f"{schema}.*{field}*"):
-                            for nested_field in schemas[schema]["field_names"][field]["nested"].keys():
-                                description=schemas[schema]["field_names"][field]["nested"][nested_field].get("description","")
-                                field_type=schemas[schema]["field_names"][field]["nested"][nested_field].get("type","")
-                                if not ((f"{field}.{nested_field}" in st.session_state.exclusion_list) or (nested_field=="description")):
-                                    st.session_state.data_map=fieldMapper(f"{field}.{nested_field}",
-                                                                          st.session_state.data_sources,
-                                                                          st.session_state.data_map,
-                                                                          schema,
-                                                                          description,
-                                                                          field_type)
+                            for nested_field in field_data["nested"].keys():
+                                if nested_field != "description" and f"{field}.{nested_field}" not in st.session_state.exclusion_list:
+                                    nested_data = field_data["nested"][nested_field]
+                                    description = nested_data.get("description", "")
+                                    field_type = nested_data.get("type", "")
+                                    
+                                    st.session_state.data_map = fieldMapper(
+                                        f"{field}.{nested_field}",
+                                        st.session_state.data_sources,
+                                        st.session_state.data_map,
+                                        schema,
+                                        description,
+                                        field_type
+                                    )
                     else:
-                        description=schemas[schema]["field_names"][field].get("description","")
-                        field_type=schemas[schema]["field_names"][field].get("type","")
-                        st.session_state.data_map=fieldMapper(field,
-                                                              st.session_state.data_sources,
-                                                              st.session_state.data_map,
-                                                              schema,
-                                                              description,
-                                                              field_type)
+                        # Handle regular fields
+                        description = field_data.get("description", "")
+                        field_type = field_data.get("type", "")
+                        
+                        st.session_state.data_map = fieldMapper(
+                            field,
+                            st.session_state.data_sources,
+                            st.session_state.data_map,
+                            schema,
+                            description,
+                            field_type
+                        )
+                    
+                    processed_fields.add(field)
         if st.button("Save Mapping"):
             mapLock(user,customer)
