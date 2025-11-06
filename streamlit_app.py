@@ -16,20 +16,13 @@ customer_list = st.session_state.customer_list
 ####### View Customer (Sidebar) #######
 with st.sidebar:
     st.title("View Customer Mapping")
-    
-    # Only initialize view_customer if not already set
     if 'view_customer' not in st.session_state:
         st.session_state.view_customer = ""
-    
-    try:
-        idx=customer_list.index(st.session_state.view_customer)
-    except:
         idx=0
-    
     view_customer=st.selectbox("Select Customer",
                 customer_list,
                 key="view_customer",
-                index=idx)
+                index=customer_list.index(st.session_state.view_customer))
     st.divider()
 
 ####### Edit Customer #######
