@@ -1,7 +1,7 @@
 import streamlit as st
 from utilities.handle_files import handleFiles
 from utilities.housekeeping import housekeeping,loadSchemas
-from utilities.handle_mapping import fieldMapper,customerLock,fileLock,mapLock,sidebarMapping
+from utilities.handle_mapping import fieldMapper,customerLock,fileLock,mapLock,sidebarMapping,clearFieldMapperCache
 from utilities.handle_github_data import getCustomerList,getCustomerDataMap,getCustomerDataSources
 
 ####### Run on app launch #######
@@ -72,6 +72,7 @@ if st.session_state.customer_locked:
                                     disabled=st.session_state.file_locked)
     if not st.session_state.file_locked and uploaded_files:                
         st.session_state.data_sources=handleFiles(uploaded_files)             # allows upload of new files
+        clearFieldMapperCache()  # Clear cached data when files change
     if len(list(st.session_state.data_sources["files"].keys())[1:])>0:
         st.write("Uploaded files")
     for file in list(st.session_state.data_sources["files"].keys())[1:]:               # shows user each file and
@@ -97,29 +98,66 @@ if st.session_state.customer_locked:
                     st.session_state.data_map["mapping"][schema]={}
             st.session_state.mapping_initialized = True
         
-        for schema in sorted(list(schemas.keys())):                  
-            with st.expander(f"**{schema}**"):                        # drives mapping UI dropdowns
-                for field in schemas[schema]["field_names"].keys():
-                    if schemas[schema]["field_names"][field].get("nested",False):  # shows nested fields (e.g. address_line_1) under fields (e.g. address)  
-                        with st.expander(f"{schema}.*{field}*"):
-                            for nested_field in schemas[schema]["field_names"][field]["nested"].keys():
-                                description=schemas[schema]["field_names"][field]["nested"][nested_field].get("description","")
-                                field_type=schemas[schema]["field_names"][field]["nested"][nested_field].get("type","")
-                                if not ((f"{field}.{nested_field}" in st.session_state.exclusion_list) or (nested_field=="description")):
-                                    st.session_state.data_map=fieldMapper(f"{field}.{nested_field}",
-                                                                          st.session_state.data_sources,
-                                                                          st.session_state.data_map,
-                                                                          schema,
-                                                                          description,
-                                                                          field_type)
-                    else:
-                        description=schemas[schema]["field_names"][field].get("description","")
-                        field_type=schemas[schema]["field_names"][field].get("type","")
-                        st.session_state.data_map=fieldMapper(field,
-                                                              st.session_state.data_sources,
-                                                              st.session_state.data_map,
-                                                              schema,
-                                                              description,
-                                                              field_type)
+        # Initialize lazy loading state tracking
+        if 'loaded_schemas' not in st.session_state:
+            st.session_state.loaded_schemas = set()
+        if 'loaded_fields' not in st.session_state:
+            st.session_state.loaded_fields = set()
+        
+        for schema in sorted(list(schemas.keys())):
+            # Create a button-based lazy loading system
+            col1, col2 = st.columns([3, 1])
+            
+            with col1:
+                schema_expander = st.expander(f"**{schema}**")
+            
+            with col2:
+                load_button_key = f"load_schema_{schema}"
+                if st.button(f"Load {schema}", key=load_button_key, disabled=schema in st.session_state.loaded_schemas):
+                    st.session_state.loaded_schemas.add(schema)
+                    st.rerun()
+            
+            with schema_expander:
+                if schema in st.session_state.loaded_schemas:
+                    for field in schemas[schema]["field_names"].keys():
+                        if schemas[schema]["field_names"][field].get("nested",False):
+                            # For nested fields, create another level of lazy loading
+                            field_id = f"{schema}_{field}"
+                            
+                            field_col1, field_col2 = st.columns([3, 1])
+                            with field_col1:
+                                field_expander = st.expander(f"{schema}.*{field}*")
+                            
+                            with field_col2:
+                                field_load_key = f"load_field_{field_id}"
+                                if st.button(f"Load", key=field_load_key, disabled=field_id in st.session_state.loaded_fields):
+                                    st.session_state.loaded_fields.add(field_id)
+                                    st.rerun()
+                            
+                            with field_expander:
+                                if field_id in st.session_state.loaded_fields:
+                                    for nested_field in schemas[schema]["field_names"][field]["nested"].keys():
+                                        description=schemas[schema]["field_names"][field]["nested"][nested_field].get("description","")
+                                        field_type=schemas[schema]["field_names"][field]["nested"][nested_field].get("type","")
+                                        if not ((f"{field}.{nested_field}" in st.session_state.exclusion_list) or (nested_field=="description")):
+                                            st.session_state.data_map=fieldMapper(f"{field}.{nested_field}",
+                                                                                  st.session_state.data_sources,
+                                                                                  st.session_state.data_map,
+                                                                                  schema,
+                                                                                  description,
+                                                                                  field_type)
+                                else:
+                                    st.info(f"Click 'Load' to show {field} mapping fields")
+                        else:
+                            description=schemas[schema]["field_names"][field].get("description","")
+                            field_type=schemas[schema]["field_names"][field].get("type","")
+                            st.session_state.data_map=fieldMapper(field,
+                                                                  st.session_state.data_sources,
+                                                                  st.session_state.data_map,
+                                                                  schema,
+                                                                  description,
+                                                                  field_type)
+                else:
+                    st.info(f"Click 'Load {schema}' to show mapping fields for this schema")
         if st.button("Save Mapping"):
             mapLock(user,customer)
