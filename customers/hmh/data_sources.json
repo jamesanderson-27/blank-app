@@ -107,6 +107,40 @@
         "network_id",
         "network_name"
       ]
+    },
+    "PRC_MOD_2025_11_05.csv": {
+      "uploaded_at": "2025-11-06 00:06:57",
+      "file_type": "application/vnd.ms-excel",
+      "attributes": [
+        "VISIT_TYPE_ID",
+        "MOD_ID",
+        "DEP_ID",
+        "DEP_NAME",
+        "SER_ID",
+        "SER_NAME",
+        "SEX",
+        "START_AGE",
+        "START_AGE_UNIT",
+        "END_AGE",
+        "END_AGE_UNIT",
+        "LENGTH",
+        "ALLOWED_SCHEDULE"
+      ]
+    },
+    "PRC_RESTRICTION_2025_11_05.csv": {
+      "uploaded_at": "2025-11-06 00:07:03",
+      "file_type": "application/vnd.ms-excel",
+      "attributes": [
+        "SER_ID",
+        "NAME",
+        "SERTYPE",
+        "DEP_ID",
+        "DEPNAME",
+        "PRC_ID",
+        "PRCNAME",
+        "RESTRICTIONTYPE",
+        "DEFAULT_ACTION"
+      ]
     }
   }
 }
