@@ -27,7 +27,6 @@ with st.sidebar:
 
 ####### Edit Customer #######
 st.subheader("Edit Customer Mapping")
-
 customer=st.selectbox("Select Customer",
                     customer_list,
                     key="customer",
@@ -38,9 +37,9 @@ if not st.session_state.customer_locked:
     if 'current_customer' not in st.session_state or st.session_state.current_customer != customer:
         st.session_state.data_map = getCustomerDataMap(user,customer)
         st.session_state.current_customer = customer
-
+        
 with st.sidebar:
-    if view_customer: # Only render sidebar mapping if a customer is selecteds
+    if view_customer: # Only render sidebar mapping if a customer is selected
         sidebarMapping(view_customer,customer,st.session_state.data_map,st.session_state.user)
     else:
         st.markdown("*Select a customer to view current mapping*")
@@ -54,15 +53,14 @@ if st.session_state.customer_locked:
 
     ####### File Upload #######
     st.subheader("Upload Files")
-    
-    # Load data_sources once when customer is locked
-    if 'data_sources' not in st.session_state:
+    if 'data_sources' not in st.session_state: # Load data_sources once when customer is locked
         st.session_state.data_sources=getCustomerDataSources(user,customer)
     
     uploaded_files = st.file_uploader("Choose one or more files",
                                     type=['csv', 'txt','json'],
                                     accept_multiple_files=True,
                                     disabled=st.session_state.file_locked)
+    
     if not st.session_state.file_locked and uploaded_files:                
         st.session_state.data_sources=handleFiles(uploaded_files)             # allows upload of new files
         clearFieldMapperCache()  # Clear cached data when files change
@@ -92,13 +90,9 @@ if st.session_state.customer_locked:
                     st.session_state.data_map["mapping"][schema]={}
             st.session_state.mapping_initialized = True
         
-        # Render schemas with natural lazy loading via Streamlit expanders
-        # Streamlit expanders inherently provide lazy loading - content inside expanders
-        # is only processed when the expander is opened by the user
         for schema in sorted(list(schemas.keys())):
             with st.expander(f"**{schema}**"):
-                # Group nested fields under their parent field expanders
-                processed_fields = set()
+                processed_fields = set() # Group nested fields under their parent field expanders
                 
                 for field in schemas[schema]["field_names"].keys():
                     if field in processed_fields:
@@ -107,12 +101,12 @@ if st.session_state.customer_locked:
                     field_data = schemas[schema]["field_names"][field]
                     
                     if field_data.get("nested", False):
-                        # Handle nested fields grouped under parent
-                        with st.expander(f"{schema}.*{field}*"):
+                        
+                        with st.expander(f"{schema}.*{field}*"): # Handle nested fields grouped under parent
                             for nested_field in field_data["nested"].keys():
                                 if nested_field != "description" and f"{field}.{nested_field}" not in st.session_state.exclusion_list:
                                     nested_data = field_data["nested"][nested_field]
-                                    description = nested_data.get("description", "")
+                                    description = nested_data.get("description", "No description listed in entities-schema")
                                     field_type = nested_data.get("type", "")
                                     
                                     st.session_state.data_map = fieldMapper(
