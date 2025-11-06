@@ -63,7 +63,6 @@ def csvTxTReader(file):
             st.badge(f"Could not read header from {str(file.name)}", color='orange')
             return []
     except Exception as e:
-        st.badge(f"Using simple fallback for {str(file.name)}: {str(e)[:50]}...", color='orange')
         try:
             file.seek(0)
             first_line = file.readline().decode('utf-8', errors='ignore').strip()
