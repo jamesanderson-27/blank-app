@@ -3,6 +3,7 @@ import json
 import streamlit as st
 from typing import Union
 from datetime import datetime
+import io
 
 def getJsonAttributes(obj: Union[dict, list],prefix=""):
     attributes = set() # set for auto dup checking
@@ -29,15 +30,59 @@ def jsonReader(file):
     return list(attributes)
 
 def csvTxTReader(file):
-    raw=file.read().decode('utf-8')
-    content = raw.splitlines()
-    dialect = csv.Sniffer().sniff(raw)
-    delim=dialect.delimiter # should determine delimiter of file
     try:
-        reader = csv.reader(content, delimiter=delim)
+        file.seek(0)
+        chunk_size = 8192  # 8KB chunks
+        first_line = ""
+        sample_for_sniffing = ""
+        
+        while True:
+            chunk = file.read(chunk_size)
+            if not chunk:
+                break
+            chunk_str = chunk.decode('utf-8', errors='ignore')
+            sample_for_sniffing += chunk_str
+            newline_pos = chunk_str.find('\n')
+            if newline_pos != -1:
+                first_line = (first_line + chunk_str[:newline_pos]).strip()
+                break
+            else:
+                first_line += chunk_str
+            if len(sample_for_sniffing) > 2048:
+                sample_for_sniffing = sample_for_sniffing[:2048]
+                break
+        if not first_line and sample_for_sniffing:
+            first_line = sample_for_sniffing.strip()
+        dialect = csv.Sniffer().sniff(sample_for_sniffing[:1024])  # Use max 1KB for sniffing
+        delim = dialect.delimiter
+        if first_line:
+            reader = csv.reader([first_line], delimiter=delim)
+            headers = list(next(reader))
+            return headers
+        else:
+            st.badge(f"Could not read header from {str(file.name)}", color='orange')
+            return []
     except Exception as e:
-        st.badge(f"Error reading file: {e}",color='red')
-    return list(next(reader))
+        st.badge(f"Using simple fallback for {str(file.name)}: {str(e)[:50]}...", color='orange')
+        try:
+            file.seek(0)
+            first_line = file.readline().decode('utf-8', errors='ignore').strip()
+            if first_line:
+                for delim in [',', '\t', ';', '|']:
+                    try:
+                        reader = csv.reader([first_line], delimiter=delim)
+                        headers = list(next(reader))
+                        if len(headers) > 1:  # If we get multiple columns, this is likely correct
+                            return headers
+                    except:
+                        continue
+                return [first_line]
+            else:
+                st.badge(f"Empty file: {str(file.name)}", color='red')
+                return []
+        except Exception as fallback_error:
+            st.badge(f"Error reading file: {fallback_error}", color='red')
+            return []
 
 def handleFiles(uploaded_files):
 
