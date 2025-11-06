@@ -4,7 +4,7 @@
 **Department.abbreviation**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `DEP_2025_11_04.csv` | `DEP_NAME` | `` | `` | `None` | `` |
+| `DEP_2025_11_04.csv` | `DEPT_ABBR` | `` | `` | `None` | `` |
 
 
 
@@ -18,28 +18,28 @@
 **Department.address.addressLine1**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `DEP_2025_11_04.csv` | `STREET_ADDRESS` | `Kyruus Extract - pde_v5_locations_20250808-0638.csv` | `address1` | `None` | `` |
 
 
 
 **Department.address.addressLine2**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `DEP_2025_11_04.csv` | `STREET_ADDRESS_2` | `Kyruus Extract - pde_v5_locations_20250808-0638.csv` | `address2` | `None` | `` |
 
 
 
 **Department.address.city**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `DEP_2025_11_04.csv` | `CITY` | `Kyruus Extract - pde_v5_locations_20250808-0638.csv` | `city` | `None` | `` |
 
 
 
 **Department.address.country**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `USA` |
 
 
 
@@ -74,14 +74,14 @@
 **Department.address.postalCode**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `DEP_2025_11_04.csv` | `ZIP` | `Kyruus Extract - pde_v5_locations_20250808-0638.csv` | `zip` | `None` | `` |
 
 
 
 **Department.address.state**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `DEP_2025_11_04.csv` | `STATE` | `` | `` | `None` | `` |
 
 
 
@@ -102,7 +102,7 @@
 **Department.brandName**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `hmh` |
 
 
 
@@ -151,7 +151,7 @@
 **Department.description**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `Kyruus Extract - pde_v5_locations_20250808-0638.csv` | `` | `` | `` | `None` | `` |
 
 
 
@@ -936,49 +936,49 @@
 **Location.hours.fri**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Location.hours.mon**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Location.hours.sat**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Location.hours.sun**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Location.hours.thu**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Location.hours.tue**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
 **Location.hours.wed**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `` | `` | `` | `` | `string` | `` |
 
 
 
@@ -1588,7 +1588,7 @@
 **Provider.departmentIdentifiers.emrIdentifier**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `string` | `` |
+| `Kyruus Extract - pde_v5_locations_20250808-0638.csv` | `external_id` | `` | `` | `string` | `` |
 
 
 
@@ -1630,7 +1630,7 @@
 **Provider.emrIdentifiers**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `string` | `` |
+| `SER_2025_11_04.csv` | `SER_ID` | `` | `` | `string` | `` |
 
 
 
@@ -1693,7 +1693,7 @@
 **Provider.isAcceptingNewPatients**
 | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Primary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary File</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Secondary Attribute</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value Type</small>* | *<span style='font-size:12px; font-style:italic; font-weight:normal;'>Fallback Value</small>* |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| `` | `` | `` | `` | `None` | `` |
+| `SER_2025_11_04.csv` | `OPEN_SCHEDULING` | `` | `` | `None` | `` |
 
 
 
