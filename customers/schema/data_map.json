@@ -9,7 +9,8 @@
                 "secondary_file":"",
                 "secondary_attribute":"",
                 "fallback_value_type":"",
-                "fallback_value":""
+                "fallback_value":"",
+                "notes":""
             }
         }
     }
