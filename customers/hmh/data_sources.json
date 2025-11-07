@@ -492,6 +492,45 @@
         "Active",
         "Training 3 Specialty"
       ]
+    },
+    "DEP_20250827.csv": {
+      "uploaded_at": "2025-11-07 23:36:45",
+      "file_type": "application/vnd.ms-excel",
+      "attributes": [
+        "DEP_ID",
+        "DEP_NAME",
+        "Street_Address",
+        "City",
+        "State",
+        "Zip",
+        "Phone",
+        "DEPT_ABBR",
+        "Specialty",
+        "Center",
+        "Service_Area",
+        "Direct_Schd",
+        "Open_Schd",
+        "Visit_ID_DVOVR",
+        "Visit_Title_DVOVR",
+        "Direct_Sch_On_DVOR",
+        "Buffer_Days_DVOVR",
+        "Lookahead_Days_DVOVR",
+        "Open_Sch_On_DVOVR",
+        "Visit_ID_DVOVR"
+      ]
+    },
+    "SER_20250925.csv": {
+      "uploaded_at": "2025-11-07 23:36:49",
+      "file_type": "application/vnd.ms-excel",
+      "attributes": [
+        "SER_ID",
+        "NAME",
+        "SEX",
+        "DEP_ID",
+        "NATIONAL_PROVIDER_ID",
+        "OPEN_SCHEDULING",
+        "DIRECT_SCHEDULING"
+      ]
     }
   }
 }
