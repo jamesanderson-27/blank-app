@@ -1,8 +1,9 @@
 import streamlit as st
-from utilities.handle_files import handleFiles
+from utilities.handle_files import handleFiles,clearFileCache
 from utilities.housekeeping import housekeeping,loadSchemas
-from utilities.handle_mapping import fieldMapper,customerLock,fileLock,mapLock,sidebarMapping,clearFieldMapperCache
+from utilities.handle_mapping import fieldMapper,customerLock,fileLock,mapLock,sidebarMapping
 from utilities.handle_github_data import getCustomerList,getCustomerDataMap,getCustomerDataSources
+
 
 ####### Run on app launch #######
 housekeeping() # env variables, button styling, secret reading
@@ -55,26 +56,28 @@ if st.session_state.customer_locked:
     st.subheader("Upload Files")
     if 'data_sources' not in st.session_state: # Load data_sources once when customer is locked
         st.session_state.data_sources=getCustomerDataSources(user,customer)
-    
+    # renders the file upload UI
     uploaded_files = st.file_uploader("Choose one or more files",
                                     type=['csv', 'txt','json'],
                                     accept_multiple_files=True,
                                     disabled=st.session_state.file_locked)
-    
-    if not st.session_state.file_locked and uploaded_files:                
-        st.session_state.data_sources=handleFiles(uploaded_files)             # allows upload of new files
-        clearFieldMapperCache()  # Clear cached data when files change
+    # Clear cached data when files change   
+    if not st.session_state.file_locked and uploaded_files:                              
+        st.session_state.data_sources=handleFiles(uploaded_files)
+        clearFileCache()
+    # shows user each file and its n_attributes
     if len(list(st.session_state.data_sources["files"].keys())[1:])>0:
         st.write("Uploaded files")
-    for file in list(st.session_state.data_sources["files"].keys())[1:]:               # shows user each file and
-        n_attributes=len(st.session_state.data_sources["files"][file]["attributes"])   # its number of attributes
-        st.write(f"*{file}* has {n_attributes} attributes.")          
-    if st.button("Save Files"):                                       # saves data_sources to github
+    for file in list(st.session_state.data_sources["files"].keys())[1:]:               
+        n_attributes=len(st.session_state.data_sources["files"][file]["attributes"])
+        st.write(f"*{file}* has {n_attributes} attributes.")   
+    # presents save button and saves data_sources to github       
+    if st.button("Save Files"):                                       
         fileLock(user,customer)
         st.rerun()
 
     ####### Data Mapping #######
-    if st.session_state.file_locked:                                  # User continues to mapping
+    if st.session_state.file_locked:                                  # User continues to mapping activity
         if st.session_state.schemas is None:
             st.session_state.schemas = loadSchemas()
         schemas = st.session_state.schemas

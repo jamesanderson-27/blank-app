@@ -105,3 +105,10 @@ def handleFiles(uploaded_files):
             except:
                 st.write(f"Something went wrong with the upload of {str(file.name)}... please reach out to James!")
     return st.session_state.data_sources
+
+def clearFileCache():
+    # Clear file attribute caches
+    keys_to_remove = [key for key in st.session_state.keys() if (key.startswith('attrs_') or key.startswith('mapper_cache_'))]
+    for key in keys_to_remove:
+        del st.session_state[key]
+    st.session_state['force_sidebar_refresh'] = True
