@@ -1138,8 +1138,8 @@
         "logic": ""
       },
       "agesSeen": {
-        "primary_file": "",
-        "primary_attribute": "",
+        "primary_file": "Kyruus Extract - pde_v5_providers_summary_20250808-0638.csv",
+        "primary_attribute": "age_groups_seen",
         "secondary_file": "",
         "secondary_attribute": "",
         "fallback_value_type": "None",
@@ -1148,8 +1148,8 @@
         "logic": ""
       },
       "bio": {
-        "primary_file": "",
-        "primary_attribute": "",
+        "primary_file": "Kyruus Extract - pde_v5_xp_fields_20250808-0553.csv",
+        "primary_attribute": "about_the_provider",
         "secondary_file": "",
         "secondary_attribute": "",
         "fallback_value_type": "None",
@@ -1188,7 +1188,7 @@
         "logic": ""
       },
       "conditionsTreated": {
-        "primary_file": "",
+        "primary_file": "Kyruus Extract - pde_v5_xp_fields_20250808-0553.csv",
         "primary_attribute": "",
         "secondary_file": "",
         "secondary_attribute": "",
@@ -1218,8 +1218,8 @@
         "logic": ""
       },
       "credentials": {
-        "primary_file": "",
-        "primary_attribute": "",
+        "primary_file": "credential_stream_20250823T004314.json",
+        "primary_attribute": "Degree",
         "secondary_file": "",
         "secondary_attribute": "",
         "fallback_value_type": "None",
