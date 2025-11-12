@@ -1,1 +1,1702 @@
-
+{
+  "last_modified_time": "2025-11-10 22:46:59",
+  "last_modified_user": "jamesanderson-27",
+  "mapping": {
+    "Department": {
+      "abbreviation": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "accreditations": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "address.addressLine1": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "address.addressLine2": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "address.city": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "address.country": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "address.county": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "address.latitude": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "address.longitude": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "address.postalCode": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "address.state": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "adhoc": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "banner": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "brandName": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "clockwise": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "cmsContent.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "cmsContent.pageId": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "conditionsTreated": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "contextMetadata": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "description": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "dexcareBuildsPage": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "displayName": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "emrIdentifier.emrId": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "emrIdentifier.emrIdType": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "emrIdentifier.emrSystemId": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "facilityTypes": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "googlePlaceUrl": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "hours.custom": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "hours.fri": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "hours.mon": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "hours.sat": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "hours.sun": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "hours.thu": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "hours.tue": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "hours.wed": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "imageUrl": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "insurances.name": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "isAcceptingNewPatients": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "isActive": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "isBookableOnline": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "isBookablePhone": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "isBookableVirtual": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "isHidden": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "isNewPatientEnabled": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "isReturningPatientEnabled": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "pageDescription": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "pageTitle": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "phone.phoneNumber": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "phone.extension": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "policies.name": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "policies.url": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "reviews.commentCount": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "reviews.commentDistribution": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "reviews.comments": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "reviews.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "reviews.questionRatings": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "reviews.rating": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "reviews.ratingCount": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "reviews.ratingSystemId": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "services.name": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "services.url": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "specialties.name": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "tier": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "timezone": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "url": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "walkInsWelcome": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      }
+    },
+    "Location": {
+      "address.addressLine1": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "address.addressLine2": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "address.city": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "address.country": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "address.county": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "address.latitude": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "address.longitude": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "address.postalCode": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "address.state": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "adhoc": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "brandName": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "childLocations": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "cmsContent.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "cmsContent.pageId": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "conditionsTreated": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "contextMetadata": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "departmentPrimaryIdentifier.emrIdentifier": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "departmentPrimaryIdentifier.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "description": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "dexcareBuildsPage": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "displayName": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "googlePlaceUrl": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "hours.custom": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "hours.fri": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "hours.mon": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "hours.sat": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "hours.sun": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "hours.thu": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "hours.tue": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "hours.wed": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "imageUrl": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "isActive": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "isHidden": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "pageDescription": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "pageTitle": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "phone.phoneNumber": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "phone.extension": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "policies.name": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "policies.url": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "services.name": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "services.url": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "tier": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "timezone": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "url": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      }
+    },
+    "Provider": {
+      "adhoc": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "agesSeen": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "bio": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "certifications": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "cmsContent.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "cmsContent.pageId": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "conditionsTreated": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "contextMetadata": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "credentialedStates": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "credentials": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "dateOfBirth": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "departmentIdentifiers.emrIdentifier": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "departmentIdentifiers.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "departmentPrimaryIdentifier": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "dexcareBuildsPage": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "education": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "email": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "emrIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "gender": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "hospitalAffiliations": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "imageUrl": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "insurances.name": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "isAcceptingNewPatients": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "isActive": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "isHidden": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "isAffiliate": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "isBookableOnline": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "isBookablePhone": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "isBookableVirtual": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "isNewPatientEnabled": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "isReturningPatientEnabled": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "languages": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "medicalInterests": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "name": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "networks": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "npi": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "pageDescription": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "pageTitle": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "phone.phoneNumber": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "phone.extension": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "practiceGroup": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "practiceGroups": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "profileUrls": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "reviews.commentCount": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "reviews.commentDistribution": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "reviews.comments": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "reviews.externalIdentifiers": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "reviews.questionRatings": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "reviews.rating": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "reviews.ratingCount": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "reviews.ratingSystemId": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "specialties.name": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "specialty": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "subSpecialties": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "tier": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      },
+      "videoUrl": {
+        "primary_file": "",
+        "primary_attribute": "",
+        "secondary_file": "",
+        "secondary_attribute": "",
+        "fallback_value_type": "None",
+        "fallback_value": "None",
+        "notes": "",
+        "logic": ""
+      }
+    }
+  }
+}
