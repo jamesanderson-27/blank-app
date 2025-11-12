@@ -12,6 +12,8 @@ def housekeeping():
     setValidationConfig()
     if 'data_map_sha' not in st.session_state:
         st.session_state.data_map_sha=''
+    if 'data_map_md_sha' not in st.session_state:
+        st.session_state.data_map_md_sha=''
     if 'data_sources_sha' not in st.session_state:
         st.session_state.data_sources_sha=''
     if 'customer_locked' not in st.session_state:
@@ -90,11 +92,11 @@ def setValidationConfig():
         "default_fallback": "True"
     },
     "object": {
-        "validation": lambda x: True,  # Could add JSON validation
+        "validation": lambda x: True,  # add JSON validation
         "default_fallback": "{}"
     },
     "array": {
-        "validation": lambda x: True,  # Could add array validation
+        "validation": lambda x: True,  # add array validation
         "default_fallback": "[]"
     },
     "number": {

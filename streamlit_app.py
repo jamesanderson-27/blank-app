@@ -61,6 +61,7 @@ if st.session_state.customer_locked:
                                     type=['csv', 'txt','json'],
                                     accept_multiple_files=True,
                                     disabled=st.session_state.file_locked)
+
     # Clear cached data when files change   
     if not st.session_state.file_locked and uploaded_files:                              
         st.session_state.data_sources=handleFiles(uploaded_files)
@@ -81,7 +82,7 @@ if st.session_state.customer_locked:
         if st.session_state.schemas is None:
             st.session_state.schemas = loadSchemas()
         schemas = st.session_state.schemas
-        
+
         st.toast("Use ctrl F to find schema objects", icon=":material/search:", duration="infinite")
         st.divider()
         st.subheader("Map to DexCare Schema")
