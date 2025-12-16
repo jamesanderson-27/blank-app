@@ -87,6 +87,18 @@ if st.session_state.customer_locked:
         st.divider()
         st.subheader("Map to DexCare Schema")
         
+        # Initialize session state variables early to prevent race conditions
+        if "saved_files" not in st.session_state:
+            st.session_state.saved_files = list(st.session_state.data_sources["files"].keys())
+        if 'saved_data_map' not in st.session_state:
+            st.session_state.saved_data_map = getCustomerDataMap(user, customer, 1)
+        
+        # Initialize expander state management
+        if 'schema_expander_states' not in st.session_state:
+            st.session_state.schema_expander_states = {}
+        if 'field_expander_states' not in st.session_state:
+            st.session_state.field_expander_states = {}
+        
         # Initialize mapping structure once
         if 'mapping_initialized' not in st.session_state:
             for schema in sorted(list(schemas.keys())):                # Build the map once, not every run                  
@@ -95,14 +107,24 @@ if st.session_state.customer_locked:
             st.session_state.mapping_initialized = True
         
         for schema in sorted(list(schemas.keys())):
-            with st.expander(f"**{schema}**"):
+            # Get or set default expander state for schema
+            schema_key = f"schema_{schema}"
+            if schema_key not in st.session_state.schema_expander_states:
+                st.session_state.schema_expander_states[schema_key] = False
+            
+            with st.expander(f"**{schema}**", expanded=st.session_state.schema_expander_states[schema_key]):
                 processed_fields = set() # Group nested fields under their parent field expanders
                 for field in schemas[schema]["field_names"].keys():
                     if field in processed_fields:
                         continue   
                     field_data = schemas[schema]["field_names"][field]
-                    if field_data.get("nested", False):                      
-                        with st.expander(f"{schema}.*{field}*"): # Handle nested fields grouped under parent
+                    if field_data.get("nested", False):
+                        # Get or set default expander state for nested field
+                        field_key = f"field_{schema}_{field}"
+                        if field_key not in st.session_state.field_expander_states:
+                            st.session_state.field_expander_states[field_key] = False
+                        
+                        with st.expander(f"{schema}.*{field}*", expanded=st.session_state.field_expander_states[field_key]): # Handle nested fields grouped under parent
                             for nested_field in field_data["nested"].keys():
                                 if nested_field != "description" and f"{field}.{nested_field}" not in st.session_state.exclusion_list:
                                     nested_data = field_data["nested"][nested_field]

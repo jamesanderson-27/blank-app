@@ -4,13 +4,21 @@
     "mapping":{
         "<schema_object>":{
             "<schema_field>":{
-                "primary_file":"",
-                "primary_attribute":"",
-                "secondary_file":"",
-                "secondary_attribute":"",
+                "file_a":"",
+                "attribute_a":"",
+                "file_b":"",
+                "attribute_b":"",
+                "file_c":"",
+                "attribute_c":"",
                 "fallback_value_type":"",
                 "fallback_value":"",
-                "notes":""
+                "notes":"",
+                "result_set":{
+                    "conditional_1":"",
+                    "result_1":"",
+                    "condiional_2":"",
+                    "result_2":""
+                }
             }
         }
     }

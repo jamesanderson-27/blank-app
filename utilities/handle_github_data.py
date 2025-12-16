@@ -62,10 +62,11 @@ def getSchemaSmall(user,path):
 @st.cache_data
 def getEntitiesSchema(schemas,exclusion_list):
     user = "DexCare"
-    def collectFields(schema_name, schema_path, seen_paths):
-        if schema_path in seen_paths:
+    def collectFields(schema_name, schema_path, seen_paths, store_seen):
+        if (schema_path in seen_paths):
             return {}
-        seen_paths.add(schema_path)
+        if store_seen:
+            seen_paths.add(schema_path)
         field_dict = {}
         schema_json = getSchemaSmall(user, schema_path)
         properties = schema_json.get("properties", {})
@@ -76,10 +77,10 @@ def getEntitiesSchema(schemas,exclusion_list):
             nested_fields = {}
             if "$ref" in field_data:
                 ref_path = field_data["$ref"].strip("./")
-            elif "items" in field_data and "$ref" in field_data["items"]:
+            elif ("items" in field_data and "$ref" in field_data["items"]):
                 ref_path = field_data["items"]["$ref"].strip("./")
             if ref_path:
-                nested_fields = collectFields(schema_name, ref_path, seen_paths)
+                nested_fields = collectFields(schema_name, ref_path, seen_paths,False)
                 field_dict[field] = {"nested":nested_fields}
             else:
                 field_dict[field] = {}
@@ -92,7 +93,7 @@ def getEntitiesSchema(schemas,exclusion_list):
     for schema_name, schema_info in schemas.items():
         path = schema_info["file_name"]
         seen = set()
-        fields = collectFields(schema_name, path, seen)
+        fields = collectFields(schema_name, path, seen,True)
         schemas[schema_name]["field_names"] = fields
     return schemas
 
