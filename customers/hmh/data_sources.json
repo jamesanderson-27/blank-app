@@ -56,18 +56,6 @@
         "billing_tin"
       ]
     },
-    "Kyruus Extract - pde_v5_networks_20250808-0638.csv": {
-      "uploaded_at": "2025-11-07 23:31:32",
-      "file_type": "application/vnd.ms-excel",
-      "attributes": [
-        "provider_id",
-        "last_name",
-        "first_name",
-        "npi",
-        "network_id",
-        "network_name"
-      ]
-    },
     "Kyruus Extract - pde_v5_providers_summary_20250808-0638.csv": {
       "uploaded_at": "2025-11-07 23:31:43",
       "file_type": "application/vnd.ms-excel",
@@ -100,22 +88,6 @@
         "practice_group",
         "age_groups_seen",
         "specialties"
-      ]
-    },
-    "Kyruus Extract - pde_v5_trainings_20250808-0638.csv": {
-      "uploaded_at": "2025-11-07 23:31:50",
-      "file_type": "application/vnd.ms-excel",
-      "attributes": [
-        "provider_id",
-        "last_name",
-        "first_name",
-        "npi",
-        "description",
-        "degree",
-        "rank",
-        "field",
-        "year",
-        "institution"
       ]
     },
     "Kyruus Extract - pde_v5_xp_fields_20250808-0553.csv": {
@@ -203,45 +175,6 @@
         "xp_hospital_affiliation",
         "years_in_practice"
       ]
-    },
-    "PRC_MOD_2025_11_05.csv": {
-      "uploaded_at": "2025-11-07 23:32:05",
-      "file_type": "application/vnd.ms-excel",
-      "attributes": [
-        "VISIT_TYPE_ID",
-        "MOD_ID",
-        "DEP_ID",
-        "DEP_NAME",
-        "SER_ID",
-        "SER_NAME",
-        "SEX",
-        "START_AGE",
-        "START_AGE_UNIT",
-        "END_AGE",
-        "END_AGE_UNIT",
-        "LENGTH",
-        "ALLOWED_SCHEDULE"
-      ]
-    },
-    "PRC_RESTRICTION_2025_11_05.csv": {
-      "uploaded_at": "2025-11-07 23:32:10",
-      "file_type": "application/vnd.ms-excel",
-      "attributes": [
-        "SER_ID",
-        "NAME",
-        "SERTYPE",
-        "DEP_ID",
-        "DEPNAME",
-        "PRC_ID",
-        "PRCNAME",
-        "RESTRICTIONTYPE",
-        "DEFAULT_ACTION"
-      ]
-    },
-    "credential_stream_20250821T175444.json": {
-      "uploaded_at": "2025-11-07 23:32:17",
-      "file_type": "application/json",
-      "attributes": []
     },
     "credential_stream_20250823T004314.json": {
       "uploaded_at": "2025-11-07 23:34:48",
@@ -491,32 +424,6 @@
         "Training 1 To",
         "Active",
         "Training 3 Specialty"
-      ]
-    },
-    "DEP_20250827.csv": {
-      "uploaded_at": "2025-11-07 23:36:45",
-      "file_type": "application/vnd.ms-excel",
-      "attributes": [
-        "DEP_ID",
-        "DEP_NAME",
-        "Street_Address",
-        "City",
-        "State",
-        "Zip",
-        "Phone",
-        "DEPT_ABBR",
-        "Specialty",
-        "Center",
-        "Service_Area",
-        "Direct_Schd",
-        "Open_Schd",
-        "Visit_ID_DVOVR",
-        "Visit_Title_DVOVR",
-        "Direct_Sch_On_DVOR",
-        "Buffer_Days_DVOVR",
-        "Lookahead_Days_DVOVR",
-        "Open_Sch_On_DVOVR",
-        "Visit_ID_DVOVR"
       ]
     },
     "SER_20250925.csv": {
