@@ -2328,19 +2328,19 @@
         "result_2": ""
       },
       "dateOfBirth": {
-        "file_a": "",
-        "a_attribute": "",
-        "file_b": "",
-        "b_attribute": "",
+        "file_a": "SER_20250925.csv",
+        "a_attribute": "DEP_ID",
+        "file_b": "Kyruus Extract - pde_v5_providers_summary_20250808-0638.csv",
+        "b_attribute": "external_id",
         "file_c": "",
         "c_attribute": "",
         "fallback_value_type": "None",
         "fallback_value": "None",
         "notes": "",
-        "logic": "simple",
-        "conditional_1": "",
+        "logic": "complex",
+        "conditional_1": "IF A IS NOT NULL AND B IS NOT NULL",
         "conditional_2": "",
-        "result_1": "",
+        "result_1": "CONTCAT(A,B)",
         "result_2": ""
       },
       "departmentIdentifiers.emrIdentifier": {
