@@ -438,6 +438,33 @@
         "OPEN_SCHEDULING",
         "DIRECT_SCHEDULING"
       ]
+    },
+    "DEP_2025_12_16.csv": {
+      "uploaded_at": "2025-12-30 18:44:28",
+      "file_type": "application/vnd.ms-excel",
+      "attributes": [
+        "DEP_ID",
+        "DEP_NAME",
+        "STREET_ADDRESS",
+        "STREET_ADDRESS_2",
+        "CITY",
+        "STATE",
+        "ZIP",
+        "PHONE",
+        "DEPT_ABBR",
+        "SPECIALTY",
+        "CENTER",
+        "SERVICE_AREA",
+        "DIRECT_SCHD",
+        "OPEN_SCHD",
+        "VISIT_ID_DVOVR",
+        "VISIT_TITLE_DVOVR",
+        "DIRECT_SCH_ON_DVOR",
+        "BUFFER_DAYS_DVOVR",
+        "LOOKAHEAD_DAYS_DVOVR",
+        "OPEN_SCH_ON_DVOVR",
+        "GROUPER"
+      ]
     }
   }
 }
